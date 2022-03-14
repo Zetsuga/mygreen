@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-.header {
-  background-color: var(--verdePrincipal);
-  height: 112px;
-}
-=======
 .header{
     background-color: var(--verdePrincipal);
     height: 112px;
@@ -54,4 +48,3 @@
 .btn-login p:hover{
     color: var(--grisOscuro);
 }
->>>>>>> 36498eec706025d531a7cf4872e820c0ef6e8456
