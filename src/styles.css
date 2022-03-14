@@ -24,9 +24,16 @@
 }
 
 
-.tituloCard{
+.tituloCard, .tituloCard2{
     color: var(--titulos);
     font-family: var(--roboto);
     font-size: 23px;
     padding-top: 10px;
+}
+
+.tituloCardSub{
+    color: var(--titulos);
+    font-family: var(--roboto);
+    font-size: 15px;
+    padding-left: 15px;
 }
