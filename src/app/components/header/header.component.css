@@ -82,11 +82,18 @@ a:hover{
     /* border: 1px solid black; */
     margin-right: 20px;
     border-radius: 4px;
+    height: 45px;
+    width: 120px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn-login:hover{
-    /* box-shadow: 4px 4px 4px grey; */
+    box-shadow: 4px 4px 4px grey;
     background-color:#69AF07;
-    border: 2px outset white;
+    border: 1px outset white;
+    /* background-color: white; */
 
 }
 .redes{

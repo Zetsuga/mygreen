@@ -1,0 +1,99 @@
+footer{
+    bottom: 0;
+    left: 0;
+    background-color:#414141;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 40px 30px 40px;
+    height: 220px;
+    color: white;
+}
+.parte-izq{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.bloque1{
+    display: flex;
+    align-content: center;
+    gap: 20px;
+}
+.parte-izq h1{
+    font-family: 'Roboto Condensed';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top: 10px;
+}
+
+.canvas-log img{
+    height: 62px;
+    width: 62px;
+}
+.parte-med{
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+.parte-med h2{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+}
+.parte-med h3{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+.parte-med p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+}
+.parte-dcha{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+
+}
+.parte-dcha h2{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+}
+.parte-dcha ul{
+    display: flex;
+    flex-direction: column;
+    margin: 3px ;
+
+}
+.parte-dcha li{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    margin-top: 10px;
+}
+.parte-dcha li img{
+    margin-right: 8px;
+}
+a{
+    color: white;
+}
