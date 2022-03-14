@@ -7,4 +7,26 @@
     --fondo: #F4F4F4;
     --lato: 'Lato', sans-serif;
     --roboto: 'Roboto Condensed', sans-serif;
+    --sombra: 4px 4px 4px grey;
+    --borde: 3px solid var(--verdeSecundario);
+    --titulos: #887848;
+    --rojowarning: rgb(243, 7, 7);
+    --amariloAdvertencia: rgb(233, 191, 7);
+    --verdeCorrecto: #69af07;
+    --clima: #4D99CF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+.tituloCard{
+    color: var(--titulos);
+    font-family: var(--roboto);
+    font-size: 23px;
+    padding-top: 10px;
 }

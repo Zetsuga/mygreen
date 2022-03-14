@@ -1,0 +1,9 @@
+.iconoMenu{
+    color: white;
+}
+
+.menuAdministrador{
+    background-color: white;
+    width: 238px;
+    height: calc(100vh - 112px);
+}
