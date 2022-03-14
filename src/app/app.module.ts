@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './pages/landing/landing.component';
@@ -21,6 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderPanelComponent } from './components/header-panel/header-panel.component';
 import { MenuPanelComponent } from './components/menu-panel/menu-panel.component';
 import { BotonComponent } from './components/boton/boton.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BotonSliceComponent } from './components/boton-slice/boton-slice.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +43,13 @@ import { BotonComponent } from './components/boton/boton.component';
     FooterComponent,
     HeaderPanelComponent,
     MenuPanelComponent,
-    BotonComponent
+    BotonComponent,
+    BotonSliceComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

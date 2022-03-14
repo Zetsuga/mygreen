@@ -1,0 +1,101 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: [x0]238px[x1]calc(100vw - 238px) [x2];
+  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+}
+
+.cabecera {
+  grid-column: x0/x2;
+  grid-row: y0/y1;
+}
+
+.menuppal {
+  grid-column: x0/x1;
+  grid-row: y1/y2;
+}
+.cuerpo {
+  display: grid;
+  grid-column: x1/x2;
+  grid-row: y1/y2;
+  background-color: #f4f4f4;
+  grid-template-columns: [x0]100%[x1];
+  grid-template-rows: [y0]300px[y1]300px[y2]300px[y3];
+  padding: 50px;
+}
+
+.bordeysombra {
+  border: var(--borde);
+  box-shadow: var(--sombra);
+  background-color: white;
+}
+
+.contenido {
+  grid-column: x0/x1;
+  grid-row: y0/y1;
+  margin-top: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#tension {
+  font-size: 60px;
+}
+
+.tensionM {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: var(--roboto);
+}
+.contenidoTemperatura {
+  grid-column: x0/x1;
+  grid-row: y1/y2;
+  margin-top: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contenidoHumedad {
+  grid-column: x0/x1;
+  grid-row: y2/y3;
+  margin-top: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#iconoDomo {
+  width: 80px;
+}
+
+.botonSlice {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  margin-left: 20px;
+  padding-bottom: 30px;
+}
+
+.botonSlice p {
+  font-family: var(--lato);
+  font-size: 17px;
+  font-weight: bold;
+}

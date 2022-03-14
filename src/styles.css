@@ -1,10 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
-:root{
-    --grisOscuro : #414141;
-    --verdePrincipal: #69AF07;
-    --verdeSecundario: #8A9669;
-    --fondo: #F4F4F4;
-    --lato: 'Lato', sans-serif;
-    --roboto: 'Roboto Condensed', sans-serif;
+:root {
+  --grisOscuro: #414141;
+  --verdePrincipal: #69af07;
+  --verdeSecundario: #8a9669;
+  --rojowarning: rgb(243, 7, 7);
+  --amariloAdvertencia: rgb(233, 191, 7);
+  --verdeCorrecto: #69af07;
+  --fondo: #f4f4f4;
+  --lato: "Lato", sans-serif;
+  --roboto: "Roboto Condensed", sans-serif;
+  --sombra: 4px 4px 4px grey;
+  --borde: 3px solid var(--verdeSecundario);
+  --titulos: #887848;
+  --color-green: #00a878;
+  --color-red: #fe5e41;
+  --color-button: #fdffff;
+  --color-black: #000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.tituloCard {
+  color: var(--titulos);
+  font-family: var(--roboto);
+  font-size: 23px;
+  padding-top: 10px;
 }

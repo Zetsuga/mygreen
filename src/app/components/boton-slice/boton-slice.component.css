@@ -1,0 +1,32 @@
+.switch-button {
+  display: inline-block;
+  margin-top: 20px;
+}
+.switch-button .switch-button__checkbox {
+  display: none;
+}
+.switch-button .switch-button__label {
+  background: linear-gradient(to left, rgb(255, 2, 2), white);
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 3rem;
+  display: inline-block;
+  position: relative;
+}
+.switch-button .switch-button__label:before {
+  transition: 0.2s;
+  display: block;
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-button);
+  content: "";
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+  background: linear-gradient(to right, rgb(3, 230, 154), rgb(208, 219, 159));
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+  transform: translateX(5.5rem);
+}
