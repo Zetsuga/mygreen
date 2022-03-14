@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
+=======
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+>>>>>>> 36498eec706025d531a7cf4872e820c0ef6e8456
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './pages/landing/landing.component';

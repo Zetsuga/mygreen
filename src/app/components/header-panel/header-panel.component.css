@@ -1,4 +1,57 @@
+<<<<<<< HEAD
 .header {
   background-color: var(--verdePrincipal);
   height: 112px;
 }
+=======
+.header{
+    background-color: var(--verdePrincipal);
+    height: 112px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.zona-izq{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.zona-izq h1{
+    color:white;
+    font-family: var(--roboto);
+}
+
+.zona-dcha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-login img{
+    padding-right: 10px;
+    max-width: 40px;
+}
+
+.btn-login p{
+    font-family: var(--roboto);
+    font-size: 20px;
+    color:white;
+    font-weight: 600;
+}
+
+.btn-login p:hover{
+    color: var(--grisOscuro);
+}
+>>>>>>> 36498eec706025d531a7cf4872e820c0ef6e8456

@@ -1,1 +1,68 @@
+.iconoMenu {
+  color: var(--titulo);
+  padding-right: 10px;
+}
 
+.menuAdministrador {
+  background-color: white;
+  width: 238px;
+  height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: hsl(85, 92%, 36%, 40%);
+}
+
+.contenido_imagen {
+  width: 70px;
+  padding-bottom: 20px;
+}
+
+.contenido_imagen img {
+  max-width: 70px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.contenido_texto {
+  text-align: center;
+  color: var(--grisOscuro);
+}
+
+.contenido_texto p {
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-family: var(--lato);
+  font-weight: 600;
+}
+
+.menu {
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+.menuBoton {
+  padding-bottom: 20px;
+}
+
+.iconoMenuBoton {
+  padding-right: 10px;
+}
+
+.icnoMenuBotonSub {
+  padding-left: 15px;
+  padding-right: 0px;
+}
+
+.tituloCardSub:hover,
+.tituloCard:hover {
+  color: var(--grisOscuro);
+  font-weight: 600;
+}
