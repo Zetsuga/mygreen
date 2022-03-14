@@ -30,3 +30,20 @@
 .switch-button .switch-button__checkbox:checked + .switch-button__label:before {
   transform: translateX(5.5rem);
 }
+
+@media (max-width: 1325px) {
+  .switch-button .switch-button__label {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .switch-button .switch-button__label:before {
+    width: 2rem;
+    height: 2rem;
+  }
+  .switch-button
+    .switch-button__checkbox:checked
+    + .switch-button__label:before {
+    transform: translateX(2rem);
+  }
+}
