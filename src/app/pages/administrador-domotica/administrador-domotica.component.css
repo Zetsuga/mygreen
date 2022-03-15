@@ -18,8 +18,8 @@
   grid-column: x1/x2;
   grid-row: y1/y2;
   background-color: #f4f4f4;
-  grid-template-columns: [x0]100%[x1];
-  grid-template-rows: [y0]300px[y1]300px[y2]300px[y3];
+  grid-template-columns: [x0]1fr[x1];
+  grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3];
   padding: 50px;
 }
 
@@ -32,12 +32,12 @@
 .contenido {
   grid-column: x0/x1;
   grid-row: y0/y1;
-  margin-top: 20px;
-  margin-left: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
+  border-radius: 7px;
 }
 
 .info {
@@ -63,22 +63,21 @@
 .contenidoTemperatura {
   grid-column: x0/x1;
   grid-row: y1/y2;
-  margin-top: 20px;
-  margin-left: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
+  border-radius: 7px;
 }
 .contenidoHumedad {
   grid-column: x0/x1;
   grid-row: y2/y3;
-  margin-top: 20px;
-  margin-left: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-radius: 7px;
 }
 
 #iconoDomo {

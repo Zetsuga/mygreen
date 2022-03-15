@@ -10,6 +10,7 @@ import { AdministradorRiegoComponent } from './pages/administrador-riego/adminis
 import { AdministradorUsuariosComponent } from './pages/administrador-usuarios/administrador-usuarios.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TrabajadorInicioComponent } from './pages/trabajador-inicio/trabajador-inicio.component';
 
 const routes: Routes = [
   {path:"", component: LandingComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:"administrador/historial" , component: AdministradorHistorialComponent},
   {path:"administrador/riego" , component: AdministradorRiegoComponent},
   {path:"administrador/parte" , component: AdministradorParteComponent},
-  {path:"administrador/incidencias" , component: AdministradorIncidenciasComponent}
+  {path:"administrador/incidencias" , component: AdministradorIncidenciasComponent},
+  {path:"trabajador/inicio" , component: TrabajadorInicioComponent}
 ];
 
 @NgModule({
