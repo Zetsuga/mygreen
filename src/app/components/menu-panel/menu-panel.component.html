@@ -1,4 +1,4 @@
-<section class="menuAdministrador">
+<section class="menuAdministrador" >
     <div class="contenido">
         <div class="contenido_imagen">
             <img src="../../../assets/img/perfil.png">
@@ -8,7 +8,7 @@
             <p>prueba@gmail.com</p>
         </div>
     </div>
-    <div class="menu">
+    <div class="menu" *ngIf="!usuario.trabajador else falso">
         <div class="menuBoton">
             <img src="../../../assets/img/configuraciones 1.png" alt="" class="iconoMenuBoton">
             <a routerLink="administrador/inicio" class="tituloCard">INICIO</a>
@@ -58,5 +58,24 @@
     </div>
 
 
+
+
+<ng-template #falso>
+    <div class="menu">
+        <div class="menuBoton">
+            <img src="../../../assets/img/configuraciones 1.png" alt="" class="iconoMenuBoton">
+            <a routerLink="trabajador/inicio" class="tituloCard">INICIO</a>
+        </div>
+        <div class="menuBoton">
+            <img src="../../../assets/img/perfil-del-usuario 1.png" alt="" class="iconoMenuBoton">
+            <a routerLink="trabajador/fichar" class="tituloCard">FICHAR</a>
+        </div>
+        <div class="menuBoton">
+            <img src="../../../assets/img/add-user.png" alt="" class="iconoMenuBoton">
+            <a routerLink="trabajador/trabajo" class="tituloCard">TRABAJO</a>
+        </div>
+
+    </div>
+</ng-template>
 
 </section>

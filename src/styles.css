@@ -24,7 +24,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 .tituloCard,
@@ -35,11 +35,38 @@
   padding-top: 10px;
 }
 
+.tituloCard--sinmargen{
+  color: var(--titulos);
+  font-family: var(--roboto);
+  font-size: 23px;
+  margin: 0 !important;
+}
+
 .tituloCardSub {
   color: var(--titulos);
   font-family: var(--roboto);
   font-size: 15px;
   padding-left: 15px;
+}
+
+#tablaCabecera{
+  text-align: center;
+  font-family: var(--roboto);
+  font-size: 15px;
+  color: var(--verdeSecundario);
+}
+
+#tablaFila{
+  text-align: center;
+  font-family: var(--lato);
+  font-size: 14px;
+  color: var(--grisOscuro);
+}
+
+#tablaMygreen{
+  margin-top: 5px;
+  border: 1px solid rgba(141, 141, 141, 0.377);
+  box-shadow: var(--sombra);
 }
 
 

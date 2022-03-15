@@ -6,13 +6,17 @@
             </div>
             <h1>MyGreen</h1>
         </div>    
-        <div class="zona-dcha">
-
-            <a class="btn-login" title="login" href="#">
+        <div class="zona-dcha" *ngIf="!usuario.trabajador else falso">
+            <a class="boton-login" title="login" href="#">
                 <img  src="../../../assets/img/logout.png">
                 <p>DESCONECTARSE</p>
             </a>
-            
         </div>
+        <ng-template #falso>
+            <div class="zona-dcha">
+                <button class="boton-mygreen">ENTRADA</button>
+            </div>
+            
+        </ng-template>
     </div>
 </header>

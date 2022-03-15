@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-header-panel',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(public usuario:UsuarioService) { 
+  }
 
   ngOnInit(): void {
   }

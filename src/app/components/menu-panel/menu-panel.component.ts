@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import{faDoorClosed} from '@fortawesome/free-solid-svg-icons';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 
 @Component({
@@ -12,8 +13,8 @@ export class MenuPanelComponent implements OnInit {
 
   public faAddressBook;
   public faDoorClosed;
-
-  constructor() {
+  
+  constructor(public usuario:UsuarioService) {
     this.faAddressBook = faAddressBook;
     this.faDoorClosed = faDoorClosed;
   }

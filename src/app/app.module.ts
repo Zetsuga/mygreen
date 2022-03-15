@@ -24,6 +24,8 @@ import { HeaderPanelComponent } from './components/header-panel/header-panel.com
 import { MenuPanelComponent } from './components/menu-panel/menu-panel.component';
 import { BotonComponent } from './components/boton/boton.component';
 import { BotonSliceComponent } from './components/boton-slice/boton-slice.component';
+import { TablaIncidenciasComponent } from './components/tabla-incidencias/tabla-incidencias.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -46,12 +48,14 @@ import { BotonSliceComponent } from './components/boton-slice/boton-slice.compon
     HeaderPanelComponent,
     MenuPanelComponent,
     BotonComponent,
-    BotonSliceComponent
+    BotonSliceComponent,
+    TablaIncidenciasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

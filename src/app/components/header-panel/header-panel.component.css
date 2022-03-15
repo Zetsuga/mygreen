@@ -29,25 +29,26 @@
   align-items: center;
 }
 
-.btn-login {
+.boton-login {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.btn-login img {
+.boton-login img {
   padding-right: 10px;
   max-width: 40px;
 }
 
-.btn-login p {
+.boton-login p {
   font-family: var(--roboto);
   font-weight: 700;
   font-size: 20px;
   color: white;
+  margin: 0!important;
 }
 
-.btn-login p:hover {
+.boton-login p:hover {
   color: var(--grisOscuro);
 }
