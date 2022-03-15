@@ -1,1 +1,47 @@
-<p>administrador-riego works!</p>
+<div class="contenedor">
+    <div class="cabecera">
+        <app-header-panel></app-header-panel>
+    </div>
+    <div class="menuppal">
+        <app-menu-panel></app-menu-panel>
+
+    </div>
+    <div class="cuerpo">
+        <div class="contenidoCuerpo">
+            <div class="fechas">
+                <div class="fechaInicio class-input">
+                    <input type="text" class="inputFechaInico" placeholder="Fecha inicial" />
+                </div>
+                <div class="fechaFin class-input">
+                    <input type="text" class="inputFechaFin" placeholder="Fecha final" />
+                </div>
+                <div class="botonBuscar">
+                    <button type="button">Buscar</button>
+                </div>
+            </div>
+            <div class="graficaTension">
+                <img src="../../../assets/img/graficaTension.png" alt="">
+            </div>
+            <div class="valorTension">
+                <div class="tension">
+                    <img src="../../../assets/img/manoPlanta 1.png">
+                    <div class="caja">
+                        <h3 class="cajaValor">12Cb</h3>
+                        <h4 class="cajaTitulo">TENSIÓN MATRICIAL</h4>
+                    </div>
+                </div>
+                <div class="tituloSugerencia">
+                    <h2>TENSIÓN MATRICIAL CORRECTA</h2>
+                    <p>Para el correcto desarollo de la planta la tensión matricial debe
+                        de mantenerse entre valores minimos de 6 Cb y máximos de 16 Cb.
+                        En determinadas ocasiones estas medidas pueden variar.</p>
+                </div>
+            </div>
+            <div class="botonRiego">
+                <p>ON </p>
+                <app-boton-slice></app-boton-slice>
+                <p> OFF</p>
+            </div>
+        </div>
+    </div>
+</div>

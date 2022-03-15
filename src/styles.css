@@ -42,4 +42,17 @@
   padding-left: 15px;
 }
 
-
+.class-input {
+  background-image: url(../../../assets/img/calendario.png);
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 28px;
+  height: 30px;
+  border: 1px solid rgb(124, 124, 124);
+  border-radius: 3px;
+  margin-right: 10px;
+}
