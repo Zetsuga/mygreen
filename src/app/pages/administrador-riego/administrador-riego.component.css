@@ -21,6 +21,7 @@
   grid-template-columns: [x0]1fr[x1];
   grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3];
   padding: 50px;
+  min-height: 860px;
 }
 .contenidoCuerpo {
   display: flex;
@@ -36,13 +37,14 @@
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  max-width: 1000px;
 }
-.fechas input {
+/* .fechas input {
   height: 30px;
   margin: 5px;
   text-align: center;
   background-color: #f4f4f4;
-  /* border: 1px solid rgb(124, 124, 124); */
+  border: 1px solid rgb(124, 124, 124);
   border-left: 1px solid rgb(124, 124, 124);
   border-top: 1px solid rgb(124, 124, 124);
   border-bottom: 1px solid rgb(124, 124, 124);
@@ -51,7 +53,7 @@
 
 .fechas input:focus {
   outline: none;
-}
+} */
 .botonBuscar {
   display: flex;
   flex-direction: row;
@@ -87,6 +89,7 @@
 
 .graficaTension img {
   width: 100%;
+  max-width: 1000px;
 }
 .valorTension {
   width: 100%;
