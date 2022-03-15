@@ -11,37 +11,41 @@
             <div class="info">
                 <img id="iconoDomo" src="../../../assets/img/manoV.png" alt="">
                 <div class="tensionM">
-                    <p>Tensión Matricial</p>
+                    <p>TENSIÓN MATRICIAL</p>
                     <p id="tension">12 Cb</p>
                 </div>
             </div>
             <div class="botonSlice">
                 <p>Activar - Desactivar</p>
                 <p>Riego</p>
-                <app-boton-slice></app-boton-slice>
+                <app-boton-slice [usuariohijo]="mensaje"></app-boton-slice>
+            </div>
+            <div>
+                <img src="../../../assets/img/image_3.png" alt="">
             </div>
 
         </div>
         <div class="contenidoTemperatura bordeysombra">
             <div class="info">
-                <img id="iconoDomo" src="../../../assets/img/manoV.png" alt="">
+                <img id="iconoDomo" src="../../../assets/img/termometroV.png" alt="">
                 <div class="tensionM">
-                    <p>Tensión Matricial</p>
-                    <p id="tension">12 Cb</p>
+                    <p>TEMPERATURA</p>
+                    <p id="tension">24º C</p>
                 </div>
             </div>
             <div class="botonSlice">
                 <p>Activar - Desactivar</p>
-                <p>Riego</p>
-                <app-boton-slice></app-boton-slice>
+                <p>Ventilación</p>
+                <app-boton-slice [usuariohijo]="mensaje2"></app-boton-slice>
             </div>
+            <img src="../../../assets/img/image_4.png" alt="">
         </div>
         <div class="contenidoHumedad bordeysombra">
             <div class="info">
-                <img id="iconoDomo" src="../../../assets/img/manoV.png" alt="">
+                <img id="iconoDomo" src="../../../assets/img/gotasV.png" alt="">
                 <div class="tensionM">
-                    <p>Tensión Matricial</p>
-                    <p id="tension">12 Cb</p>
+                    <p>HUMERDAD RELATIVA</p>
+                    <p id="tension">57 %</p>
                 </div>
             </div>
             <div class="botonSlice">
@@ -49,6 +53,7 @@
                 <p>Riego</p>
                 <app-boton-slice></app-boton-slice>
             </div>
+            <img src="../../../assets/img/image_5.png" alt="">
         </div>
     </div>
 </div>

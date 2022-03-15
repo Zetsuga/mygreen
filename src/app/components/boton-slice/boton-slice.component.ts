@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-boton-slice',
@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonSliceComponent implements OnInit {
 
-  constructor() { }
+@Input() usuariohijo:number;
 
+  constructor() { 
+    console.log(this.usuariohijo);
+  }
+  
   ngOnInit(): void {
   }
 

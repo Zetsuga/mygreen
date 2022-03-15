@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministradorDomoticaComponent implements OnInit {
 
-  constructor() { }
+  mensaje = 1;
+  mensaje2 = 2;
+
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }
