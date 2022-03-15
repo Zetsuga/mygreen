@@ -1,0 +1,51 @@
+.contenido{
+    display: grid;
+    grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
+    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+    background-color: var(--fondo);
+}
+
+.header{
+    grid-column: x0/x2;
+    grid-row: y0/y1;
+}
+
+.menu{
+    display: grid;
+    grid-column: x0/x1;
+    grid-row: y1/y2;
+}
+
+.tarjetas{
+    display: grid;
+    grid-column: x1/x2;
+    grid-row: y1/y2;
+    grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4] ;
+    grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5] ;
+    padding: 50px;
+    gap: 20px;
+}
+
+.incidencias{
+    grid-column: x0/x2;
+    grid-row: y0/y5;
+    border-radius: 7px;
+    box-shadow: var(--sombra);
+    border: var(--borde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.incidencias-form{
+    grid-column: x2/x4;
+    grid-row: y0/y5;
+    border-radius: 7px;
+    box-shadow: var(--sombra);
+    border: var(--borde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
