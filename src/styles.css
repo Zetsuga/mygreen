@@ -102,3 +102,33 @@
 .class-input input:focus {
   outline: none;
 }
+
+/* BOTON MYGREEN */
+
+.botonMyGreen {
+	box-shadow:var(--sombra);
+    transition: all .8s ease;
+	background:linear-gradient(to bottom, #69af07 5%, #8a9669 100%);
+	background-color:#69af07;
+	border-radius:4px;
+	border:1px solid #887848;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:var(--roboto);
+	font-size:18px;
+	font-weight:800;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 8px black;
+}
+.botonMyGreen:hover {
+	background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%);
+	background-color:#8a9669;
+    text-shadow: none;
+    color: var(--grisOscuro);
+}
+.botonMyGreen:active {
+	position:relative;
+	top:1px;
+}

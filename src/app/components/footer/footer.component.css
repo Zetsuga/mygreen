@@ -1,12 +1,13 @@
 footer{
+    position: relative;
     bottom: 0;
-    left: 0;
+    /* left: 0; */
     background-color:#414141;
-    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     padding: 35px 40px 30px 40px;
     height: 220px;
+    width: 100%;
     color: white;
 }
 .parte-izq{
