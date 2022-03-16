@@ -1,1 +1,65 @@
-<p>trabajador-tareas works!</p>
+<div class="contenido">
+    <div class="header">
+        <app-header-panel></app-header-panel>
+    </div>
+    <div class="menu">
+        <app-menu-panel></app-menu-panel>
+    </div>
+    
+    <div class="tarjetas">
+        <div class="tareas">
+            <h3 class="tituloCard separacion">TAREAS ASIGNADAS</h3>
+            <div class="tareaPendiente" *ngFor="let tarea of tareas">
+                <div class="lineaSeparacion">
+                    <hr>
+                </div>
+                <div class="caja">
+                    <div class="tarea-Izquierda">
+                        <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>
+                        <p class="tareaFecha">{{tarea.fecha}}</p> 
+                     </div>
+                     <div class="tarea-Derecha">
+                         <p class="tareaDescripcion">{{tarea.descripcion}}</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="descripcion">
+            <h3 class="tituloCard separacionSuperior">DETALLES TAREA</h3>
+            <div class="descripcion-caja">
+                <div class="descripcion-izquierda">
+                    <div class="class-input urgencia">
+                        <input type="text" name="urgencia" value="urgencia">
+                    </div>
+    
+                    <div class="class-input fecha">
+                        <input type="text" name="fecha" value="fecha">
+                    </div>
+
+                    <button class="boton-mygreen">FINALIZAR</button>
+                </div>
+    
+                <div class="descripcion-derecha">
+                    <p class="descripcion-tarea-texto">Esto es una descripción de una tarea</p>
+                </div>
+            </div>
+        </div>
+        <div class="incidencia">
+            <h3 class="tituloCard separacionSuperior">GENERAR INCIDENCIA</h3>
+            <div class="incidencia-caja">
+                <div class="incidencia-izquierda">    
+                    <div class="class-input fecha">
+                        <input type="text" name="fecha" value="fecha">
+                    </div>
+
+                    <button class="boton-mygreen">GENERAR</button>
+                </div>
+    
+                <div class="incidencia-derecha">
+                    <textarea name="" id="" cols="40" rows="4" fixed>Ejemplo de incidencia</textarea>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -26,6 +26,8 @@ import { BotonComponent } from './components/boton/boton.component';
 import { BotonSliceComponent } from './components/boton-slice/boton-slice.component';
 import { TablaIncidenciasComponent } from './components/tabla-incidencias/tabla-incidencias.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatTabsModule} from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,6 +33,7 @@
   font-family: var(--roboto);
   font-size: 23px;
   padding-top: 10px;
+  margin:0;
 }
 
 .tituloCard--sinmargen{
@@ -42,11 +43,20 @@
   margin: 0 !important;
 }
 
+.tituloCard--conEspacio{
+  color: var(--titulos);
+  font-family: var(--roboto);
+  font-size: 23px;
+  margin: 20px 0;
+
+}
+
 .tituloCardSub {
   color: var(--titulos);
   font-family: var(--roboto);
   font-size: 15px;
   padding-left: 15px;
+  margin: 0;
 }
 
 #tablaCabecera{
@@ -102,3 +112,6 @@
 .class-input input:focus {
   outline: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -8,7 +8,7 @@
     
     <div class="tarjetas">
         <div class="incidencias">
-            <h3 class="tituloCard">INCIDENCIAS</h3>
+            <h3 class="tituloCard--conEspacio">INCIDENCIAS</h3>
             <div class="indicencias-contenedor" >
                 <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
                     <thead>
@@ -35,12 +35,27 @@
         </div>
 
         <div class="incidencias-form">
-            <h3 class="tituloCard">DETALLES</h3>
+            <h3 class="tituloCard--conEspacio">DETALLES</h3>
         
             <div class="incidencias-form-inputs">
+                <div class="class-input fecha">
+                    <input type="text" name="fecha" value="Fecha">
+                </div>
+
+                <div class="class-input finca">
+                    <input type="text" name="finca" value="Finca">
+                </div>
+
                 <div class="class-input usuario">
                     <input type="text" name="usuario" value="Usuario">
                 </div>
+
+                <div class="class-input descripcion">
+                    <p #descripcion>
+                    </p>
+                </div>
+
+                <button class="boton-mygreen">TERMINAR</button>
             </div>
         </div>
         

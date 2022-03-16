@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-trabajador-tareas',
@@ -7,7 +8,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrabajadorTareasComponent implements OnInit {
 
-  constructor() { }
+  public tareas;
+
+  constructor(public usuario:UsuarioService) {
+    this.usuario.trabajador = true;
+
+    this.tareas = [
+      {
+        "tarea_id" : 0,
+        "usuario_id" : 1,
+        "finca_id" : 0,
+        "fecha" : "30/12/2021",
+        "prioridad" : "urgente",
+        "estado" : false,
+        "descripcion" : "Hay que recolectar los pimientos rojos"
+      },{
+        "tarea_id" : 1,
+        "usuario_id" : 1,
+        "finca_id" : 0,
+        "fecha" : "30/12/2021",
+        "prioridad" : "medio",
+        "estado" : false,
+        "descripcion" : "Hay que recolectar los tomates"
+      },{
+        "tarea_id" : 1,
+        "usuario_id" : 1,
+        "finca_id" : 0,
+        "fecha" : "30/12/2021",
+        "prioridad" : "bajo",
+        "estado" : false,
+        "descripcion" : "Hay que recolectar los tomates"
+      },{
+        "tarea_id" : 0,
+        "usuario_id" : 1,
+        "finca_id" : 0,
+        "fecha" : "30/12/2021",
+        "prioridad" : "urgente",
+        "estado" : false,
+        "descripcion" : "Hay que recolectar los pimientos rojos"
+      },{
+        "tarea_id" : 1,
+        "usuario_id" : 1,
+        "finca_id" : 0,
+        "fecha" : "30/12/2021",
+        "prioridad" : "bajo",
+        "estado" : false,
+        "descripcion" : "Hay que recolectar los tomates"
+      }
+    ]
+
+   }
+
+
 
   ngOnInit(): void {
   }

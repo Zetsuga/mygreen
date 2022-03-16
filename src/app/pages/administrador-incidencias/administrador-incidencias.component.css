@@ -49,3 +49,28 @@
     align-items: center;
     background-color: white;
 }
+
+.incidencias-form-inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 300px;
+}
+
+.usuario {
+    background-image: url(../../../assets/img/persona.png);
+}
+
+.fecha {
+    
+}
+
+.finca {
+    background-image: url(../../../assets/img/planta2.png);
+}
+
+.descripcion {
+    background-image: url(../../../assets/img/permisos.png);
+    height: 150px;
+}
