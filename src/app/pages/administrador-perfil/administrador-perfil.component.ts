@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-administrador-perfil',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministradorPerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(public usuario:UsuarioService) { 
+    this.usuario.trabajador=false;
+  }
 
   ngOnInit(): void {
   }
