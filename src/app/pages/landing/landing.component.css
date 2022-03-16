@@ -144,16 +144,18 @@ body{
 }
 /* cads1 */
 .container{
+    border: 1px solid black;
     display: flex;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
 }
 .card{
     border: 1px solid green;
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.309);
     height: 40.94vh;
-    width: 16.15vw;
+    min-width: 16.15vw;
     overflow: hidden;
 }
 .canva{
@@ -164,6 +166,7 @@ body{
     overflow: hidden;
     /* position: relative; */
     border-radius: 8px 8px 0 0;
+    position: relative;
 }
 .canva img{
     width: auto;
@@ -490,17 +493,17 @@ body{
     justify-content: space-evenly;
     flex-direction: row;
     margin: 7.5vh 5.4vw 0 5.4vw;
-    height: 1080px;
+    height: 600px;
     align-items: center;
 }
 /* Organizacion subpartes */
 .parteForm{
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    /* border-right: 2px double var(--verdeSecundario); */
+    padding-right: 50px;
+    border-right: 2px double var(--verdeSecundario);
 }
 .parteMapa{
     display: flex;
@@ -514,28 +517,56 @@ body{
     text-align: center;
     font-family: 'Roboto Condensed';
     font-style: bold;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 35px;
     line-height: 41px;
     color: var(--verdeSecundario);
     margin-bottom: 1.8vh;
 }
 .mapaCanva{
-    min-width: 21.66vw;
-    min-height: 54.75vh;
+    min-width: 23.66vw;
+    height: 52.73vh;
     overflow: hidden;
     border: 2px solid var(--verdeSecundario);
     box-shadow: var(--sombra);
     border-radius: 8px 0 8px 0;
 }
+.mapaCanva img{
+    width: 100%;
+}
 
+/* parte Formulario */
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid var(--verdeSecundario);
+    padding: 40px 50px;
+    border-radius: 8px 0 8px 0;
+    gap: 10px;
+    box-shadow: var(--sombra);
 
-
-
-
-
-
-
+}
+.form span{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+}
+.form-input{
+    display: flex;
+    justify-content: center;
+    color: rgba(128, 128, 128, 0.295) ;
+    border: 1.5px solid var(--verdeSecundario);
+    width: 20rem;
+    border-radius: 8px;
+    background-color: #69af071c;
+    min-height: 2.5rem;
+    padding: 4px 0;
+}
 
 
 
@@ -549,9 +580,12 @@ body{
     align-items: center;
     justify-content: center;
     border: 1px solid var(--verdeSecundario);
-    width: 15rem;
+    background-color: #69af071c;
+    width: 20rem;
     padding: .2rem;
     min-height: 1rem;
+    border-radius: 8px;
+    resize: none;
 }
 .textarea:empty::before{
     position: absolute;
