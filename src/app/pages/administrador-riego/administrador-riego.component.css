@@ -1,0 +1,159 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: [x0]238px[x1]calc(100vw - 238px) [x2];
+  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+}
+
+.cabecera {
+  grid-column: x0/x2;
+  grid-row: y0/y1;
+}
+
+.menuppal {
+  grid-column: x0/x1;
+  grid-row: y1/y2;
+}
+.cuerpo {
+  display: grid;
+  grid-column: x1/x2;
+  grid-row: y1/y2;
+  background-color: #f4f4f4;
+  grid-template-columns: [x0]1fr[x1];
+  grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3];
+  padding: 50px;
+  min-height: 860px;
+}
+.contenidoCuerpo {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  padding: 50px;
+}
+
+.fechas {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+/* .fechas input {
+  height: 30px;
+  margin: 5px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid rgb(124, 124, 124);
+  border-left: 1px solid rgb(124, 124, 124);
+  border-top: 1px solid rgb(124, 124, 124);
+  border-bottom: 1px solid rgb(124, 124, 124);
+  border-right: none;
+}
+
+.fechas input:focus {
+  outline: none;
+} */
+.botonBuscar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80px;
+}
+/* .fechaInicio,
+.fechaFin {
+  background-image: url(../../../assets/img/calendario.png);
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 28px;
+  height: 30px;
+  border: 1px solid rgb(124, 124, 124);
+  border-radius: 3px;
+  margin-right: 10px;
+} */
+
+.graficaTension {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.graficaTension img {
+  width: 100%;
+  max-width: 1000px;
+}
+.valorTension {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tituloSugerencia {
+  width: 550px;
+  font-family: var(--roboto);
+}
+.tituloSugerencia p {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.botonRiego {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.botonRiego p {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 15px;
+  font-family: var(--roboto);
+}
+
+.tension {
+  grid-column: x2/x3;
+  grid-row: y0/y1;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  background-color: var(--verdeCorrecto);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 0;
+  width: 250px;
+  height: 120px;
+}
+.caja {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.cajaValor {
+  color: white;
+  font-family: var(--lato);
+  font-size: 50px;
+}
+
+.cajaTitulo {
+  color: white;
+  font-family: var(--lato);
+  font-size: 15px;
+}
