@@ -493,7 +493,7 @@ body{
     height: 1080px;
     align-items: center;
 }
-
+/* Organizacion subpartes */
 .parteForm{
     border: 1px solid black;
     display: flex;
@@ -502,9 +502,28 @@ body{
     align-content: center;
 }
 .parteMapa{
-    border: 1px solid black;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     align-content: center;
+}
+/* parte mapa */
+.tituloMapa,
+.tituloForm{
+    text-align: center;
+    font-family: 'Roboto Condensed';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 41px;
+    color: var(--verdeSecundario);
+    margin-bottom: 1.8vh;
+}
+.mapaCanva{
+    min-width: 21.66vw;
+    min-height: 54.75vh;
+    overflow: hidden;
+    border: 2px solid var(--verdeSecundario);
+    box-shadow: var(--sombra);
+    border-radius: 8px 0 8px 0;
 }
