@@ -42,7 +42,7 @@ p {
     /* padding-top: 80px; */
     /* padding-left: 50px; */
     overflow: hidden;
-    background-color: #222;
+    background-color: var(--verdePrincipal);
     background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
       linear-gradient( white, #8a9669 );
@@ -97,6 +97,7 @@ img:hover {
     justify-content: center;
     flex-direction: column;
     border: 1px solid var(--verdeSecundario);
+    border-radius: 8px 0 8px 0;
     padding: 0 1.5vw;
     margin: 6vh 0 0 0;
     gap: 1vh;

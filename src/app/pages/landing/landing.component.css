@@ -2,6 +2,11 @@ body{
     display:inline-block;
     justify-content: center;
     flex-direction: column;
+    /* background-color: var(--verdePrincipal);
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
+      linear-gradient( white, #8a9669 );
+    background-size: .75em 100%, 100% 100%; */
 
 }
 /* ============Primera Seccion============== */
@@ -158,10 +163,11 @@ body{
 .card{
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.309);
-    height: 40.94vh;
+    height: 41.94vh;
     min-width: 16.15vw;
     max-width: 10vw;
-    overflow: hidden;
+    background-color: #8a966915;
+    /* overflow: hidden; */
 }
 .canva{
     /* width: 295px; */
@@ -202,13 +208,14 @@ body{
     font-size: 30px;
 }
 .content p{
-    margin-top: 15px;
+    /* margin-top: 10px; */
+    /* height: 125px; */
     text-align: justify;
     padding: 0 10px 0 10px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 1em;
 }
 /* texto sub-cuerpo1 */
 .texto-cuerpo1{
@@ -240,6 +247,9 @@ body{
 }
 .card2{
     width: 18.5%;
+    padding: 10px;
+    box-shadow: var(--sombra);
+    background-color: #8a966915;
 }
 .canva2{
     display: flex;
@@ -439,6 +449,7 @@ body{
     width: 18.79vw;
     min-width: 12vw;
     height: 55.91vh;
+    /* background-color: white; */
     /* overflow: hidden; */
 
 }
