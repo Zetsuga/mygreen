@@ -41,7 +41,7 @@ body{
     justify-content: center;
 }
 .btn-banner{
-    margin-top: 12.8vh ;
+    margin-top: 7.8vh ;
     transition: all .5s ease;
     color: #fff;
     border: 2px solid white;
@@ -53,6 +53,8 @@ body{
     padding: 12px;
     outline: none;
     border-radius: 4px;
+    width: 10vw;
+    height: 5vh;
 }
 .btn-banner:hover {
     color: #001F3F;
@@ -139,23 +141,26 @@ body{
 /* ======= SUB-CUERPO 1 ============ */
 
 .cuerpo1{
-    margin: 7.5vh 5.4vw 0 5.4vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 6.5vh 5.4vw 6.4vh 5.4vw;
     height: 1080px;
 }
 /* cads1 */
 .container{
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
 }
 .card{
-    border: 1px solid green;
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.309);
     height: 40.94vh;
     min-width: 16.15vw;
+    max-width: 10vw;
     overflow: hidden;
 }
 .canva{
@@ -210,7 +215,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 10.2vh;
+    margin-top: 8.2vh;
     text-align: center;
 }
 .texto-cuerpo1 p{
@@ -227,13 +232,14 @@ body{
 }
 /* cards2 */
 .container2{
-    margin-top: 9.36vh;
+    width: 85%;
+    margin-top: 6.36vh;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
 }
 .card2{
-    width: 300px;
+    width: 18.5%;
 }
 .canva2{
     display: flex;
@@ -272,14 +278,17 @@ body{
 }
 /* Parte-texto */
 .parte-texto{
+    /* border: 1px solid black; */
     width: 60%;
     height: 92.11vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* justify-content: center; */
-    padding: 100px 20px;
-    gap: 50px;
+    justify-content: center;
+    /* padding: 0px 0px 0 20px; */
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 30px;
 
 }
 .subparte{
@@ -305,8 +314,8 @@ body{
 .texto-subparte p{
     font-family: 'Lato';
     font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 400;
+    font-size: 1em;
     text-align: justify;
 }
 /* Parte-imagenes */
@@ -328,7 +337,7 @@ body{
     justify-content: space-between;
     flex-direction: column;
     width: auto;
-    height: 100%;
+    height: 90%;
     gap: 0;
 }
 .subcanva1 {
@@ -381,27 +390,28 @@ body{
 
 .cuerpo3{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
-    margin: 7.5vh 5.4vw 0 5.4vw;
-    height: 1080px;
+    margin: 3.5vh 5.4vw 3.5vh 5.4vw;
+    height: 980px;
     align-items: center;
-    padding: 0 0 100px 0;
+    /* padding: 0 0 100px 0; */
 }
 
 /* Parte-texto */
 
 .texto-cuerpo3{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     text-align: center;
 }
 .texto-cuerpo3 h2{
     font-family: 'Roboto Condensed';
     font-style: normal;
-    font-weight: 700;
-    font-size: 66.1818px;
+    font-weight: bold;
+    font-size: 4.14em;
+
 }
 .texto-cuerpo3 p{
     font-family: 'Lato';
@@ -416,6 +426,8 @@ body{
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
+    /* border-top: 4px solid black; */
+    /* padding-top: 50px; */
 }
 .card-trabajador{
     display: flex;
@@ -424,8 +436,9 @@ body{
     border: 2px solid var(--verdeSecundario);
     box-shadow: var(--sombra);
     border-radius: 4px;
-    width: 16.79vw;
-    height: 52.91vh;
+    width: 18.79vw;
+    min-width: 12vw;
+    height: 55.91vh;
     /* overflow: hidden; */
 
 }
@@ -433,8 +446,9 @@ body{
     display: flex;
     justify-content: center;
     overflow: hidden;
+    /* min-width: 12vw; */
     height: 21.49vh;
-    width: auto;
+    /* width: auto; */
 }
 .cont-trabajador img{
 
@@ -443,7 +457,7 @@ body{
 }
 /* Texto-card Trabajador */
 .parteTexto-trabajador{
-    padding: 12px;
+    padding: 20px 12px 0 12px;
 }
 .titulo-trabajador{
     border-bottom: 1px solid var(--verdeSecundario);
@@ -468,7 +482,8 @@ body{
 /* Parte redes card trabajador */
 .redes{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    /* align-items: flex-end; */
     gap: 2px;
 }
 .canva-red{
@@ -502,8 +517,8 @@ body{
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    padding-right: 50px;
-    border-right: 2px double var(--verdeSecundario);
+    padding-right: 11.213vw;
+    border-right: 3px dotted var(--verdeSecundario);
 }
 .parteMapa{
     display: flex;
@@ -525,7 +540,7 @@ body{
 }
 .mapaCanva{
     min-width: 23.66vw;
-    height: 52.73vh;
+    height: 58.73vh;
     overflow: hidden;
     border: 2px solid var(--verdeSecundario);
     box-shadow: var(--sombra);
@@ -566,6 +581,12 @@ body{
     background-color: #69af071c;
     min-height: 2.5rem;
     padding: 4px 0;
+}
+
+#boton-form{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 
