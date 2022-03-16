@@ -1,1 +1,41 @@
-<p>trabajador-fichar works!</p>
+<div class="contenedor">
+    <div class="cabecera">
+        <app-header-panel></app-header-panel>
+    </div>
+    <div class="menuppal">
+        <app-menu-panel></app-menu-panel>
+
+    </div>
+    <div class="cuerpo">
+        <div class="tituloFichajes tituloCard">
+            <h2>ULITMOS FICHAJES</h2>
+            <p>Listado de los últimos fichajes registrados.</p>
+        </div>
+        <div class="tablaUltimosFichajes">
+            <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                <thead>
+                    <th scope="col" id="tablaCabecera">
+                        FECHA
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        ENTRADA
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        SALIDA
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fichaje of fichajes" id="tablaFila">
+                        <td>{{fichaje.fecha}}</td>
+                        <td>{{fichaje.entrada}}</td>
+                        <td>{{fichaje.salida}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="botonFichar detalle">
+                <button type="button">Fichar</button>
+            </div>
+        </div>
+    </div>
+</div>

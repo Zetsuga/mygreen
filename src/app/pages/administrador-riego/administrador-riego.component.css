@@ -29,6 +29,11 @@
   justify-content: top;
   align-items: center;
   padding: 50px;
+  border: var(--borde);
+  box-shadow: var(--sombra);
+  border-radius: 7px;
+  max-width: 1200px;
+  background-color: white;
 }
 
 .fechas {
@@ -94,6 +99,7 @@
 .valorTension {
   width: 100%;
   margin-top: 50px;
+  max-width: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -103,6 +109,7 @@
 .tituloSugerencia {
   width: 550px;
   font-family: var(--roboto);
+  margin-left: 20px;
 }
 .tituloSugerencia p {
   margin-top: 20px;
@@ -115,6 +122,7 @@
   justify-content: left;
   width: 100%;
   margin-top: 50px;
+  max-width: 1000px;
 }
 
 .botonRiego p {
