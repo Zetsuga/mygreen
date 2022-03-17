@@ -133,6 +133,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:1px 1px 8px black;
+  text-align: center;
 }
 .botonMyGreen:hover {
 	background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%);
