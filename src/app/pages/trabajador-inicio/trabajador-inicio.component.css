@@ -119,10 +119,18 @@
     flex-direction: row;
     justify-content: space-between;
     max-height: 20px;
-    padding: 3px;
     color: white;
     font-family: var(--lato);
     font-weight: 600;
+}
+
+.cabecera-titulo{
+    margin-left: 10px;
+}
+
+.cabecera-imagen{
+    margin-right: 10px;
+    margin-top: 4px;
 }
 
 .contenido-tarjeta{
