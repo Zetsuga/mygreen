@@ -1,1 +1,88 @@
-<p>administrador-usuarios works!</p>
+<div class="contenido">
+    <div class="header">
+        <app-header-panel></app-header-panel>
+    </div>
+    <div class="menu">
+        <app-menu-panel></app-menu-panel>
+    </div>
+
+    <div class="admin-usuarios">
+        
+        <!--Formulario Usuarios  -->
+
+         <div class="usuariosForm">
+            <div class="titulo-usuariosForm">
+                <h2 class="tituloCard">CREAR USUARIO</h2>
+            </div>
+            <span>NOMBRE</span>
+            <div class="class-input nombre">
+                <input type="text" id="nombre-usuariosForm" placeholder="  Nombre" />
+            </div>
+            <span>APELLIDOS</span>
+            <div class="class-input apellidos">
+                <input type="text" id="apellidos-usuariosForm" placeholder="  Apellidos..." />
+            </div>
+            <span>TELÉFONO</span>
+            <div class="class-input telefono">
+                <input type="text" id="telefono-usuariosForm" placeholder="  Teléfono..." />
+            </div>
+            <span>E-MAIL</span>
+            <div class="class-input email">
+                <input type="text" id="email-usuariosForm" placeholder="  E-mail..." />
+            </div>
+            <span>CONTRASEÑA</span>
+            <div class="class-input password">
+                <input type="password" id="password-usuariosForm" placeholder="  *******" />
+            </div>
+            <span>REPETIR CONTRASEÑA</span>
+            <div class="class-input repetirpassword">
+                <input type="password" id="password-usuariosForm" placeholder="  *******" />
+            </div>
+            <div id="boton-form" >
+                <a class="botonMyGreen" type="button" >CREAR</a>
+            </div>
+        </div> 
+        
+        <!-- Tabla Usuarios -->
+
+         <div class="tablaUltimasTareas">
+            <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                <thead>
+                    <th scope="col" id="tablaCabecera">
+                        NOMBRE
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        APELLIDOS
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        TELÉFONO
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        E-MAIL
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        CARGO
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios" id="tablaFila">
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.apellidos}}</td>
+                        <td>{{usuario.telefono}}</td>
+                        <td>{{usuario.email}}</td>
+                        <td>{{usuario.cargo}}</td>
+                        <td><div class=iconos><img src="../../../assets/img/iconoEliminar.png"><img src="../../../assets/img/iconoModificar.png"></div></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div> 
+
+
+    </div>
+
+    
+</div>
