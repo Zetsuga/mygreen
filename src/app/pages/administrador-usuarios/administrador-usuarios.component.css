@@ -22,9 +22,9 @@
     grid-column: x1/x2;
     grid-row: y1/y2;
     grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4] ;
-    grid-template-rows: [y0]1fr [y1];
-    padding: 50px;
-    gap: 20px;
+    grid-template-rows: [y0]80% [y1];
+    padding: 3.125em;
+    gap: 1.25em;
 }
 
 .usuariosForm{
@@ -38,9 +38,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 40px 0;
-    gap: 10px;
-    margin-bottom: 100px;
+    padding: 2.16vh 0;
+    gap: .63em;
+    /* margin-bottom: 5.41vh; */
 }
 #boton-form{
     margin: 20px;
@@ -55,11 +55,11 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 40px 1.63vw 0;
-    margin-bottom: 100px;
+    padding: 2.16vh 1.63vw 0;
+    /* margin-bottom: 50px; */
 }
 th{
-   height: 40px; 
+   height: 30px; 
 }
 td{
     text-align: center;
@@ -67,7 +67,7 @@ td{
 .iconos{
     /* border: 1px solid black; */
     width: auto;
-    height: 30px;
+    height: 20px;
     overflow: hidden;
     display: flex;
     justify-content: start;
