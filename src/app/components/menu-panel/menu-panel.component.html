@@ -7,8 +7,14 @@
             <p>Prueba Fernandez Fernandez</p>
             <p>prueba@gmail.com</p>
         </div>
+        <div class="zona-dcha" *ngIf="usuario.trabajador else falso">
+            <a class="botonMyGreen2" type="button" >ENTRADA</a>
+        </div>
+        <ng-template #falso>
+
+        </ng-template>
     </div>
-    <div class="menu" *ngIf="!usuario.trabajador else falso">
+    <div class="menu" *ngIf="!usuario.trabajador else siTrabajador">
         <div class="menuBoton">
             <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
             <a routerLink="/administrador/inicio" class="tituloCard">INICIO</a>
@@ -56,7 +62,7 @@
         </div>
 
     </div>
-<ng-template #falso>
+<ng-template #siTrabajador>
     <div class="menu">
         <div class="menuBoton">
             <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
@@ -70,7 +76,6 @@
             <img src="../../../assets/img/add-user.png" alt="" class="iconoMenuBoton">
             <a routerLink="/trabajador/tareas" class="tituloCard">TAREAS</a>
         </div>
-
     </div>
 </ng-template>
 

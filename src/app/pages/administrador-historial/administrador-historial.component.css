@@ -40,9 +40,10 @@
 
 
 .fechas {
+  margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     max-width: 1000px;
