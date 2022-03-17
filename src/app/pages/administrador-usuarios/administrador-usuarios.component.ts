@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-administrador-usuarios',
@@ -9,7 +10,8 @@ export class AdministradorUsuariosComponent implements OnInit {
 
   public usuarios:{};
 
-  constructor() {
+  constructor(public usuario:UsuarioService) {
+    this.usuario.trabajador=false;
 
 
     this.usuarios = [

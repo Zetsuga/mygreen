@@ -17,7 +17,10 @@
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  background-color: hsl(85, 92%, 36%, 40%);
+  background-color: hsla(85, 92%, 36%, 0.4);
+}
+.zona-dcha{
+  margin: 2px;
 }
 
 .contenido_imagen {
