@@ -28,6 +28,7 @@ import { TablaIncidenciasComponent } from './components/tabla-incidencias/tabla-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    NgxEchartsModule.forRoot({
+      echarts:()=>import('echarts'),
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

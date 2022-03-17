@@ -99,6 +99,11 @@
   font-weight: bold;
 }
 
+.tensionMatricial {
+  width: 600px;
+  height: 250px;
+}
+
 @media (max-width: 1325px) {
   #iconoDomo {
     display: none;
@@ -122,5 +127,12 @@
 
   .tensionM p {
     font-size: 17px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .tensionMatricial {
+    width: 800px;
+    height: 250px;
   }
 }
