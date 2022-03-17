@@ -1,0 +1,79 @@
+
+.contenido{
+    display: grid;
+    grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
+    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+    background-color: var(--fondo);
+}
+
+.header{
+    grid-column: x0/x2;
+    grid-row: y0/y1;
+}
+
+.menu{
+    display: grid;
+    grid-column: x0/x1;
+    grid-row: y1/y2;
+}
+
+.admin-usuarios{
+    display: grid;
+    grid-column: x1/x2;
+    grid-row: y1/y2;
+    grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4] ;
+    grid-template-rows: [y0]1fr [y1];
+    padding: 50px;
+    gap: 20px;
+}
+
+.usuariosForm{
+    grid-column: x0/x1;
+    grid-row: y0/y1;
+    border-radius: 7px;
+    box-shadow: var(--sombra);
+    border: var(--borde);
+    /* background-color: var(--rojowarning); */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 0;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+#boton-form{
+    margin: 20px;
+}
+.tablaUltimasTareas{
+    grid-column: x1/x4;
+    grid-row: y0/y1;
+    border-radius: 7px;
+    box-shadow: var(--sombra);
+    border: var(--borde);
+    /* background-color: var(--rojowarning); */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 1.63vw 0;
+    margin-bottom: 100px;
+}
+th{
+   height: 40px; 
+}
+td{
+    text-align: center;
+}
+.iconos{
+    /* border: 1px solid black; */
+    width: auto;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+}
+.iconos img{
+    height: 100%;
+    width: auto;
+}

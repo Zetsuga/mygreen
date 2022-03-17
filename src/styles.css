@@ -101,7 +101,7 @@
   height: 30px;
   width: 100%;
   /* margin: 5px; */
-  text-align: center;
+  text-align: start;
   background-color: #f4f4f4;
   border-left: 1px solid rgb(124, 124, 124);
   border-top: 1px solid rgb(124, 124, 124);
@@ -113,8 +113,8 @@
   outline: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 /* BOTON MYGREEN */
 
 .botonMyGreen {
