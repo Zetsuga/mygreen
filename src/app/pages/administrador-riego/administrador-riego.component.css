@@ -99,6 +99,8 @@
 .valorTension {
   width: 100%;
   margin-top: 50px;
+  padding-left: 35px;
+  padding-right: 35px;
   max-width: 1000px;
   display: flex;
   flex-direction: row;
@@ -123,6 +125,7 @@
   width: 100%;
   margin-top: 50px;
   max-width: 1000px;
+  padding-left: 25px;
 }
 
 .botonRiego p {
@@ -164,4 +167,10 @@
   color: white;
   font-family: var(--lato);
   font-size: 15px;
+}
+
+.tensionMatricial {
+  height: 500px;
+  width: 1500px;
+  max-width: 1500px;
 }

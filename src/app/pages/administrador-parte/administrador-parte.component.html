@@ -46,39 +46,42 @@
                     </div>
                 </div>
                 <div class="fila">
-                    <div class="botonGuardar detalle">
-                        <button type="button">Guardar</button>
+                    <div class="botonGuardar centrarBoton">
+                        <!-- <button type="button">Guardar</button> -->
+                        <a class="botonMyGreen" type="button">ENVIAR</a>
                     </div>
                 </div>
             </div>
 
-        </div>
-        <div class="tablaUltimasTareas">
-            <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
-                <thead>
-                    <th scope="col" id="tablaCabecera">
-                        PRIORIDAD
-                    </th>
-                    <th scope="col" id="tablaCabecera">
-                        USUARIO
-                    </th>
-                    <th scope="col" id="tablaCabecera">
-                        FECHA
-                    </th>
-                    <th scope="col" id="tablaCabecera">
-                        DESCRIPCION
-                    </th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let tarea of tareas" id="tablaFila">
-                        <td>{{tarea.prioridad}}</td>
-                        <td>{{tarea.usuario_id}}</td>
-                        <td>{{tarea.fecha}}</td>
-                        <td>{{tarea.descripcion}}</td>
-                    </tr>
+            <div class="tablaUltimasTareas">
+                <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                    <thead>
+                        <th scope="col" id="tablaCabecera">
+                            PRIORIDAD
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            USUARIO
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            FECHA
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            DESCRIPCION
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tarea of tareas" id="tablaFila">
+                            <td>{{tarea.prioridad}}</td>
+                            <td>{{tarea.usuario_id}}</td>
+                            <td>{{tarea.fecha}}</td>
+                            <td>{{tarea.descripcion}}</td>
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
+
     </div>
 </div>

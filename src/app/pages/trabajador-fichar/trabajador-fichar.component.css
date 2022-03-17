@@ -25,12 +25,36 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  border: 1px solid blue;
+}
+
+.datosCuerpo {
+  border: var(--borde);
+  box-shadow: var(--sombra);
+  width: 1200px;
+  max-width: 1000px;
+  min-width: 30%;
+  height: 600px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 7px;
+  background-color: white;
+}
+
+.cuerpoTabla {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .tablaUltimosFichajes {
-  border: 1px solid blue;
-  width: 100%;
-  max-width: 1000px;
+  width: 900px;
 }
 
 .botonFichar {
@@ -43,4 +67,9 @@
 
 .botonFichar button {
   width: 300px;
+}
+
+.tituloFichajes {
+  margin-left: 50px;
+  margin-top: 20px;
 }

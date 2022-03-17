@@ -21,7 +21,8 @@
                 <app-boton-slice [usuariohijo]="mensaje"></app-boton-slice>
             </div>
             <div>
-                <img src="../../../assets/img/image_3.png" alt="">
+                <!-- <img src="../../../assets/img/image_3.png" alt=""> -->
+                <div echarts [options]="options" [loading]="isLoading" theme="macarons" class="tensionMatricial"></div>
             </div>
 
         </div>
@@ -38,7 +39,10 @@
                 <p>Ventilación</p>
                 <app-boton-slice [usuariohijo]="mensaje2"></app-boton-slice>
             </div>
-            <img src="../../../assets/img/image_4.png" alt="">
+            <!-- <img src="../../../assets/img/image_4.png" alt=""> -->
+            <div>
+                <div echarts [options]="options" [loading]="isLoading" theme="macarons" class="tensionMatricial"></div>
+            </div>
         </div>
         <div class="contenidoHumedad bordeysombra">
             <div class="info">
@@ -53,7 +57,10 @@
                 <p>Riego</p>
                 <app-boton-slice></app-boton-slice>
             </div>
-            <img src="../../../assets/img/image_5.png" alt="">
+            <!-- <img src="../../../assets/img/image_5.png" alt=""> -->
+            <div>
+                <div echarts [options]="options" [loading]="isLoading" theme="macarons" class="tensionMatricial"></div>
+            </div>
         </div>
     </div>
 </div>
