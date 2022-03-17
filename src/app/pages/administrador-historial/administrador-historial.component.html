@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="graficaTension">
-                        <img src="../../../assets/img/graficaTension.png" alt="">
+                        <echarts [initOpts]="initOpts" [options]="option"></echarts>
                     </div>
                 </mat-tab>
                 <mat-tab label="Historial 2">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="graficaTension">
-                        <img src="../../../assets/img/graficaTension.png" alt="">
+                        <div echarts [options]="options2" class="demo-chart"></div>
                     </div>
                 </mat-tab>
                 <mat-tab label="Historial 3">

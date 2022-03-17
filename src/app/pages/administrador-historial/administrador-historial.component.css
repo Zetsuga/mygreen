@@ -71,3 +71,8 @@
     width: 100%;
     max-width: 1000px;
   }
+
+  .demo-chart{
+    width: 900px;
+    height: 300px;
+  }
