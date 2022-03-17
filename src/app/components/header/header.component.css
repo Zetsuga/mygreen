@@ -43,6 +43,7 @@ nav{
 
 a{
     border: 1px solid #69AF07;
+    transition: all .8s ease;
     border-top: none;
     border-bottom: none;
     color: #fff;
@@ -63,7 +64,7 @@ a:hover{
     border-radius: 2px;
     background-color: white;
     color: #69AF07;
-
+    font-weight: 800;
     box-shadow: (0 0 0 10px #fff);
 }
 .canvas-log{
