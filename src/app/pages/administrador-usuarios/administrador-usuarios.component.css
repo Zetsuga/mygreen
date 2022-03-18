@@ -25,6 +25,7 @@
     grid-template-rows: [y0]90% [y1];
     padding: 3.125em;
     gap: 1.25em;
+    
 }
 
 .usuariosForm{
@@ -40,6 +41,7 @@
     align-items: center;
     padding: 2.16vh 0;
     gap: .63em;
+    background-color: white;
     /* margin-bottom: 5.41vh; */
 }
 #boton-form{
@@ -57,6 +59,7 @@
     justify-content: flex-start;
     padding: 2.16vh 1.63vw 0;
     /* margin-bottom: 50px; */
+    background-color: white;
 }
 th{
    height: 30px; 

@@ -119,7 +119,7 @@ img:hover {
 .form-input{
     display: flex;
     justify-content: center;
-    color: rgba(128, 128, 128, 0.295) ;
+    color: rgb(0, 0, 0) ;
     border: 1.5px solid var(--verdeSecundario);
     width: 20rem;
     border-radius: 8px;
@@ -139,13 +139,7 @@ img:hover {
     font-weight: 400;
     font-size: 0.88em;
 }
-.recordar-contraseña{
-    margin-left: 20px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.88em;
-}
+
 .form-check label{
     font-family: 'Lato';
     font-style: normal;
@@ -153,11 +147,27 @@ img:hover {
     font-size: 0.88em;
 }
 .form-check a{
-    color: var(--verdePrincipal);
+    color: var(--grisOscuro);
 }
-.form-check input{
+
+.recordar-contraseña{
+    margin-left: 20px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.88em;
+    color: var(--grisOscuro);
+}
+
+#remember-password{
     background-color: rgb(230, 227, 227);
 }
+
+#remember-password:checked{
+    background-color: var(--verdePrincipal);
+}
+
+
 #boton-form{
     padding-top: 10px;
     display: flex;
