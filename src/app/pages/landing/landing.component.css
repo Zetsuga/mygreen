@@ -248,8 +248,8 @@ body{
 .card2{
     width: 18.5%;
     padding: 10px;
-    box-shadow: var(--sombra);
-    background-color: #8a966915;
+    /* box-shadow: var(--sombra); */
+    /* background-color: #8a966915; */
 }
 .canva2{
     display: flex;
