@@ -27,8 +27,8 @@
 }
 
 .incidencias{
-    grid-column: x0/x2;
-    grid-row: y0/y5;
+    grid-column: x1/x3;
+    grid-row: y0/y4;
     border-radius: 7px;
     box-shadow: var(--sombra);
     border: var(--borde);
@@ -39,8 +39,8 @@
 }
 
 .incidencias-form{
-    grid-column: x2/x4;
-    grid-row: y0/y5;
+    grid-column: x0/x1;
+    grid-row: y0/y4;
     border-radius: 7px;
     box-shadow: var(--sombra);
     border: var(--borde);

@@ -22,7 +22,7 @@
     grid-column: x1/x2;
     grid-row: y1/y2;
     grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4] ;
-    grid-template-rows: [y0]80% [y1];
+    grid-template-rows: [y0]90% [y1];
     padding: 3.125em;
     gap: 1.25em;
 }
