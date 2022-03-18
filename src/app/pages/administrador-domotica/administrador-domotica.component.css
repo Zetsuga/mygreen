@@ -60,6 +60,9 @@
   font-weight: bold;
   font-family: var(--roboto);
 }
+
+.temperaturaM {
+}
 .contenidoTemperatura {
   grid-column: x0/x1;
   grid-row: y1/y2;
