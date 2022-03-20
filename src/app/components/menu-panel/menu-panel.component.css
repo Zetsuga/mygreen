@@ -9,9 +9,8 @@
   height: calc(100vh - 112px);
   display: flex;
   flex-direction: column;
+  min-height: 600px;
 }
-
-
 
 .contenido {
   display: flex;
@@ -21,7 +20,7 @@
   padding: 10px 0;
   background-color: hsla(85, 92%, 36%, 0.4);
 }
-.zona-dcha{
+.zona-dcha {
   margin: 2px;
 }
 
@@ -46,7 +45,7 @@
   font-size: 14px;
   font-family: var(--lato);
   font-weight: 600;
-  margin:0;
+  margin: 0;
 }
 
 .menu {

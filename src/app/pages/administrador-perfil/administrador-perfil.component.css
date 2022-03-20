@@ -1,6 +1,6 @@
 .contenedor {
   display: grid;
-  grid-template-columns: [x0]238px[x1]calc(100vw - 238px) [x2];
+  grid-template-columns: [x0]238px[x1]calc(100vw - 255px) [x2];
   grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
 }
 
@@ -38,7 +38,7 @@
   min-width: 800px;
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   align-items: flex-start;
 }
 .infoBasicaPerfil {
@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border: var(--borde);
   box-shadow: var(--sombra);
 }
@@ -70,6 +71,9 @@
   border: var(--borde);
   box-shadow: var(--sombra);
   padding: 10px;
+}
+.tituloCard h3 {
+  text-align: center;
 }
 
 .pd-titulo {
@@ -108,7 +112,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
 .camposBasicos div {
@@ -172,7 +176,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
 .detalle {
@@ -180,6 +184,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   margin-top: 60px;
 }

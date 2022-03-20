@@ -1,149 +1,162 @@
-.contenido{
-    display: grid;
-    grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
-    background-color: var(--fondo);
+.contenido {
+  display: grid;
+  grid-template-columns: [x0]238px [x1]calc(100vw - 255px) [x2];
+  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  background-color: var(--fondo);
 }
 
-.header{
-    grid-column: x0/x2;
-    grid-row: y0/y1;
+.header {
+  grid-column: x0/x2;
+  grid-row: y0/y1;
 }
 
-.menu{
-    display: grid;
-    grid-column: x0/x1;
-    grid-row: y1/y2;
+.menu {
+  display: grid;
+  grid-column: x0/x1;
+  grid-row: y1/y2;
 }
 
-.tarjetas{
-    display: grid;
-    grid-column: x1/x2;
-    grid-row: y1/y2;
-    grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4] ;
-    grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5] ;
-    padding: 50px;
-    gap: 20px;
+.tarjetas {
+  display: grid;
+  grid-column: x1/x2;
+  grid-row: y1/y2;
+  grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4];
+  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5];
+  padding: 50px;
+  gap: 20px;
 }
 
-.caja{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+.caja {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.cajaValor{
-    color:white;
-    font-family: var(--lato);
-    font-size: 50px;
+.cajaValor {
+  color: white;
+  font-family: var(--lato);
+  font-size: 50px;
 }
 
-.cajaTitulo{
-    color:white;
-    font-family: var(--lato);
-    font-size: 15px;
+.cajaTitulo {
+  color: white;
+  font-family: var(--lato);
+  font-size: 15px;
 }
 
-.cajaTituloClima{
-    color:white;
-    font-family: var(--lato);
-    font-size: 15px;
-    text-align: left;
+.cajaTituloClima {
+  color: white;
+  font-family: var(--lato);
+  font-size: 15px;
+  text-align: left;
 }
 
-.temperatura{
-    grid-column: x0/x1;
-    grid-row: y0/y1;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    background-color: var(--rojowarning);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.temperatura {
+  grid-column: x0/x1;
+  grid-row: y0/y1;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  background-color: var(--rojowarning);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.humedad{
-    grid-column: x1/x2;
-    grid-row: y0/y1;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    background-color: var(--rojowarning);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5px 0;
+.humedad {
+  grid-column: x1/x2;
+  grid-row: y0/y1;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  background-color: var(--rojowarning);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 0;
 }
 
-
-.tension{
-    grid-column: x2/x3;
-    grid-row: y0/y1;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    background-color: var(--verdeCorrecto);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5px 0;
+.tension {
+  grid-column: x2/x3;
+  grid-row: y0/y1;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  background-color: var(--verdeCorrecto);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 0;
 }
 
-
-.clima{
-    grid-column: x3/x4;
-    grid-row: y0/y1;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    background-color: var(--clima);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5px 0;
+.clima {
+  grid-column: x3/x4;
+  grid-row: y0/y1;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  background-color: var(--clima);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 0;
 }
 
-
-.incidencias{
-    grid-column: x0/x2;
-    grid-row: y1/y5;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+.incidencias {
+  grid-column: x0/x2;
+  grid-row: y1/y5;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
 
-.tensionMatricial{
-    grid-column: x2/x4;
-    grid-row: y1/y3;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+.tensionMatricial {
+  grid-column: x2/x4;
+  grid-row: y1/y3;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
 
-.tareasPendientes{
-    grid-column: x2/x4;
-    grid-row: y3/y5;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+.tareasPendientes {
+  grid-column: x2/x4;
+  grid-row: y3/y5;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.tareasPendientes h3 {
+  margin-top: 10px;
 }
 
-.tension-Matricial-Imagen{
-    width: 86%;
-    height: auto;
+.tension-Matricial-Imagen {
+  width: 86%;
+  height: auto;
+}
+.indicencias-contenedor {
+  width: 90%;
+  margin-top: 10px;
+}
+
+.incidencias h3 {
+  margin-top: 10px;
+}
+
+.tarasPendientes-contenedor {
+  width: 90%;
+  margin-top: 10px;
 }
