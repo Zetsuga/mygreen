@@ -13,7 +13,6 @@ export class TrabajadorInicioComponent implements OnInit {
   public tareas:{}
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = true;
 
     this.nominas = ["enero","febrero","marzo","abril", "mayo","junio"]
 

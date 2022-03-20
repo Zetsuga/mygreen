@@ -12,7 +12,6 @@ export class AdministradorInicioComponent implements OnInit {
   public tareas:{};
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = false;
     this.incidencias = [
       {
         "incidencia_id": 0,

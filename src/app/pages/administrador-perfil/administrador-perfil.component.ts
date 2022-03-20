@@ -9,7 +9,6 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 export class AdministradorPerfilComponent implements OnInit {
 
   constructor(public usuario:UsuarioService) { 
-    this.usuario.trabajador=false;
   }
 
   ngOnInit(): void {

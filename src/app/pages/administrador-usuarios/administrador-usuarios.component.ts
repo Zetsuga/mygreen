@@ -11,7 +11,6 @@ export class AdministradorUsuariosComponent implements OnInit {
   public usuarios:{};
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador=false;
 
 
     this.usuarios = [

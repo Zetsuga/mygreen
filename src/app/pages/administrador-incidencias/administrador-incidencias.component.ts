@@ -11,7 +11,6 @@ export class AdministradorIncidenciasComponent implements OnInit {
   public incidencias
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = false;
 
     this.incidencias = [
       {

@@ -11,7 +11,6 @@ export class AdministradorRiegoComponent implements OnInit {
   public options: any;
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = false;
    }
 
   ngOnInit(): void {

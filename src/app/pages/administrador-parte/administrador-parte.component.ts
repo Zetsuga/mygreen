@@ -11,7 +11,6 @@ export class AdministradorParteComponent implements OnInit {
   public tareas:{};
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = false;
      
     this.tareas = [
       {

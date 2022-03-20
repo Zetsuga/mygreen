@@ -12,7 +12,6 @@ export class AdministradorDomoticaComponent implements OnInit {
   mensaje2 = 2;
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador=false;
    }
 
   ngOnInit(): void {

@@ -11,7 +11,6 @@ export class TrabajadorTareasComponent implements OnInit {
   public tareas;
 
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = true;
 
     this.tareas = [
       {

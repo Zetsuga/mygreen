@@ -10,7 +10,6 @@ export class TrabajadorFicharComponent implements OnInit {
 
   public fichajes:{};
   constructor(public usuario:UsuarioService) {
-    this.usuario.trabajador = true;
      
     this.fichajes = [
       {
