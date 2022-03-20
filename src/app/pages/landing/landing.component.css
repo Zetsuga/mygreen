@@ -1,639 +1,609 @@
-/* mobile first */
-
 body {
   display: inline-block;
   justify-content: center;
   flex-direction: column;
   /* background-color: var(--verdePrincipal);
-            background-image: 
-              linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
-              linear-gradient( white, #8a9669 );
-            background-size: .75em 100%, 100% 100%; */
-}
-
-/* tabletas */
-@media (min-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-}
-
-/* escritorio normales */
-@media (min-width: 992px) {
-  body {
-    font-size: 16px;
-  }
-}
-
-/* pantallas grandes */
-@media (min-width: 1200px) {
-  body {
-    display: inline-block;
-    justify-content: center;
-    flex-direction: column;
-    /* background-color: var(--verdePrincipal);
         background-image: 
           linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
           linear-gradient( white, #8a9669 );
         background-size: .75em 100%, 100% 100%; */
-  }
-  /* ============Primera Seccion============== */
+}
+/* ============Primera Seccion============== */
 
-  .primera-seccion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .contenido-banner {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    z-index: 1;
-  }
-  .texto-banner {
-    text-align: center;
-    color: white;
-  }
-  .texto-banner h1 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 45px;
-  }
-  .texto-banner p {
-    margin-top: 10.23vh;
-    margin-bottom: 2.04vh;
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-  }
-  .boton-banner {
-    display: flex;
-    justify-content: center;
-  }
-  .btn-banner {
-    margin-top: 7.8vh;
-    transition: all 0.5s ease;
-    color: #fff;
-    border: 2px solid white;
-    font-family: "roboto";
-    text-align: center;
-    line-height: 1;
-    font-size: 15px;
-    background-color: transparent;
-    padding: 12px;
-    outline: none;
-    border-radius: 4px;
-    width: 10vw;
-    height: 5vh;
-  }
-  .btn-banner:hover {
-    color: #001f3f;
-    background-color: #fff;
-  }
-  .img-banner {
-    border: 2px solid black;
-    height: 670px;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-  }
-  .img-banner img {
-    width: 100%;
-    height: auto;
-  }
-  .img-banner::before {
-    content: "";
-    position: absolute;
-    /* height: 670px; */
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.501);
-  }
+.primera-seccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenido-banner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+}
+.texto-banner {
+  text-align: center;
+  color: white;
+}
+.texto-banner h1 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+}
+.texto-banner p {
+  margin-top: 10.23vh;
+  margin-bottom: 2.04vh;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+}
+.boton-banner {
+  display: flex;
+  justify-content: center;
+}
+.btn-banner {
+  margin-top: 7.8vh;
+  transition: all 0.5s ease;
+  color: #fff;
+  border: 2px solid white;
+  font-family: "roboto";
+  text-align: center;
+  line-height: 1;
+  font-size: 15px;
+  background-color: transparent;
+  padding: 12px;
+  outline: none;
+  border-radius: 4px;
+  width: 10vw;
+  height: 5vh;
+}
+.btn-banner:hover {
+  color: #001f3f;
+  background-color: #fff;
+}
+.img-banner {
+  border: 2px solid black;
+  height: 670px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+.img-banner img {
+  width: 100%;
+  height: auto;
+}
+.img-banner::before {
+  content: "";
+  position: absolute;
+  /* height: 670px; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.501);
+}
 
-  /* ====================== SEPARADOR ==================== */
+/* ====================== SEPARADOR ==================== */
 
-  .separador {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    /* height: 273px; */
-    height: 27.95vh;
-    align-items: flex-start;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  .separador span {
-    color: var(--verdePrincipal);
-    margin: 3px;
-  }
-  .separador h1 {
-    color: white;
-  }
-  .separador h2 {
-    color: white;
-  }
-  .img-separador {
-    width: 100%;
-  }
-  .img-separador img {
-    width: 100vw;
-    /* height: 273px; */
-    height: 27.7vh;
-  }
-  .texto-separador {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    position: absolute;
-    margin-top: 50px;
-    z-index: 1;
-  }
-  .texto-separador h1 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    /* font-size: 72px; */
-    font-size: 3.9vw;
-  }
-  .texto-separador h2 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    /* font-size: 30px;     */
-    font-size: 1.62vw;
-  }
+.separador {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* height: 273px; */
+  height: 27.95vh;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.separador span {
+  color: var(--verdePrincipal);
+  margin: 3px;
+}
+.separador h1 {
+  color: white;
+}
+.separador h2 {
+  color: white;
+}
+.img-separador {
+  width: 100%;
+}
+.img-separador img {
+  width: 100vw;
+  /* height: 273px; */
+  height: 27.7vh;
+}
+.texto-separador {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  margin-top: 50px;
+  z-index: 1;
+}
+.texto-separador h1 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  /* font-size: 72px; */
+  font-size: 3.9vw;
+}
+.texto-separador h2 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  /* font-size: 30px;     */
+  font-size: 1.62vw;
+}
 
-  /* ======= SUB-CUERPO 1 ============ */
+/* ======= SUB-CUERPO 1 ============ */
 
-  .cuerpo1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 6.5vh 5.4vw 6.4vh 5.4vw;
-    height: 1080px;
-  }
-  /* cads1 */
-  .container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-  }
-  .card {
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.309);
-    height: 41.94vh;
-    min-width: 16.15vw;
-    max-width: 10vw;
-    background-color: #8a966915;
-    /* overflow: hidden; */
-  }
-  .canva {
-    /* width: 295px; */
-    height: 20.47vh;
-    min-height: 20.47vh;
-    /* height: 200px; */
-    overflow: hidden;
-    /* position: relative; */
-    border-radius: 8px 8px 0 0;
-    position: relative;
-  }
-  .canva img {
-    width: auto;
-    /* width: 295px; */
-    height: 100%;
-  }
-  .canva:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.241);
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .content h2 {
-    padding-top: 10px;
-    text-align: center;
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-  }
-  .content p {
-    /* margin-top: 10px; */
-    /* height: 125px; */
-    text-align: justify;
-    padding: 0 10px 0 10px;
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1em;
-  }
-  /* texto sub-cuerpo1 */
-  .texto-cuerpo1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 8.2vh;
-    text-align: center;
-  }
-  .texto-cuerpo1 p {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22.6909px;
-  }
-  .texto-cuerpo1 h2 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 66.1818px;
-  }
-  /* cards2 */
-  .container2 {
-    width: 85%;
-    margin-top: 6.36vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-  .card2 {
-    width: 18.5%;
-    padding: 10px;
-    /* box-shadow: var(--sombra); */
-    /* background-color: #8a966915; */
-  }
-  .canva2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .content2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .content2 h2 {
-    text-align: center;
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    margin-top: 10px;
-  }
-  .content2 p {
-    text-align: justify;
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    margin-top: 10px;
-  }
-  /* =========== SUB-CUERPO 2 =============== */
+.cuerpo1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 6.5vh 5.4vw 6.4vh 5.4vw;
+  height: 1080px;
+}
+/* cads1 */
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+.card {
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.309);
+  height: 41.94vh;
+  min-width: 16.15vw;
+  max-width: 10vw;
+  background-color: #8a966915;
+  /* overflow: hidden; */
+}
+.canva {
+  /* width: 295px; */
+  height: 20.47vh;
+  min-height: 20.47vh;
+  /* height: 200px; */
+  overflow: hidden;
+  /* position: relative; */
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+.canva img {
+  width: auto;
+  /* width: 295px; */
+  height: 100%;
+}
+.canva:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.241);
+}
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content h2 {
+  padding-top: 10px;
+  text-align: center;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+}
+.content p {
+  /* margin-top: 10px; */
+  /* height: 125px; */
+  text-align: justify;
+  padding: 0 10px 0 10px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+}
+/* texto sub-cuerpo1 */
+.texto-cuerpo1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 8.2vh;
+  text-align: center;
+}
+.texto-cuerpo1 p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22.6909px;
+}
+.texto-cuerpo1 h2 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 66.1818px;
+}
+/* cards2 */
+.container2 {
+  width: 85%;
+  margin-top: 6.36vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.card2 {
+  width: 18.5%;
+  padding: 10px;
+  /* box-shadow: var(--sombra); */
+  /* background-color: #8a966915; */
+}
+.canva2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content2 h2 {
+  text-align: center;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 10px;
+}
+.content2 p {
+  text-align: justify;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  margin-top: 10px;
+}
+/* =========== SUB-CUERPO 2 =============== */
 
-  .cuerpo2 {
-    display: flex;
-    justify-content: space-between;
-    margin: 7.5vh 5.4vw 0 5.4vw;
-    height: 1080px;
-    align-items: center;
-  }
-  /* Parte-texto */
-  .parte-texto {
-    /* border: 1px solid black; */
-    width: 60%;
-    height: 92.11vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-    /* padding: 0px 0px 0 20px; */
-    padding-left: 40px;
-    padding-right: 40px;
-    gap: 30px;
-  }
-  .subparte {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 30px;
-    align-items: center;
-  }
-  .texto-subparte {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .texto-subparte h2 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 35px;
-  }
-  .texto-subparte p {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1em;
-    text-align: justify;
-  }
-  /* Parte-imagenes */
-  .parte-imagen {
-    /* border: 1px solid green; */
-    width: 40%;
-    height: 92.11vh;
-    overflow: hidden;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-  .canva-cuerpo2 {
-    border: 2px solid var(--verdeSecundario);
-    border-radius: 10px 0 10px 0;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.308);
-    display: flex;
-    /* justify-content: center; */
-    justify-content: space-between;
-    flex-direction: column;
-    width: auto;
-    height: 90%;
-    gap: 0;
-  }
-  .subcanva1 {
-    border-bottom: 2px solid var(--verdeSecundario);
-    border-top: 2px solid var(--verdeSecundario);
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    overflow: hidden;
-    height: 34%;
-  }
-  .subcanva1a {
-    border-right: 2px solid var(--verdeSecundario);
-  }
-  .subcanva1a .subcanva1b {
-    overflow: hidden;
-  }
-  .subcanva1 img .subcanva1b img {
-    width: 100%;
-    height: auto;
-  }
-  .subcanva0 {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px 0 0 0;
-    width: auto;
-    height: 33%;
-  }
-  .subcanva2 {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 0 0 10px 0;
-    width: auto;
-    height: 34%;
-  }
-  .subcanva0 img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 0 0 0;
-  }
-  .subcanva2 img {
-    width: 100%;
-    height: auto;
-  }
+.cuerpo2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 7.5vh 5.4vw 0 5.4vw;
+  height: 1080px;
+  align-items: center;
+}
+/* Parte-texto */
+.parte-texto {
+  /* border: 1px solid black; */
+  width: 60%;
+  height: 92.11vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 0px 0px 0 20px; */
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 30px;
+}
+.subparte {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+.texto-subparte {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.texto-subparte h2 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+}
+.texto-subparte p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  text-align: justify;
+}
+/* Parte-imagenes */
+.parte-imagen {
+  /* border: 1px solid green; */
+  width: 40%;
+  height: 92.11vh;
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.canva-cuerpo2 {
+  border: 2px solid var(--verdeSecundario);
+  border-radius: 10px 0 10px 0;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.308);
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-between;
+  flex-direction: column;
+  width: auto;
+  height: 90%;
+  gap: 0;
+}
+.subcanva1 {
+  border-bottom: 2px solid var(--verdeSecundario);
+  border-top: 2px solid var(--verdeSecundario);
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  overflow: hidden;
+  height: 34%;
+}
+.subcanva1a {
+  border-right: 2px solid var(--verdeSecundario);
+}
+.subcanva1a .subcanva1b {
+  overflow: hidden;
+}
+.subcanva1 img .subcanva1b img {
+  width: 100%;
+  height: auto;
+}
+.subcanva0 {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px 0 0 0;
+  width: auto;
+  height: 33%;
+}
+.subcanva2 {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0 0 10px 0;
+  width: auto;
+  height: 34%;
+}
+.subcanva0 img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 0 0 0;
+}
+.subcanva2 img {
+  width: 100%;
+  height: auto;
+}
 
-  /* =================== SUB-CUERPO 3 ============== */
+/* =================== SUB-CUERPO 3 ============== */
 
-  .cuerpo3 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin: 3.5vh 5.4vw 3.5vh 5.4vw;
-    height: 980px;
-    align-items: center;
-    /* padding: 0 0 100px 0; */
-  }
+.cuerpo3 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 3.5vh 5.4vw 3.5vh 5.4vw;
+  height: 980px;
+  align-items: center;
+  /* padding: 0 0 100px 0; */
+}
 
-  /* Parte-texto */
+/* Parte-texto */
 
-  .texto-cuerpo3 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    text-align: center;
-  }
-  .texto-cuerpo3 h2 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: bold;
-    font-size: 4.14em;
-  }
-  .texto-cuerpo3 p {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22.6909px;
-  }
+.texto-cuerpo3 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+}
+.texto-cuerpo3 h2 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 4.14em;
+}
+.texto-cuerpo3 p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22.6909px;
+}
 
-  /* Parte-equipo */
-  .equipo {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    width: 100%;
-    /* border-top: 4px solid black; */
-    /* padding-top: 50px; */
-  }
-  .card-trabajador {
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    border: 2px solid var(--verdeSecundario);
-    box-shadow: var(--sombra);
-    border-radius: 4px;
-    width: 18.79vw;
-    min-width: 12vw;
-    height: 55.91vh;
-    /* background-color: white; */
-    /* overflow: hidden; */
-  }
-  .cont-trabajador {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    /* min-width: 12vw; */
-    height: 21.49vh;
-    /* width: auto; */
-  }
-  .cont-trabajador img {
-    width: auto;
-    height: 100%;
-  }
-  /* Texto-card Trabajador */
-  .parteTexto-trabajador {
-    padding: 20px 12px 0 12px;
-  }
-  .titulo-trabajador {
-    border-bottom: 1px solid var(--verdeSecundario);
-  }
-  .titulo-trabajador h3 {
-    font-family: "Roboto Condensed";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22.1571px;
-  }
-  .titulo-trabajador p {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12.5557px;
-    color: var(--verdePrincipal);
-  }
-  .texto-trabajador {
-    text-align: justify;
-  }
+/* Parte-equipo */
+.equipo {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  /* border-top: 4px solid black; */
+  /* padding-top: 50px; */
+}
+.card-trabajador {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  border: 2px solid var(--verdeSecundario);
+  box-shadow: var(--sombra);
+  border-radius: 4px;
+  width: 18.79vw;
+  min-width: 12vw;
+  height: 55.91vh;
+  /* background-color: white; */
+  /* overflow: hidden; */
+}
+.cont-trabajador {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  /* min-width: 12vw; */
+  height: 21.49vh;
+  /* width: auto; */
+}
+.cont-trabajador img {
+  width: auto;
+  height: 100%;
+}
+/* Texto-card Trabajador */
+.parteTexto-trabajador {
+  padding: 20px 12px 0 12px;
+}
+.titulo-trabajador {
+  border-bottom: 1px solid var(--verdeSecundario);
+}
+.titulo-trabajador h3 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22.1571px;
+}
+.titulo-trabajador p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.5557px;
+  color: var(--verdePrincipal);
+}
+.texto-trabajador {
+  text-align: justify;
+}
 
-  /* Parte redes card trabajador */
-  .redes {
-    display: flex;
-    justify-content: flex-end;
-    /* align-items: flex-end; */
-    gap: 2px;
-  }
-  .canva-red {
-    display: flex;
-    justify-content: center;
-    max-width: 30px;
-    max-height: 30px;
-    border-radius: 50%;
-    background-color: rgba(128, 128, 128, 0.301);
-    padding: 6px;
-  }
-  .canva-red img {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-  }
+/* Parte redes card trabajador */
+.redes {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+  gap: 2px;
+}
+.canva-red {
+  display: flex;
+  justify-content: center;
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 50%;
+  background-color: rgba(128, 128, 128, 0.301);
+  padding: 6px;
+}
+.canva-red img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
 
-  /* ============ SUB-CUERPO 4 =========== */
-  .cuerpo4 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    margin: 7.5vh 5.4vw 7.5vh 5.4vw;
-    height: 600px;
-    align-items: center;
-  }
-  /* Organizacion subpartes */
-  .parteForm {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    padding-right: 11.213vw;
-    border-right: 3px dotted var(--verdeSecundario);
-  }
-  .parteMapa {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-content: center;
-  }
-  /* parte mapa */
-  .tituloMapa,
-  .tituloForm {
-    text-align: center;
-    font-family: "Roboto Condensed";
-    font-style: bold;
-    font-weight: bold;
-    font-size: 35px;
-    line-height: 41px;
-    color: var(--verdeSecundario);
-    margin-bottom: 1.8vh;
-  }
-  .mapaCanva {
-    min-width: 23.66vw;
-    height: 58.73vh;
-    overflow: hidden;
-    border: 2px solid var(--verdeSecundario);
-    box-shadow: var(--sombra);
-    border-radius: 8px 0 8px 0;
-  }
-  .mapaCanva img {
-    width: 100%;
-  }
+/* ============ SUB-CUERPO 4 =========== */
+.cuerpo4 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 7.5vh 5.4vw 7.5vh 5.4vw;
+  height: 600px;
+  align-items: center;
+}
+/* Organizacion subpartes */
+.parteForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  padding-right: 11.213vw;
+  border-right: 3px dotted var(--verdeSecundario);
+}
+.parteMapa {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+}
+/* parte mapa */
+.tituloMapa,
+.tituloForm {
+  text-align: center;
+  font-family: "Roboto Condensed";
+  font-style: bold;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 41px;
+  color: var(--verdeSecundario);
+  margin-bottom: 1.8vh;
+}
+.mapaCanva {
+  min-width: 23.66vw;
+  height: 58.73vh;
+  overflow: hidden;
+  border: 2px solid var(--verdeSecundario);
+  box-shadow: var(--sombra);
+  border-radius: 8px 0 8px 0;
+}
+.mapaCanva img {
+  width: 100%;
+}
 
-  /* parte Formulario */
-  .form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border: 2px solid var(--verdeSecundario);
-    padding: 40px 50px;
-    border-radius: 8px 0 8px 0;
-    gap: 10px;
-    box-shadow: var(--sombra);
-  }
-  .form span {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-  }
-  .form-input {
-    display: flex;
-    justify-content: center;
-    color: rgba(128, 128, 128, 0.295);
-    border: 1.5px solid var(--verdeSecundario);
-    width: 20rem;
-    border-radius: 8px;
-    background-color: #69af071c;
-    min-height: 2.5rem;
-    padding: 4px 0;
-  }
+/* parte Formulario */
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid var(--verdeSecundario);
+  padding: 40px 50px;
+  border-radius: 8px 0 8px 0;
+  gap: 10px;
+  box-shadow: var(--sombra);
+}
+.form span {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+}
+.form-input {
+  display: flex;
+  justify-content: center;
+  color: rgba(128, 128, 128, 0.295);
+  border: 1.5px solid var(--verdeSecundario);
+  width: 20rem;
+  border-radius: 8px;
+  background-color: #69af071c;
+  min-height: 2.5rem;
+  padding: 4px 0;
+}
 
-  #boton-form {
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-  }
+#boton-form {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
 
-  /* TEXTAREA */
+/* TEXTAREA */
 
-  .textarea {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--verdeSecundario);
-    background-color: #69af071c;
-    width: 20rem;
-    padding: 0.2rem;
-    min-height: 1rem;
-    border-radius: 8px;
-    resize: none;
-  }
-  .textarea:empty::before {
-    position: absolute;
-    content: "Su comentario ... ";
-  }
+.textarea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--verdeSecundario);
+  background-color: #69af071c;
+  width: 20rem;
+  padding: 0.2rem;
+  min-height: 1rem;
+  border-radius: 8px;
+  resize: none;
+}
+.textarea:empty::before {
+  position: absolute;
+  content: "Su comentario ... ";
 }

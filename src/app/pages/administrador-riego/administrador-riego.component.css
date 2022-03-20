@@ -21,7 +21,7 @@
   grid-template-columns: [x0]1fr[x1];
   grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3];
   padding: 50px;
-  min-height: 860px;
+  min-height: 1000px;
 }
 .contenidoCuerpo {
   display: flex;
