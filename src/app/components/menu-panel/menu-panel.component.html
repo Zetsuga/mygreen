@@ -7,14 +7,14 @@
             <p>Prueba Fernandez Fernandez</p>
             <p>prueba@gmail.com</p>
         </div>
-        <div class="zona-dcha" *ngIf="usuario.trabajador else falso">
+        <div class="zona-dcha" *ngIf="true else falso">
             <a class="botonMyGreen2" type="button" >ENTRADA</a>
         </div>
         <ng-template #falso>
 
         </ng-template>
     </div>
-    <div class="menu" *ngIf="!usuario.trabajador else siTrabajador">
+    <div class="menu" *ngIf="true else siTrabajador">
         <div class="menuBoton">
             <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
             <a routerLink="/administrador/inicio" class="tituloCard">INICIO</a>
