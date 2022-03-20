@@ -14,7 +14,7 @@ export class MenuPanelComponent implements OnInit {
   public faAddressBook;
   public faDoorClosed;
   
-  constructor(public usuario:UsuarioService) {
+  constructor(public usuarioService:UsuarioService) {
     this.faAddressBook = faAddressBook;
     this.faDoorClosed = faDoorClosed;
   }
