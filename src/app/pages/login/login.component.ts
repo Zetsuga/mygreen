@@ -18,20 +18,20 @@ export class LoginComponent implements OnInit {
       this.usuario = new Usuario("","","","",0,"","","","","","");
     }
 
-    // public onSubmit(form:NgForm){
-    //   this.usuarioService.login(this.usuario).subscribe((datos:any)=>{
-    //     if(datos.error==true){
-    //       this.usuarioService.logueado = false;
-    //       this.usuarioService.usuario = null;
-    //       this.toastService.showError(datos.mensaje,datos.titulo);
-    //     }else{
-    //       this.usuarioService.logueado = true;
-    //       this.usuarioService.usuario = datos.resultado[0];
-    //       this.toastService.showOk(datos.mensaje,datos.titulo)
-    //       this.router.navigateByUrl('/');
-    //     }
-    //   });
-    // }
+    public onSubmit(form:NgForm){
+      this.usuarioService.login(this.usuario).subscribe((datos:any)=>{
+        if(datos.error==true){
+          this.usuarioService.logueado = false;
+          this.usuarioService.usuario = null;
+          this.toastService.showError(datos.mensaje,datos.titulo);
+        }else{
+          this.usuarioService.logueado = true;
+          this.usuarioService.usuario = datos.resultado[0];
+          this.toastService.showOk(datos.mensaje,datos.titulo)
+          this.router.navigateByUrl('/');
+        }
+      });
+    }
 
   ngOnInit(): void {
   }

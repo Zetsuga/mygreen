@@ -30,6 +30,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { ToastrModule } from 'ngx-toastr';
       echarts:()=>import('echarts'),
     }),
     ToastrModule.forRoot(),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

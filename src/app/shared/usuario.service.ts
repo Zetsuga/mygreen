@@ -12,16 +12,16 @@ export class UsuarioService {
   public logueado:boolean;
   public usuario:Usuario;
 
-  constructor() { 
+  constructor(private http:HttpClient) { 
     this.logueado=false;
     this.usuario = new Usuario("","","","",0,"","","","","","");
     this.usuario.rol="1";
   }
 
-  // public login(usuario:Usuario):Observable<object>{
+  public login(usuario:Usuario):Observable<object>{
 
-  //   this.url =`https://mygreenapi.herokuapp.com/login`;
+    this.url =`https://mygreenapi.herokuapp.com/login`;
 
-  //   return this.http.post(this.url,usuario);
-  // }
+    return this.http.post(this.url,usuario);
+  }
 }
