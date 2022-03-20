@@ -1,82 +1,95 @@
-.contenido{
-    display: grid;
-    grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
-    background-color: var(--fondo);
+.contenido {
+  display: grid;
+  grid-template-columns: [x0]238px [x1]calc(100vw - 255px) [x2];
+  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  background-color: var(--fondo);
+  min-height: 800px;
 }
 
-.header{
-    grid-column: x0/x2;
-    grid-row: y0/y1;
+.header {
+  grid-column: x0/x2;
+  grid-row: y0/y1;
 }
 
-.menu{
-    display: grid;
-    grid-column: x0/x1;
-    grid-row: y1/y2;
+.menu {
+  display: grid;
+  grid-column: x0/x1;
+  grid-row: y1/y2;
 }
 
-.tarjetas{
-    display: grid;
-    grid-column: x1/x2;
-    grid-row: y1/y2;
-    grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4] ;
-    grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5] ;
-    padding: 50px;
-    gap: 20px;
+.tarjetas {
+  display: grid;
+  grid-column: x1/x2;
+  grid-row: y1/y2;
+  /* grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4];
+  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5]; */
+  padding: 50px;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 1200px;
+  min-height: 600px;
+  max-height: 600px;
 }
 
-.incidencias{
-    grid-column: x1/x3;
-    grid-row: y0/y4;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+.incidencias {
+  grid-column: x1/x3;
+  grid-row: y0/y4;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  min-width: 700px;
+}
+.indicencias-contenedor {
+  width: 90%;
 }
 
-.incidencias-form{
-    grid-column: x0/x1;
-    grid-row: y0/y4;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+.incidencias-form {
+  grid-column: x0/x1;
+  grid-row: y0/y4;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  min-width: 400px;
+  min-height: 500px;
 }
 
-.incidencias-form-inputs{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    width: 300px;
-    
-    margin-top: 10px;
+.incidencias-form-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 300px;
+
+  margin-top: 10px;
 }
 
 .usuario {
-    background-image: url(../../../assets/img/persona.png);
+  background-image: url(../../../assets/img/persona.png);
 }
 
-.botonMygreen-caja{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+.botonMygreen-caja {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .finca {
-    background-image: url(../../../assets/img/planta2.png);
+  background-image: url(../../../assets/img/planta2.png);
 }
 
 .descripcion {
-    background-image: url(../../../assets/img/permisos.png);
-    height: 150px;
+  background-image: url(../../../assets/img/permisos.png);
+  height: 150px;
 }
