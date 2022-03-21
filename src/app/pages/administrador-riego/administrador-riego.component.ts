@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
@@ -10,10 +11,15 @@ export class AdministradorRiegoComponent implements OnInit {
 
   public options: any;
 
-  constructor(public usuario:UsuarioService) {
+  constructor(public usuario:UsuarioService, public router:Router) {
    }
 
   ngOnInit(): void {
+    // if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
+    //   this.router.navigateByUrl('/login');
+
+    // }
+
     const xAxisData = [];
     const data1 = [];
     const data2 = [];

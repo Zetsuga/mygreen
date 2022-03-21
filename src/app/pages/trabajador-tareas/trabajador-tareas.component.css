@@ -33,7 +33,6 @@
   box-shadow: var(--sombra);
   border: var(--borde);
   display: flex;
-  /* border: 1px solid rgba(104, 104, 104, 0.26); */
   flex-direction: column;
   background-color: white;
   padding: 0 10px;
@@ -128,7 +127,7 @@
 }
 
 .lineaSeparacion hr {
-  width: 60%;
+  width: 100%;
   margin: 0;
 }
 
@@ -153,10 +152,18 @@
   gap: 20px;
 }
 
-.descripcion-derecha,
-.incidencia-derecha {
-  border: 1px solid rgba(194, 194, 194, 0.589);
+.descripcion-derecha textarea,
+.incidencia-derecha textarea {
+  border: 1px solid var(--verdeSecundario);
   border-radius: 7px;
+  padding-left: 5px;
+}
+
+.descripcion-derecha textarea:hover,
+.incidencia-derecha textarea:hover,
+.descripcion-derecha textarea:focus,
+.incidencia-derecha textarea:focus {
+  outline: none;
 }
 
 .descripcion-derecha p {

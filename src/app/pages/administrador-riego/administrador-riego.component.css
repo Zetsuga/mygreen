@@ -14,14 +14,17 @@
   grid-row: y1/y2;
 }
 .cuerpo {
-  display: grid;
+  /* display: grid; */
   grid-column: x1/x2;
   grid-row: y1/y2;
   background-color: #f4f4f4;
-  grid-template-columns: [x0]1fr[x1];
-  grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3];
+  /* grid-template-columns: [x0]1fr[x1];
+  grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3]; */
   padding: 50px;
   min-height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .contenidoCuerpo {
   display: flex;
