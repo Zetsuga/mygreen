@@ -47,7 +47,6 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
 }
 
 .botonBuscar {
@@ -73,6 +72,10 @@
 }
 
 .demo-chart {
-  width: 900px;
-  height: 300px;
+  width: 1100px;
+  height: 400px;
+}
+
+.mat-primary {
+  width: 90%;
 }

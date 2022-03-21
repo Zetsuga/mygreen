@@ -9,8 +9,8 @@ export class AdministradorHistorialComponent implements OnInit {
 
   initOpts = {
     renderer: 'svg',
-    width: 900,
-    height: 300
+    width: 1100,
+    height: 400
   };
 
   option = {

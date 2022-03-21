@@ -5,7 +5,7 @@
     <div class="menu">
         <app-menu-panel></app-menu-panel>
     </div>
-    
+
     <div class="tarjetas">
         <div class="temperatura">
             <!-- Desplegable info -->
@@ -22,7 +22,7 @@
                 <h3 class="cajaValor">{{temperatura}}</h3>
                 <h4 class="cajaTitulo">TEMPERATURA</h4>
             </div>
-            
+
         </div>
         <div class="humedad">
             <img src="../../../assets/img/gotas-de-aguaB 1.png">
@@ -50,11 +50,11 @@
 
         <div class="incidencias">
             <h3 class="tituloCard">INCIDENCIAS</h3>
-            <div class="indicencias-contenedor" >
+            <div class="indicencias-contenedor">
                 <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
                     <thead>
                         <th scope="col" id="tablaCabecera">
-                           FECHA
+                            FECHA
                         </th>
                         <th scope="col" id="tablaCabecera">
                             USUARIO
@@ -69,7 +69,7 @@
                             <td>{{incidencia.usuario_id}}</td>
                             <td>{{incidencia.descripcion}}</td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
@@ -77,15 +77,18 @@
 
         <div class="tensionMatricial">
             <h3 class="tituloCard">TENSIÓN MATRICIAL</h3>
+            <div class="graficaTension">
+                <div echarts [options]="options" class="tensionMatricial2"></div>
+            </div>
         </div>
 
         <div class="tareasPendientes">
             <h3 class="tituloCard">TAREAS PENDIENTES</h3>
-            <div class="tarasPendientes-contenedor" >
+            <div class="tarasPendientes-contenedor">
                 <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
                     <thead>
                         <th scope="col" id="tablaCabecera">
-                           FECHA
+                            FECHA
                         </th>
                         <th scope="col" id="tablaCabecera">
                             PRIORIDAD
@@ -100,11 +103,11 @@
                             <td>{{tarea.prioridad}}</td>
                             <td>{{tarea.descripcion}}</td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    
+
 </div>

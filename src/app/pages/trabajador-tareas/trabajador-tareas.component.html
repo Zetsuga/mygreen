@@ -5,7 +5,7 @@
     <div class="menu">
         <app-menu-panel></app-menu-panel>
     </div>
-    
+
     <div class="tarjetas">
         <div class="tareas">
             <h3 class="tituloCard separacion">TAREAS ASIGNADAS</h3>
@@ -16,45 +16,48 @@
                 <div class="caja">
                     <div class="tarea-Izquierda">
                         <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>
-                        <p class="tareaFecha">{{tarea.fecha}}</p> 
-                     </div>
-                     <div class="tarea-Derecha">
-                         <p class="tareaDescripcion">{{tarea.descripcion}}</p>
-                     </div>
+                        <p class="tareaFecha">{{tarea.fecha}}</p>
+                    </div>
+                    <div class="tarea-Derecha">
+                        <p class="tareaDescripcion">{{tarea.descripcion}}</p>
+                    </div>
                 </div>
             </div>
+
         </div>
         <div class="descripcion">
             <h3 class="tituloCard separacionSuperior">DETALLES TAREA</h3>
             <div class="descripcion-caja">
                 <div class="descripcion-izquierda">
                     <div class="class-input urgencia">
-                        <input type="text" name="urgencia" value="urgencia">
+                        <input type="text" name="urgencia" placeholder="  Urgencia">
                     </div>
-    
+
                     <div class="class-input fecha">
-                        <input type="text" name="fecha" value="fecha">
+                        <input type="text" name="fecha" placeholder="  Fecha">
                     </div>
-                    <a class="botonMyGreen" type="button" >FINALIZAR</a>
+                    <a class="botonMyGreen" type="button">FINALIZAR</a>
                 </div>
-    
+
                 <div class="descripcion-derecha">
-                    <textarea name="" id="" cols="40" rows="6" fixed>Esto es una descripción de una tarea</textarea>
+                    <textarea name="" id="" cols="40" rows="6" fixed
+                        placeholder="  Esto es una descripción de una tarea"></textarea>
                 </div>
             </div>
         </div>
         <div class="incidencia">
             <h3 class="tituloCard separacionSuperior">GENERAR INCIDENCIA</h3>
             <div class="incidencia-caja">
-                <div class="incidencia-izquierda">    
+                <div class="incidencia-izquierda">
                     <div class="class-input fecha">
-                        <input type="text" name="fecha" value="fecha">
-                        
+                        <input type="text" name="fecha" placeholder="  Fecha">
+
                     </div>
-                    <a class="botonMyGreen" type="button" >GENERAR</a>
-                    </div>
+                    <a class="botonMyGreen" type="button">GENERAR</a>
+                </div>
                 <div class="incidencia-derecha">
-                    <textarea name="" id="" cols="40" rows="6" fixed>Ejemplo de incidencia</textarea>
+                    <textarea name="" id="" cols="40" rows="6" fixed
+                        placeholder="  Esto es una descripción de una incidencia"></textarea>
                 </div>
             </div>
         </div>
