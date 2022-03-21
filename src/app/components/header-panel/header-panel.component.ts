@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
@@ -8,7 +10,12 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class HeaderPanelComponent implements OnInit {
 
-  constructor(public usuario:UsuarioService) { 
+  constructor(public usuario:UsuarioService,private router:Router) { 
+  }
+
+  public desconectar():void{
+    this.usuario.usuario = new Usuario("","","","",0,"","","","","","");
+    this.router.navigateByUrl("/");
   }
 
   ngOnInit(): void {

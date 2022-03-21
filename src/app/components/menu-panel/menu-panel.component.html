@@ -14,7 +14,7 @@
 
         </ng-template>
     </div>
-    <div class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
+    <div class="menu" *ngIf="usuarioService.usuario.rol =='2'; else siTrabajador">
         <div class="menuBoton">
             <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
             <a routerLink="/administrador/inicio" class="tituloCard">INICIO</a>
