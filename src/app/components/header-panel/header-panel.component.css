@@ -53,6 +53,7 @@
 
   .boton-login p:hover {
     color: var(--grisOscuro);
+    cursor: pointer;
   }
 }
 /*Fin Escritorio*/

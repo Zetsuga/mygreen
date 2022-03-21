@@ -34,11 +34,10 @@ export class IncidenciasService {
   }
 
   /*
-    La función buscarUno retorna una tarea dada su ID
-    hay que pasarle como parámetro la ID de la tarea
+    La función buscar retorna todas las incidencias de una finca
   */
-  public buscar():Observable<object>{
-    return this.http.get(this.url)
+  public buscar(id_finca:number):Observable<object>{
+    return this.http.get(this.url+"?id_finca="+id_finca)
   }
 
 }

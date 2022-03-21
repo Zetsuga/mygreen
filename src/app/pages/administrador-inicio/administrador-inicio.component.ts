@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Incidencia } from 'src/app/models/incidencia';
+import { Medicion } from 'src/app/models/medicion';
+import { Tarea } from 'src/app/models/tarea';
+import { ClimaService } from 'src/app/shared/clima.service';
+import { FincaService } from 'src/app/shared/finca.service';
+import { IncidenciasService } from 'src/app/shared/incidencias.service';
+import { MedicionesService } from 'src/app/shared/mediciones.service';
+import { TareasService } from 'src/app/shared/tareas.service';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
@@ -9,54 +17,38 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class AdministradorInicioComponent implements OnInit {
 
-  public incidencias:{};
-  public tareas:{};
+  public incidencias:Incidencia;
+  public tareas:Tarea;
+  public medicion:Medicion;
+  public temperatura:number;
+  public humedad:number;
+  public tension:number;
+  public minTemp:number;
+  public maxTemp:number;
+  public clima:string;
 
-  constructor(public usuario:UsuarioService,private router:Router) {
-    this.incidencias = [
-      {
-        "incidencia_id": 0,
-        "usuario_id" : 1,
-        "finda_id" : 0,
-        "fecha" : "30/12/2021",
-        "estado" : false,
-        "descripcion" : "Abono insufiente, hace falta comprar más"
-      },{
-        "incidencia_id": 1,
-        "usuario_id" : 0,
-        "finda_id" : 0,
-        "fecha" : "28/12/2021",
-        "estado" : false,
-        "descripcion" : "Sistema de riego roto"
-      },{
-        "incidencia_id": 2,
-        "usuario_id" : 1,
-        "finda_id" : 0,
-        "fecha" : "27/12/2021",
-        "estado" : false,
-        "descripcion" : "Plaga en pimientos rojos"
-      }
-    ];
+  constructor(public usuario:UsuarioService,public medicionService:MedicionesService,
+    public incidenciaService:IncidenciasService,public tareasService:TareasService,
+    public fincaService:FincaService, public climaService:ClimaService,private router:Router) { 
+    this.medicionService.buscar().subscribe((datos:any)=>{
+      this.medicion = datos.resultado;
+      this.temperatura = this.medicion[datos.resultado.length -1].temperatura;
+      this.humedad = this.medicion[datos.resultado.length -1].humedad;
+      this.tension = this.medicion[datos.resultado.length -1].tensionmatricial;
+    })
 
-    this.tareas = [
-      {
-        "tarea_id" : 0,
-        "usuario_id" : 1,
-        "finca_id" : 0,
-        "fecha" : "30/12/2021",
-        "prioridad" : "urgente",
-        "estado" : false,
-        "descripcion" : "Hay que recolectar los pimientos rojos"
-      },{
-        "tarea_id" : 1,
-        "usuario_id" : 1,
-        "finca_id" : 0,
-        "fecha" : "30/12/2021",
-        "prioridad" : "medio",
-        "estado" : false,
-        "descripcion" : "Hay que recolectar los tomates"
-      }
-    ]
+    this.climaService.getClima().subscribe((datos:any)=>{
+      this.maxTemp = datos.temperaturas.max;
+      this.minTemp = datos.temperaturas.min;
+      this.clima = datos.stateSky.description;
+    })
+    this.usuario.buscarUno(usuario.usuario.id_usuario).subscribe((datos:any)=>{
+      this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
+    })
+    this.incidenciaService.buscar(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
+      console.log(datos)
+      // this.incidencias = datos.resultado;
+    })
   }
 
   ngOnInit(): void {
