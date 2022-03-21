@@ -120,7 +120,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 .botonMyGreen {
 	box-shadow:var(--sombra);
     transition: all .8s ease;
-	background:linear-gradient(to bottom, #69af07 5%, #8a9669 100%);
+	/* background:linear-gradient(to bottom, #69af07 5%, #8a9669 100%); */
 	background-color:#69af07;
 	border-radius:4px;
 	border:1px solid #887848;
@@ -134,6 +134,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 	text-decoration:none;
 	text-shadow:1px 1px 8px black;
   text-align: center;
+  
 }
 .botonMyGreen:hover {
 	background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%);

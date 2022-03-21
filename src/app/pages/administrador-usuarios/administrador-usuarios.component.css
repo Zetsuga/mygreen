@@ -36,8 +36,7 @@
   grid-column: x0/x1;
   grid-row: y0/y1;
   border-radius: 7px;
-  box-shadow: var(--sombra);
-  border: var(--borde);
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
