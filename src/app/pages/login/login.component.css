@@ -42,24 +42,24 @@ p {
 /* grid imagenes */
 .cuerpo1{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: row;
     padding: 40px;
     /* padding-top: 80px; */
     /* padding-left: 50px; */
     overflow: hidden;
-    background-color: var(--verdePrincipal);
+    /* background-color: var(--verdePrincipal);
     background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
-      linear-gradient( white, #8a9669 );
+      linear-gradient( white, #8a9669 ); */
     /* background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
       linear-gradient( #69af07, #8a9669 ); */
     /* background-image: 
     linear-gradient(to right, rgba(255,255,255,.025) 10%, transparent 0),
     linear-gradient(#222, #000); */
-    background-size: .75em 100%, 100% 100%;
-    background-attachment: fixed;
+    /* background-size: .75em 100%, 100% 100%;
+    background-attachment: fixed; */
   }
 
   /* --verdePrincipal: #69af07;
@@ -69,26 +69,29 @@ p {
   --verdeCorrecto: #69af07; */
 
 .wrapper {
+    /* border: 1px solid black; */
     position: relative;
-    flex-grow: .5;
+    flex-grow: .2;
     max-width: 1000px;
     max-height: 1000px;    
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 1vmin;
-    justify-content: center;
+    justify-content: flex-start;
     /* justify-items: center;
     align-items: center; */
-    padding: 40px;
+    /* padding: 10px; */
+    /* gap: -0.5; */
   }  
 img{
+    border: 1px solid var(--verdePrincipal);
     z-index: 1;
     grid-column: span 2;
     max-width: 100%;
     margin-bottom: -52%;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    transform: scale(1) rotate(360deg);
+    transform: scale(.85) rotate(360deg);
     transition: all 1.25s;
 }    
 img:nth-child(7n+1) {
@@ -168,6 +171,8 @@ img:hover {
 }
 
 
+.form-check-input{
+    color: black;}
 #boton-form{
     padding-top: 10px;
     display: flex;
