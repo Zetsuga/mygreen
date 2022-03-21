@@ -147,3 +147,45 @@
     width: 86%;
     height: auto;
 }
+
+
+ /* BOTON informacion */
+ .container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+}
+ .inner {
+    background: rgb(7, 218, 165);
+    padding: 1em;
+    border-radius: 10px;
+    width: 250px;
+    clip-path: circle(5% at 90% 13%);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.inner:hover {
+    clip-path: circle(75%);
+    background: #00b6ff;
+}
+span {
+    float: right;
+    color: white;
+    font-weight: bold;
+    transition: color 0.5s;
+    position: relative;
+    margin-right: 4%;
+}
+span:hover span {
+    color: rgba(255, 255, 255, 0);
+}
+h1 {
+    color: white;
+    margin: 0;
+}
+p {
+    color: white;
+    font-size: 0.8rem;
+}
+/* ========================= */
