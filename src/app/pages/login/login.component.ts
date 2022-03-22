@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
         
         if(datos.error==true){
           this.usuarioService.logueado = false;
-          this.usuarioService.usuario = null;
-          this.fincaService.finca =null;
+          this.usuario= new Usuario("","","","",0,"","","","","","");
           this.toastService.showError(datos.mensaje,datos.titulo);
         }else{
           this.usuarioService.logueado = true;

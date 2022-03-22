@@ -59,7 +59,6 @@
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
-  background-color: var(--rojowarning);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -71,7 +70,6 @@
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
-  background-color: var(--rojowarning);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -84,7 +82,6 @@
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
-  background-color: var(--verdeCorrecto);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -201,7 +198,13 @@ p {
   font-size: 0.8rem;
 }
 /* ========================= */
-.tensionMatricial2 {
-  width: 45vw;
-  height: 28vh;
+.graficaTension {
+  width: 600px;
+  height: auto;
+}
+
+.demo-chart{
+  max-height: 200px;
+  max-width: 600px;
+  margin-top:-40px;
 }

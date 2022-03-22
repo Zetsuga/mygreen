@@ -7,16 +7,8 @@
     </div>
 
     <div class="tarjetas">
-        <div class="temperatura">
-            <!-- Desplegable info -->
-            <!-- <div class="container">
-                <div class="inner">
-                  <span>i</span>
-                  <h1>Hey</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus inventore molestiae sunt qui dignissimos, facilis quasi a placeat iste error repellendus ut nihil expedita enim distinctio porro sint, cupiditate eius.</p>
-                </div>
-              </div> -->
-            <!-- Fin Desplegable info -->
+        <div [ngClass]="{'rojo':'rojo temperatura','amarillo':'amarillo temperatura','verde':'verde temperatura'}[colorTemperatura]">
+                
             <img src="../../../assets/img/TermometroB 1.png">
             <div class="caja">
                 <h3 class="cajaValor">{{temperatura}}</h3>
@@ -24,14 +16,14 @@
             </div>
 
         </div>
-        <div class="humedad">
+        <div [ngClass]="{'rojo':'rojo humedad','amarillo':'amarillo humedad','verde':'verde humedad'}[colorHumedad]">
             <img src="../../../assets/img/gotas-de-aguaB 1.png">
             <div class="caja">
                 <h3 class="cajaValor">{{humedad}}</h3>
                 <h4 class="cajaTitulo">HUMEDAD</h4>
             </div>
         </div>
-        <div class="tension">
+        <div [ngClass]="{'rojo':'rojo tension','amarillo':'amarillo tension','verde':'verde tension'}[colorTension]">
             <img src="../../../assets/img/manoPlanta 1.png">
             <div class="caja">
                 <h3 class="cajaValor">{{tension}}Cb</h3>
@@ -78,7 +70,7 @@
         <div class="tensionMatricial">
             <h3 class="tituloCard">TENSIÓN MATRICIAL</h3>
             <div class="graficaTension">
-                <div echarts [options]="options" class="tensionMatricial2"></div>
+                <div echarts [options]="options" class="demo-chart"></div>
             </div>
         </div>
 

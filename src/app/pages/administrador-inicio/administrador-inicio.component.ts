@@ -17,8 +17,8 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class AdministradorInicioComponent implements OnInit {
 
-  public incidencias:Incidencia;
-  public tareas:Tarea;
+  public incidencias:Incidencia[];
+  public tareas:Tarea[];
   public medicion:Medicion;
   public temperatura:number;
   public humedad:number;
@@ -27,51 +27,74 @@ export class AdministradorInicioComponent implements OnInit {
   public maxTemp:number;
   public clima:string;
   public options: any;
+  public colorTemperatura:string;
+  public colorHumedad:string;
+  public colorTension:string;
+
 
   constructor(public usuario:UsuarioService,public medicionService:MedicionesService,
     public incidenciaService:IncidenciasService,public tareasService:TareasService,
     public fincaService:FincaService, public climaService:ClimaService,private router:Router) { 
+
+      this.colorTemperatura="";
+      this.colorHumedad="";
+      this.colorTension="";
+
+      
+    
     this.medicionService.buscar().subscribe((datos:any)=>{
+      console.log(datos)
       this.medicion = datos.resultado;
       this.temperatura = this.medicion[datos.resultado.length -1].temperatura;
       this.humedad = this.medicion[datos.resultado.length -1].humedad;
       this.tension = this.medicion[datos.resultado.length -1].tensionmatricial;
-    })
 
-    this.climaService.getClima().subscribe((datos:any)=>{
-      this.maxTemp = datos.temperaturas.max;
-      this.minTemp = datos.temperaturas.min;
-      this.clima = datos.stateSky.description;
-    })
-    this.usuario.buscarUno(usuario.usuario.id_usuario).subscribe((datos:any)=>{
-      this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
-    })
-    this.incidenciaService.buscar(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
-      console.log(datos)
-      // this.incidencias = datos.resultado;
-    })
-  }
+      
+      if(this.temperatura<=10){
+        this.colorTemperatura = "rojo";
+      }else if(this.temperatura<=27){
+        this.colorTemperatura = "verde";
+      }else if(this.temperatura<=31){
+        this.colorTemperatura = "amarillo";
+      }else{
+        this.colorTemperatura = "rojo";
+      }
 
-  ngOnInit(): void {
-    if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
-      this.router.navigateByUrl('/login');
-    }
+      if(this.humedad<=35){
+        this.colorHumedad = "rojo";
+      }else if(this.humedad<=50){
+        this.colorHumedad = "verde";
+      }else if(this.humedad<=55){
+        this.colorHumedad = "amarillo";
+      }else{
+        this.colorHumedad = "rojo";
+      }
 
-    const xAxisData = [];
+      if(this.tension<=4){
+        this.colorTension = "rojo";
+      }else if(this.tension<=7){
+        this.colorTension = "amarillo";
+      }else if(this.tension<=14){
+        this.colorTension = "verde";
+      }else if(this.tension<=17){
+        this.colorTension = "amarillo";
+      }else{
+        this.colorTension = "rojo";
+      }
+
+      
+      const xAxisData = [];
     const data1 = [];
-    const data2 = [];
 
-    for (let i = 0; i < 100; i++) {
-      xAxisData.push('10:0'+ i+':00');
-      data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-      data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
+    for (let i = 0; i < 192; i++) {
+      let dateTimeParts= this.medicion[i].fecha.split(/[- : T]/);
+      xAxisData.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ this.medicion[i].hora);
+      console.log(this.medicion.tensionmatricial)
+      data1.push(this.medicion[i].tensionmatricial);
     }
 
     this.options = {
-      legend: {
-        data: ['TensionM', 'Temperatura'],
-        align: 'left',
-      },
+        
       tooltip: {},
       xAxis: {
         data: xAxisData,
@@ -83,21 +106,41 @@ export class AdministradorInicioComponent implements OnInit {
       yAxis: {},
       series: [
         {
-          name: 'TensionM',
+          name: 'bar',
           type: 'bar',
           data: data1,
           animationDelay: (idx) => idx * 10,
-        },
-        {
-          name: 'Temperatura',
-          type: 'bar',
-          data: data2,
-          animationDelay: (idx) => idx * 10 + 100,
         },
       ],
       animationEasing: 'elasticOut',
       animationDelayUpdate: (idx) => idx * 5,
     };
+
+    })
+
+    this.climaService.getClima().subscribe((datos:any)=>{
+      this.maxTemp = datos.temperaturas.max;
+      this.minTemp = datos.temperaturas.min;
+      this.clima = datos.stateSky.description;
+    })
+
+    this.usuario.buscarUno(usuario.usuario.id_usuario).subscribe((datos:any)=>{
+      this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
+      this.incidenciaService.buscar(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
+        this.incidencias = datos.resultado;
+      })
+
+      this.tareasService.buscarTodosFinca(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
+        this.tareas = datos.resultado;
+      })
+    })
   }
 
+  ngOnInit(): void {
+    if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
+      this.router.navigateByUrl('/login');
+    }
+
+    
+  }
 }

@@ -16,7 +16,6 @@ export class HeaderPanelComponent implements OnInit {
 
   public desconectar():void{
     this.usuario.usuario = new Usuario("","","","",0,"","","","","","");
-    this.fincaService.finca = null;
     this.router.navigateByUrl("/");
   }
 

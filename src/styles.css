@@ -194,3 +194,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   position: relative;
   top: 1px;
 }
+
+
+
+
+.rojo{
+  background-color:var(--rojowarning);
+}
+
+.amarillo{
+  background-color:var(--amariloAdvertencia);
+}
+
+.verde{
+  background-color:var(--verdeCorrecto);
+}
