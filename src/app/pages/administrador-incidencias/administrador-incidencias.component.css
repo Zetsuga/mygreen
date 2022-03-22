@@ -93,3 +93,8 @@
   background-image: url(../../../assets/img/permisos.png);
   height: 150px;
 }
+
+
+textarea {
+  resize: none;
+}

@@ -8,31 +8,31 @@
     
     <div class="tarjetas">
         
-        <div class="incidencias-form">
+        <form class="incidencias-form" #incidenciaForm="ngForm">
             <h3 class="tituloCard--conEspacio">DETALLES</h3>
         
             <div class="incidencias-form-inputs">
                 <div class="class-input fecha">
-                    <input type="text" name="fecha" placeholder="  Fecha...">
+                    <input [(ngModel)]="incidencia.fecha" type="text" name="fecha" placeholder="  Fecha..." disabled>
                 </div>
 
                 <div class="class-input finca">
-                    <input type="text" name="finca" placeholder="  Finca...">
+                    <input [(ngModel)]="incidencia.id_finca" type="text" name="finca" placeholder="  Finca..." disabled>
                 </div>
 
                 <div class="class-input usuario">
-                    <input type="text" name="usuario" placeholder="  Usuario...">
+                    <input [(ngModel)]="incidencia.id_usuario" type="text" name="usuario" placeholder="  Usuario..." disabled>
                 </div>
 
                 <div class="class-input descripcion">
-                    <p #descripcion>
-                    </p>
+                    <textarea [(ngModel)]="incidencia.descripcion" name="descripcion" id="descricion" cols="40" rows="6" fixed
+                        placeholder="  Esto es una descripción de una tarea" disabled></textarea>
                 </div>
                 <div class="botonMygreen-caja">
-                    <a class="botonMyGreen" type="button" >TERMINAR</a>
+                    <a class="botonMyGreen" type="button" (click)="finalizar(incidencia)" >TERMINAR</a>
                 </div>
             </div>
-        </div>
+        </form>
 
         <div class="incidencias">
             <h3 class="tituloCard--conEspacio">INCIDENCIAS</h3>
@@ -50,7 +50,7 @@
                         </th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let incidencia of incidencias" id="tablaFila">
+                        <tr *ngFor="let incidencia of incidencias;let indice=index" id="tablaFila" (click)="cargarDatos(indice)">
                             <td>{{incidencia.fecha}}</td>
                             <td>{{incidencia.usuario_id}}</td>
                             <td>{{incidencia.descripcion}}</td>

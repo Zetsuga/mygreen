@@ -27,7 +27,7 @@ export class IncidenciasService {
   /*
     La función modificar modifica de la BD la incidencia para dejarla en estado false 
     que se considera finalizada, hay que pasarle como parámetro el objeto INCIDENCIA 
-    con el atributo ESTADO en 0 o FALSE
+    con el atributo id_incidencia
   */
   public modificar(incidencia:Incidencia):Observable<object>{
     return this.http.put(this.url,incidencia);
