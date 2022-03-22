@@ -35,6 +35,8 @@
 .usuariosForm {
   grid-column: x0/x1;
   grid-row: y0/y1;
+  border: var(--borde);
+  box-shadow: var(--sombra);
   border-radius: 7px;
 
   display: flex;

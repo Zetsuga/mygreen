@@ -9,23 +9,42 @@
     <div class="admin-usuarios">
         
         <!--Formulario Usuarios  -->
-        <form class="formulario" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="contenedor_datos_input">
+        <form class="formulario" #usuariosForm="ngForm" (ngSubmit)="onSubmit(usuariosForm)" class="contenedor_datos_input">
             <div class="usuariosForm">
                 <div class="titulo-usuariosForm">
                     <h2 class="tituloCard">CREAR USUARIO</h2>
                 </div>
                 <span>NOMBRE</span>
                 <div class="class-input nombre">
-                    <input type="text" id="nombre-usuariosForm" placeholder="  Nombre" />
+                    <input type="text" id="nombre-usuariosForm"
+                        name="nombre" [(ngModel)]="usuario.nombre"
+                        #nombre="ngModel"
+                        [ngClass]="{'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}" required placeholder="  Nombre" />
+                </div>
+                <div class="advertencia" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                    <p *ngIf="nombre.errors.required">El nombre es obligatorio</p>
                 </div>
                 <span>APELLIDOS</span>
                 <div class="class-input apellidos">
-                    <input type="text" id="apellidos-usuariosForm" placeholder="  Apellidos..." />
+                    <input type="text" id="apellidos-usuariosForm" 
+                    name="apellidos" [(ngModel)]="usuario.apellidos"
+                    #apellidos="ngModel"
+                    [ngClass]="{'is-invalid':usuariosForm.submitted && apellidos.invalid}" required placeholder="  Apellidos..." />
+                    <div class="advertencia" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+
+                    <p *ngIf="apellidos.errors.required">Los apellidos son obligatorios</p>
+                </div>
                 </div>
                 <span>TELÉFONO</span>
                 <div class="class-input telefono">
-                    <input type="text" id="telefono-usuariosForm" placeholder="  Teléfono..." />
-                </div>
+                    <input type="text" id="telefono-usuariosForm" 
+                    name="telefono" [(ngModel)]="usuario.telefono"
+                    #telefono="ngModel"
+                    [ngClass]="{'is-invalid': usuariosForm.submitted && telefono.invalid}" required  placeholder="  Teléfono..." />
+                    <div class="advertencia" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                        <p *ngIf="telefono.errors.required">El teléfono es obligatorio</p>                    
+                    </div>
+                </div>              
                 <span>E-MAIL</span>
                 <div class="class-input email">
                     <input type="email" id="email-usuariosForm" 
@@ -34,7 +53,6 @@
                     [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email required placeholder="  E-mail..." />
                     <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
                         <p *ngIf="correo.errors.required" class="advertencia">El correo es obligatorio</p>
-                        <p *ngIf="correo.errors.email" class="advertencia">El correo no es válido</p>
                     </div>
                 </div>
                 <span>CONTRASEÑA</span>
@@ -57,8 +75,9 @@
                         <p *ngIf="password.errors.required" class="advertencia">Deben coincidir las dos contraseñas</p>
                     </div>
                 </div>
-                <div id="boton-form" >
-                    <a class="botonMyGreen" type="button" >CREAR</a>
+                <div id="boton-form">
+                    <button *ngIf="botonFormulario" class="botonMyGreen" type="submit" >CREAR</button>
+                    <button *ngIf="!botonFormulario" class="botonMyGreen" type="button" (click)="modificarUsuario()" >MODIFICAR</button>
                 </div>
             </div>
         </form> 
@@ -81,20 +100,16 @@
                         E-MAIL
                     </th>
                     <th scope="col" id="tablaCabecera">
-                        CARGO
-                    </th>
-                    <th scope="col" id="tablaCabecera">
                         
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let usuario of usuarios" id="tablaFila">
-                        <td>{{usuario.nombre}}</td>
-                        <td>{{usuario.apellidos}}</td>
-                        <td>{{usuario.telefono}}</td>
-                        <td>{{usuario.email}}</td>
-                        <td>{{usuario.cargo}}</td>
-                        <td><div class=iconos><img src="../../../assets/img/iconoEliminar.png"><img src="../../../assets/img/iconoModificar.png"></div></td>
+                    <tr *ngFor="let user of usuarios; let indice=index" id="tablaFila">
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.apellidos}}</td>
+                        <td>{{user.telefono}}</td>
+                        <td>{{user.email}}</td>
+                        <td><div class=iconos><a (click)="eliminarUsuario(indice)"><img src="../../../assets/img/iconoEliminar.png"></a><a  (click)="cargarDatos(indice)"><img src="../../../assets/img/iconoModificar.png"></a></div></td>
                     </tr>
 
                 </tbody>
