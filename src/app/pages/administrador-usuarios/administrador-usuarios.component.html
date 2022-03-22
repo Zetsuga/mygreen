@@ -9,39 +9,59 @@
     <div class="admin-usuarios">
         
         <!--Formulario Usuarios  -->
-
-         <div class="usuariosForm">
-            <div class="titulo-usuariosForm">
-                <h2 class="tituloCard">CREAR USUARIO</h2>
+        <form class="formulario" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="contenedor_datos_input">
+            <div class="usuariosForm">
+                <div class="titulo-usuariosForm">
+                    <h2 class="tituloCard">CREAR USUARIO</h2>
+                </div>
+                <span>NOMBRE</span>
+                <div class="class-input nombre">
+                    <input type="text" id="nombre-usuariosForm" placeholder="  Nombre" />
+                </div>
+                <span>APELLIDOS</span>
+                <div class="class-input apellidos">
+                    <input type="text" id="apellidos-usuariosForm" placeholder="  Apellidos..." />
+                </div>
+                <span>TELÉFONO</span>
+                <div class="class-input telefono">
+                    <input type="text" id="telefono-usuariosForm" placeholder="  Teléfono..." />
+                </div>
+                <span>E-MAIL</span>
+                <div class="class-input email">
+                    <input type="email" id="email-usuariosForm" 
+                    name="correo" [(ngModel)]="usuario.email" 
+                    #correo="ngModel"
+                    [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email required placeholder="  E-mail..." />
+                    <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                        <p *ngIf="correo.errors.required" class="advertencia">El correo es obligatorio</p>
+                        <p *ngIf="correo.errors.email" class="advertencia">El correo no es válido</p>
+                    </div>
+                </div>
+                <span>CONTRASEÑA</span>
+                <div class="class-input password">
+                    <input type="password" id="password-usuariosForm" 
+                    name="password" [(ngModel)]="usuario.contrasenia" 
+                    #password="ngModel"
+                    [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="4" required placeholder="  *******" />
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <p *ngIf="password.errors.required" class="advertencia">La contraseña es obligatoria</p>
+                    </div>
+                </div>
+                <span>REPETIR CONTRASEÑA</span>
+                <div class="class-input repetirpassword">
+                    <input type="password" id="password-usuariosForm" 
+                    name="password" [(ngModel)]="usuario.contrasenia"
+                    #password="ngModel"
+                    [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="4" required placeholder="  *******" />
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <p *ngIf="password.errors.required" class="advertencia">Deben coincidir las dos contraseñas</p>
+                    </div>
+                </div>
+                <div id="boton-form" >
+                    <a class="botonMyGreen" type="button" >CREAR</a>
+                </div>
             </div>
-            <span>NOMBRE</span>
-            <div class="class-input nombre">
-                <input type="text" id="nombre-usuariosForm" placeholder="  Nombre" />
-            </div>
-            <span>APELLIDOS</span>
-            <div class="class-input apellidos">
-                <input type="text" id="apellidos-usuariosForm" placeholder="  Apellidos..." />
-            </div>
-            <span>TELÉFONO</span>
-            <div class="class-input telefono">
-                <input type="text" id="telefono-usuariosForm" placeholder="  Teléfono..." />
-            </div>
-            <span>E-MAIL</span>
-            <div class="class-input email">
-                <input type="text" id="email-usuariosForm" placeholder="  E-mail..." />
-            </div>
-            <span>CONTRASEÑA</span>
-            <div class="class-input password">
-                <input type="password" id="password-usuariosForm" placeholder="  *******" />
-            </div>
-            <span>REPETIR CONTRASEÑA</span>
-            <div class="class-input repetirpassword">
-                <input type="password" id="password-usuariosForm" placeholder="  *******" />
-            </div>
-            <div id="boton-form" >
-                <a class="botonMyGreen" type="button" >CREAR</a>
-            </div>
-        </div> 
+        </form> 
         
         <!-- Tabla Usuarios -->
 

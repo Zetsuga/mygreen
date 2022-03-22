@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/shared/usuario.service';
+import { ToastService } from 'src/app/shared/toast.service';
+import { Usuario } from 'src/app/models/usuario';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-administrador-usuarios',
@@ -9,9 +14,12 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 export class AdministradorUsuariosComponent implements OnInit {
 
   public usuarios:{};
+  resetPasswordForm: FormGroup;
+  public usuario:Usuario
 
-  constructor(public usuario:UsuarioService) {
+  constructor(public usuarioService:UsuarioService) {
 
+    this.usuario=new Usuario("","","","",0,"","","","","","");
 
     this.usuarios = [
       {
@@ -65,7 +73,35 @@ export class AdministradorUsuariosComponent implements OnInit {
     ]
    }
 
+   public onSubmit(form:NgForm){
+
+   }
+
   ngOnInit(): void {
+
+    this.createResetPasswordForm();
+
   }
+
+  createResetPasswordForm(): void {
+    this.resetPasswordForm = new FormGroup({
+      currentPassword: new FormControl('', Validators.required),
+      newPassword: new FormControl('', Validators.required),
+      passwordConfirm: new FormControl('', Validators.required)
+    })
+  }
+
+  get currentPasswordIsValid() {
+    return this.resetPasswordForm.get('currentPassword').valid;
+  }
+  
+  get newPasswordIsValid() {
+    return this.resetPasswordForm.get('newPassword').valid;
+  }
+  
+  get passwordConfirmIsValid() {
+    return this.resetPasswordForm.get('passwordConfirm').valid;
+  }
+
 
 }
