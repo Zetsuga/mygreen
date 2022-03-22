@@ -40,4 +40,5 @@ export class IncidenciasService {
     return this.http.get(this.url+"?id_finca="+id_finca)
   }
 
+  
 }
