@@ -47,6 +47,7 @@ img{
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     transform: scale(.85) rotate(360deg);
     transition: all 1.25s;
+    
 }    
 img:nth-child(7n+1) {
     grid-column: 2/ span 2;
@@ -65,11 +66,8 @@ img:hover {
     border: var(--borde);
     border-radius: 7px;
     gap: .8vh;
-    backdrop-filter: saturate(180%) blur(20px);
-}
-.form:hover{
-    transform: scale(1.1);
-    transition: all 1.25s;
+    background-color: white;
+    /* backdrop-filter: saturate(180%) blur(20px); */
 }
 span{
     font-family: 'Lato';
@@ -87,7 +85,7 @@ span{
     border-radius: 8px;
     background-color: rgb(230, 227, 227);
     min-height: 2.5rem;
-    padding: 4px 0;
+    padding: 4px 8px;
 }
 .tituloForm h2{
     font-family: 'Lato';

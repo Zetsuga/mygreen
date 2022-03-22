@@ -151,10 +151,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   text-align: center;
 }
 .botonMyGreen:hover {
-  background: linear-gradient(to bottom, #8a9669 5%, #69af07 100%);
-  background-color: #8a9669;
-  text-shadow: none;
-  color: var(--grisOscuro);
+	/* background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%); */
+	background-color:#8a9669;
+    text-shadow: none;
+    color: var(--grisOscuro);
 }
 .botonMyGreen:active {
   position: relative;
