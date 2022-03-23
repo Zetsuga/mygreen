@@ -46,6 +46,7 @@
   padding: 2.16vh 0;
   gap: 0.63em;
   background-color: white;
+  height: 100%;
   min-width: 350px;
   min-height: 600px;
   max-height: 650px;
@@ -91,4 +92,19 @@ td {
   height: 100%;
   width: auto;
 }
+.usuariosForm p{
+  color: red;
+  font-size: smaller;
+  text-align: start;
 
+}
+.advertencia{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: calc(100% - 33px);
+}
+.subForm{
+  width: 100%;
+  margin-left: 40px;
+}
