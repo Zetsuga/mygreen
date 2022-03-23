@@ -86,10 +86,9 @@ export class AdministradorInicioComponent implements OnInit {
       const xAxisData = [];
     const data1 = [];
 
-    for (let i = 0; i < 192; i++) {
+    for (let i = 0; i < datos.resultado.length; i++) {
       let dateTimeParts= this.medicion[i].fecha.split(/[- : T]/);
       xAxisData.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ this.medicion[i].hora);
-      console.log(this.medicion.tensionmatricial)
       data1.push(this.medicion[i].tensionmatricial);
     }
 
