@@ -3,7 +3,7 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, NgForm, AbstractControl } from '@angular/forms';
 import { FincaService } from 'src/app/shared/finca.service';
 
 @Component({
@@ -36,6 +36,14 @@ export class AdministradorUsuariosComponent implements OnInit {
          this.toastService.showError(datos.mensaje,datos.titulo);
        }else{
          this.toastService.showOk(datos.mensaje, datos.titulo);
+         this.fincaService.insertarUsuarioFinca(datos.resultado,this.fincaService.finca.id_finca).subscribe((datos:any)=>{
+           if(datos.error==true){
+             this.toastService.showError(datos.mensaje,datos.titulo);
+           }else{
+             this.toastService.showOk(datos.mensaje, datos.titulo);
+             this.usuarios.push(this.usuario)
+           }
+         })
        }
 
     })
@@ -82,10 +90,21 @@ export class AdministradorUsuariosComponent implements OnInit {
   }
 
 
-  // Validación entre campos password
-  // passwordMatchValidator(g: FormGroup) {
-  //   return g.get('newPassword').value === g.get('passwordConfirm').value
-  //       ? null : { 'mismatch': true };
-  // }
+// Validación password
+
+// private buildForm(){
+//   const minPassLength=8;
+
+//   this.usuariosForm = this.formBuilder.group({
+//     password: [,[Validators.required], Validators.minLength(minPassLength)],
+//     password2: [,this.check],
+
+//   })
+// }
+
+// private check(control: AbstractControl){
+
+// }
+
 
 }

@@ -32,8 +32,12 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { FechaPipe } from './pipes/fecha.pipe';
 import { ModalComponent } from './components/modal/modal.component';
+=======
+import { ValidateEqualModule } from 'ng-validate-equal';
+>>>>>>> pedro8
 
 @NgModule({
   declarations: [
@@ -73,7 +77,8 @@ import { ModalComponent } from './components/modal/modal.component';
     }),
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ValidateEqualModule
   ],
   providers: [],
   bootstrap: [AppComponent]
