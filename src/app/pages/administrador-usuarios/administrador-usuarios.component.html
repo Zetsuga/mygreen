@@ -15,23 +15,22 @@
                     <h2 class="tituloCard">CREAR USUARIO</h2>
                 </div>
                 <span>NOMBRE</span>
-                <div class="class-input nombre">
-                    <input type="text" id="nombre-usuariosForm"
-                        name="nombre" [(ngModel)]="usuario.nombre"
-                        #nombre="ngModel"
-                        [ngClass]="{'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}" required placeholder="  Nombre" />
-                </div>
-                <div class="advertencia" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-                    <p *ngIf="nombre.errors.required">El nombre es obligatorio</p>
-                </div>
+                    <div class="class-input nombre">
+                        <input type="text" id="nombre-usuariosForm"
+                            name="nombre" [(ngModel)]="usuario.nombre"
+                            #nombre="ngModel"
+                            [ngClass]="{'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}" required placeholder="  Nombre" />
+                    </div>
+                    <div class="advertencia" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                        <p *ngIf="nombre.errors.required">El nombre es obligatorio</p>
+                    </div>
                 <span>APELLIDOS</span>
                 <div class="class-input apellidos">
                     <input type="text" id="apellidos-usuariosForm" 
-                    name="apellidos" [(ngModel)]="usuario.apellidos"
-                    #apellidos="ngModel"
-                    [ngClass]="{'is-invalid':usuariosForm.submitted && apellidos.invalid}" required placeholder="  Apellidos..." />
-                    <div class="advertencia" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
-
+                        name="apellidos" [(ngModel)]="usuario.apellidos"
+                        #apellidos="ngModel"
+                        [ngClass]="{'is-invalid':usuariosForm.submitted && apellidos.invalid}" required placeholder="  Apellidos..." />
+                <div class="advertencia" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
                     <p *ngIf="apellidos.errors.required">Los apellidos son obligatorios</p>
                 </div>
                 </div>
@@ -55,29 +54,37 @@
                         <p *ngIf="correo.errors.required" class="advertencia">El correo es obligatorio</p>
                     </div>
                 </div>
+
+
                 <span>CONTRASEÑA</span>
-                <div class="class-input password">
-                    <input type="password" id="password-usuariosForm" 
+                <div class="class-input">
+                    <input type="password"
                     name="password" [(ngModel)]="usuario.contrasenia" 
                     #password="ngModel"
                     [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="4" required placeholder="  *******" />
-                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
-                        <p *ngIf="password.errors.required" class="advertencia">La contraseña es obligatoria</p>
+                    <div class="advertencia" *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <p *ngIf="password.errors.required">La contraseña es obligatoria</p>
+                        <p *ngIf="password.errors.minlength">Minimo 4 caracteres</p>
                     </div>
                 </div>
                 <span>REPETIR CONTRASEÑA</span>
-                <div class="class-input repetirpassword">
-                    <input type="password" id="password-usuariosForm" 
-                    name="password" [(ngModel)]="usuario.contrasenia"
-                    #password="ngModel"
-                    [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="4" required placeholder="  *******" />
-                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
-                        <p *ngIf="password.errors.required" class="advertencia">Deben coincidir las dos contraseñas</p>
+                <div class="class-input">
+                    <input type="password"
+                    name="ConfirmPassword"   
+                    ngValidateEqual="password"              
+                    #ConfirmPassword="ngModel"
+                    [(ngModel)]="usuario.confirmPassword"
+                    [ngClass]="{'is-invalid':ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)}" minlength="4" required placeholder="  *******" />
+                    <div class="advertencia" *ngIf="  ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)">
+                        <p *ngIf="ConfirmPassword.errors.required">La contraseña es obligatoria</p>
+                        <p *ngIf="ConfirmPassword.errors.minlength">Minimo 4 caracteres</p>
+                        <p *ngIf="ConfirmPassword.hasError('notEqual') && password.valid">Contraseñas no coinciden</p>
                     </div>
                 </div>
+                 
                 <div id="boton-form">
-                    <button *ngIf="botonFormulario" class="botonMyGreen" type="submit" >CREAR</button>
-                    <button *ngIf="!botonFormulario" class="botonMyGreen" type="button" (click)="modificarUsuario()" >MODIFICAR</button>
+                    <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit" [disable]="" >CREAR</button>
+                    <button *ngIf="!botonFormulario" class="botonMyGreen" id ="crear-modificar" type="button" (click)="modificarUsuario()" >MODIFICAR</button>
                 </div>
             </div>
         </form> 
