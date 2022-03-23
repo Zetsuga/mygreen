@@ -32,6 +32,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FechaPipe } from './pipes/fecha.pipe';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { FormsModule } from '@angular/forms';
     MenuPanelComponent,
     BotonComponent,
     BotonSliceComponent,
-    TablaIncidenciasComponent
+    TablaIncidenciasComponent,
+    FechaPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

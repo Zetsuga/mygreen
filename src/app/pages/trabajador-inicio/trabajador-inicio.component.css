@@ -153,12 +153,12 @@
   border-radius: 7px;
 }
 
-.medio {
+.media {
   background-color: #ffc800c0;
   border-radius: 7px;
 }
 
-.bajo {
+.baja {
   background-color: var(--verdePrincipal);
   border-radius: 7px;
 }
