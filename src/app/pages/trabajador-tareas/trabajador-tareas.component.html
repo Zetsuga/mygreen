@@ -9,56 +9,62 @@
     <div class="tarjetas">
         <div class="tareas">
             <h3 class="tituloCard separacion">TAREAS ASIGNADAS</h3>
-            <div class="tareaPendiente" *ngFor="let tarea of tareas">
-                <div class="lineaSeparacion">
-                    <hr>
-                </div>
-                <div class="caja">
-                    <div class="tarea-Izquierda">
-                        <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>
-                        <p class="tareaFecha">{{tarea.fecha}}</p>
+            <div class="tareaPendiente" *ngFor="let tarea of tareas;let indice=index" (click)="cargarDatos(indice)">
+                
+                    <div class="lineaSeparacion">
+                        <hr>
                     </div>
-                    <div class="tarea-Derecha">
-                        <p class="tareaDescripcion">{{tarea.descripcion}}</p>
+                    <div class="caja">
+                        <div class="tarea-Izquierda">
+                            <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>
+                            <p class="tareaFecha">{{tarea.fecha|fecha}}</p>
+                        </div>
+                        <div class="tarea-Derecha">
+                            <p class="tareaDescripcion">{{tarea.descripcion}}</p>
+                        </div>
                     </div>
-                </div>
+                
             </div>
 
         </div>
         <div class="descripcion">
             <h3 class="tituloCard separacionSuperior">DETALLES TAREA</h3>
-            <div class="descripcion-caja">
-                <div class="descripcion-izquierda">
-                    <div class="class-input urgencia">
-                        <input type="text" name="urgencia" placeholder="  Urgencia">
+            <form class="tarea-form" #tareaForm="ngForm">
+                <div class="descripcion-caja">
+                    <div class="descripcion-izquierda">
+                        <div class="class-input urgencia">
+                            <input [(ngModel)]="tarea.prioridad" type="text" name="urgencia" placeholder="  Urgencia" disabled>
+                        </div>
+
+                        <div class="class-input fecha">
+                            <input [(ngModel)]="tarea.fecha" type="text" name="fecha" placeholder="  Fecha" disabled>
+                        </div>
+                        <a class="botonMyGreen" type="button" (click)="eliminarTarea(tarea.id_tarea)">FINALIZAR</a>
                     </div>
 
-                    <div class="class-input fecha">
-                        <input type="text" name="fecha" placeholder="  Fecha">
+                    <div class="descripcion-derecha">
+                        <textarea [(ngModel)]="tarea.descripcion" name="descripcion" id="descripcion" cols="40" rows="6" fixed
+                            placeholder="  Esto es una descripción de una tarea" disabled></textarea>
                     </div>
-                    <a class="botonMyGreen" type="button">FINALIZAR</a>
                 </div>
-
-                <div class="descripcion-derecha">
-                    <textarea name="" id="" cols="40" rows="6" fixed
-                        placeholder="  Esto es una descripción de una tarea"></textarea>
-                </div>
-            </div>
+            </form>
         </div>
         <div class="incidencia">
             <h3 class="tituloCard separacionSuperior">GENERAR INCIDENCIA</h3>
             <div class="incidencia-caja">
-                <div class="incidencia-izquierda">
-                    <div class="class-input fecha">
-                        <input type="text" name="fecha" placeholder="  Fecha">
+                <form class="incidencia-caja" #incidenciaForm="ngForm">
+                    <div class="incidencia-izquierda">
+                        <div class="class-input fecha">
+                            <input [(ngModel)]="incidencia.fecha" type="date" name="fecha" placeholder="  Fecha">
 
+                        </div>
+                        <a class="botonMyGreen" type="button" (click)="guardarIncidencia()">GENERAR</a>
                     </div>
-                    <a class="botonMyGreen" type="button">GENERAR</a>
-                </div>
-                <div class="incidencia-derecha">
-                    <textarea name="" id="" cols="40" rows="6" fixed
-                        placeholder="  Esto es una descripción de una incidencia"></textarea>
-                </div>
+                    <div class="incidencia-derecha">
+                        <textarea [(ngModel)]="incidencia.descripcion"  name="descripcion2" id="descripcion2" cols="40" rows="6" fixed
+                            placeholder="  Esto es una descripción de una incidencia"></textarea>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

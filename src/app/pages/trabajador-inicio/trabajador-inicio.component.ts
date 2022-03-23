@@ -65,7 +65,7 @@ closePopup() {
 
   ngOnInit(): void {
 
-    if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="2"){
+    if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="4"){
       this.router.navigateByUrl('/login');
     }
   }
