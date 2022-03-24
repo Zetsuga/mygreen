@@ -15,6 +15,7 @@ import * as bcrypt from 'bcrypt';
 export class LoginComponent implements OnInit {
   public usuario: Usuario;
   public bcrypt:bcrypt;
+  public saltRounds = 10;
 
   constructor(private usuarioService:UsuarioService,private router:Router,
     private toastService:ToastService,private fincaService:FincaService) { 

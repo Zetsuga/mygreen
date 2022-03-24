@@ -16,26 +16,57 @@ export class TrabajadorFicharComponent implements OnInit {
   public fichar:Fichar;
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService,
-    private router:Router, public ficharService:FicharService) {
+    private router:Router, private ficharService:FicharService) {
 
-      console.log(this.usuarioService.usuario)
+      let fecha = new Date().getFullYear + "-" + new Date().getMonth + "-" + new Date().getDay
+
+      this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+
+      console.log(this.fichar)
 
       this.ficharService.buscar(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
-        console.log(datos.resultado)
+
         if(datos.error==true){
           this.toastService.showError(datos.mensaje,datos.titulo);
         }else{
           this.toastService.showOk(datos.mensaje,datos.titulo);
-          this.ficharService.fichajes=datos.resultado;          
+          this.fichajes=datos.resultado;  
         }
       })
-
-    
   }
 
   ngOnInit(): void {
     if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="4"){
       this.router.navigateByUrl('/login');
     }
+  }
+
+  public entrada(evento){
+    let date = new Date;
+    let hora = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds(); 
+    this.fichar.entrada = hora;
+    this.ficharService.crear(this.fichar).subscribe((datos:any)=>{
+      if(datos.error==true){
+        this.toastService.showError(datos.mensaje,datos.titulo);
+      }else{
+        this.toastService.showOk(datos.mensaje, datos.titulo);
+        
+        this.fichar.id_fichaje=datos.resultado;
+      }
+    })
+  }
+  public salida(evento){
+    let date = new Date;
+    let hora = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds(); 
+    this.fichar.salida = hora;
+    this.ficharService.modificar(this.fichar).subscribe((datos:any)=>{
+      if(datos.error==true){
+        this.toastService.showError(datos.mensaje,datos.titulo);
+      }else{
+        this.toastService.showOk(datos.mensaje, datos.titulo);
+        this.fichajes.push(this.fichar);
+        this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+      }
+    })
   }
 }

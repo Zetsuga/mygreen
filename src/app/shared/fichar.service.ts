@@ -9,7 +9,6 @@ import { Fichar } from '../models/fichar';
 export class FicharService {
 
   private url:string;
-  public fichajes:Fichar[];
 
   constructor(private http:HttpClient) { 
 

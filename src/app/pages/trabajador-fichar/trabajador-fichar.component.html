@@ -3,7 +3,7 @@
         <app-header-panel></app-header-panel>
     </div>
     <div class="menuppal">
-        <app-menu-panel></app-menu-panel>
+        <app-menu-panel (eventoEntrada)="entrada($event)" (eventoSalida)="salida($event)"></app-menu-panel>
 
     </div>
     <div class="cuerpo">
@@ -27,11 +27,10 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let fichaje of fichajes" id="tablaFila">
-                                <td>{{ficharService.fichajes.fecha | fecha}}</td>
-                                <td>{{ficharService.fichajes.entrada}}</td>
-                                <td>{{ficharService.fichajes.salida}}</td>
+                                <td>{{fichaje.fecha | fecha}}</td>
+                                <td>{{fichaje.entrada}}</td>
+                                <td>{{fichaje.salida}}</td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
