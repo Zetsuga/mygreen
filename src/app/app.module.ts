@@ -32,12 +32,10 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { FechaPipe } from './pipes/fecha.pipe';
 import { ModalComponent } from './components/modal/modal.component';
-=======
 import { ValidateEqualModule } from 'ng-validate-equal';
->>>>>>> pedro8
+import { UsuarioPipe } from './pipes/usuario.pipe';
 
 @NgModule({
   declarations: [
@@ -63,7 +61,8 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     BotonSliceComponent,
     TablaIncidenciasComponent,
     FechaPipe,
-    ModalComponent
+    ModalComponent,
+    UsuarioPipe
   ],
   imports: [
     BrowserModule,

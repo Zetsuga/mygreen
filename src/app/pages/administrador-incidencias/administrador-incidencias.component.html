@@ -51,8 +51,8 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let incidencia of incidencias;let indice=index" id="tablaFila" (click)="cargarDatos(indice)">
-                            <td>{{incidencia.fecha}}</td>
-                            <td>{{incidencia.usuario_id}}</td>
+                            <td>{{incidencia.fecha |fecha}}</td>
+                            <td>{{incidencia.nombre}} {{incidencia.apellidos}}</td>
                             <td>{{incidencia.descripcion}}</td>
                         </tr>
                         

@@ -20,7 +20,7 @@ export class AdministradorIncidenciasComponent implements OnInit {
   constructor(private usuarioService:UsuarioService,private fincaService:FincaService,
     private incidenciaService:IncidenciasService, private router:Router,private toastService:ToastService) {
 
-      this.incidencia = new Incidencia(0,0,new Date,true,"");
+      this.incidencia = new Incidencia(0,0,new Date,true,"","","");
 
     this.usuarioService.buscarUno(usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
@@ -38,7 +38,7 @@ export class AdministradorIncidenciasComponent implements OnInit {
    public finalizar(incidencia){
      this.incidenciaService.modificar(incidencia).subscribe((datos:any)=>{
        this.incidencias.splice(this.indice,1)
-       this.incidencia=new Incidencia(0,0,new Date,true,"");
+       this.incidencia=new Incidencia(0,0,new Date,true,"","","");
        if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
