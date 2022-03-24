@@ -27,17 +27,13 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let fichaje of fichajes" id="tablaFila">
-                                <td>{{fichaje.fecha}}</td>
-                                <td>{{fichaje.entrada}}</td>
-                                <td>{{fichaje.salida}}</td>
+                                <td>{{ficharService.fichajes.fecha | fecha}}</td>
+                                <td>{{ficharService.fichajes.entrada}}</td>
+                                <td>{{ficharService.fichajes.salida}}</td>
                             </tr>
 
                         </tbody>
                     </table>
-                    <div class="botonFichar detalle">
-                        <!-- <button type="button">Fichar</button> -->
-                        <a class="botonMyGreen" type="button">ENVIAR</a>
-                    </div>
                 </div>
             </div>
         </div>

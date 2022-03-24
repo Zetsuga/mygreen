@@ -90,21 +90,5 @@ export class AdministradorUsuariosComponent implements OnInit {
   }
 
 
-// Validación password
-
-// private buildForm(){
-//   const minPassLength=8;
-
-//   this.usuariosForm = this.formBuilder.group({
-//     password: [,[Validators.required], Validators.minLength(minPassLength)],
-//     password2: [,this.check],
-
-//   })
-// }
-
-// private check(control: AbstractControl){
-
-// }
-
 
 }
