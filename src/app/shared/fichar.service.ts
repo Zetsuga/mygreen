@@ -9,6 +9,7 @@ import { Fichar } from '../models/fichar';
 export class FicharService {
 
   private url:string;
+  public fichajes:Fichar[];
 
   constructor(private http:HttpClient) { 
 
@@ -33,7 +34,9 @@ export class FicharService {
     /*
       La función buscar retorna todas las entradas de fichar
     */
-    public buscarUno():Observable<object>{
-      return this.http.get(this.url)
+    public buscar(id_usuario:number):Observable<object>{
+      return this.http.get(this.url + "?id_usuario=" + id_usuario)
     }
+
+
 }

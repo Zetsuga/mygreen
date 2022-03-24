@@ -150,6 +150,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   /* text-shadow: 1px 1px 8px black; */
   text-align: center;
 }
+.botonMyGreen:disabled{
+  background-color: #ccc;
+}
 .botonMyGreen:hover {
 	/* background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%); */
 	background-color:#8a9669;
@@ -183,6 +186,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   text-decoration: none;
   text-shadow: 1px 1px 16px black;
   text-align: center;
+}
+.botonMyGreen2:disabled{
+  background-color: #ccc;
 }
 .botonMyGreen2:hover {
   /* background: linear-gradient(to bottom, #8a9669 5%, #69af07 100%); */
