@@ -25,7 +25,8 @@
                 <div echarts [options]="options" class="tensionMatricial"></div>
             </div>
             <div class="valorTension">
-                <div class="tension">
+                <div class="tension"
+                    [ngClass]="{'rojo':'rojo tension','amarillo':'amarillo tension','verde':'verde tension'}[colorTension]">
                     <img src="../../../assets/img/manoPlanta 1.png">
                     <div class="caja">
                         <h2 class="cajaValor">{{tension}} Cb</h2>
@@ -33,7 +34,7 @@
                     </div>
                 </div>
                 <div class="tituloSugerencia">
-                    <h2>TENSIÓN MATRICIAL CORRECTA</h2>
+                    <h2>{{mensaje}}</h2>
                     <p>Para el correcto desarollo de la planta la tensión matricial debe
                         de mantenerse entre valores minimos de 6 Cb y máximos de 16 Cb.
                         En determinadas ocasiones estas medidas pueden variar.</p>

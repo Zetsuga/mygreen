@@ -130,3 +130,9 @@
 .tituloCard {
   text-align: center;
 }
+
+#nombreyaplleidos,
+#prioridad {
+  width: 100%;
+  border: none;
+}

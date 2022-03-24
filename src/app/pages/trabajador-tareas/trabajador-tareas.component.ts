@@ -23,7 +23,7 @@ export class TrabajadorTareasComponent implements OnInit {
   constructor(public usuarioService:UsuarioService,private tareaService:TareasService,
     private incidenciaService:IncidenciasService,private toastService:ToastService,
     private router:Router,public fincaService:FincaService) {
-      this.tarea = new Tarea(0,0,new Date,"","","","");
+      this.tarea = new Tarea(0,0,"","","","","");
       this.incidencia = new Incidencia(0,0,new Date,true,"","","");
       this.indice = 0;
       this.tareaService.buscarTodosUsuario(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{

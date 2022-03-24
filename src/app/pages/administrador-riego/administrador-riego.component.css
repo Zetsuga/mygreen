@@ -116,6 +116,9 @@
   font-family: var(--roboto);
   margin-left: 20px;
 }
+.tituloSugerencia h2 {
+  initial-value: "Error";
+}
 .tituloSugerencia p {
   margin-top: 20px;
   font-weight: 600;
@@ -144,7 +147,6 @@
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
-  background-color: var(--verdeCorrecto);
   display: flex;
   flex-direction: row;
   justify-content: space-around;

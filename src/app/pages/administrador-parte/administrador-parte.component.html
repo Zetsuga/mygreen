@@ -7,7 +7,8 @@
 
     </div>
     <div class="cuerpo">
-        <div class="formNuevaTarea">
+        <!-- <div class="formNuevaTarea"> -->
+        <form class="formulario" #tareasForm="ngForm" (ngSubmit)="onSubmit(tareasForm)" class="formNuevaTarea">
             <div class="tituloFormNuevaTarea ">
                 <h3 class="tituloCard">NUEVA TAREA</h3>
 
@@ -18,15 +19,26 @@
                     <div class="campo">
                         <span>Prioridad</span>
                         <div class="class-input prioridad">
-                            <input type="text" id="prioridad" placeholder="  Prioridad..." />
+                            <!-- <input type="text" id="prioridad" name="prioridad" [(ngModel)]="tarea.prioridad"
+                                #prioridad="ngModel" placeholder="  Prioridad..." /> -->
+                            <select name="prioridad" id="prioridad" name="prioridad" [(ngModel)]="tarea.prioridad"
+                                #Prioridad placeholder="  Prioridad..">
+                                <option value="urgente">Urgente </option>
+                                <option value="media">Media</option>
+                                <option value="baja">Baja</option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="fila">
                     <div class="campo">
-                        <span>Estado</span>
+                        <span>Nombre y apellidos</span>
                         <div class="class-input estado">
-                            <input type="text" id="estado" placeholder="  Estado..." />
+                            <select name="nombreyapellidos" id="nombreyaplleidos" name="nombreyapellidos"
+                                [(ngModel)]="tarea.id_usuario" #nombreyapellidos placeholder="  Nombre y apellidos..">
+                                <option *ngFor="let usuario of usuarios" value={{usuario.id_usuario}}>
+                                    {{usuario.nombre}} {{usuario.apellidos}}</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -34,7 +46,9 @@
                     <div class="campo">
                         <span>Fecha</span>
                         <div class="class-input fecha">
-                            <input type="date" id="fecha" placeholder="  Fecha..." />
+                            <input type="date" id="fecha" name="fechaTarea" [(ngModel)]='tarea.fecha'
+                                #fechaTarea="ngModel" placeholder="  Fecha..."
+                                value="{{tarea.fecha | date:'yyyy-MM-dd'}}" />
                         </div>
                     </div>
                 </div>
@@ -42,51 +56,66 @@
                     <div class="campo campodescripcion">
                         <span>Descripción</span>
                         <div class="class-input descripcion">
-                            <input type="text" id="descripcion" placeholder="  Descripción" />
+                            <input type="text" id="descripcion" name="descripcion" [(ngModel)]="tarea.descripcion"
+                                #descripcion="ngModel"
+                                [ngClass]="{'is-invalid': descripcion.invalid && (descripcion.dirty || descripcion.touched)}"
+                                required placeholder="  Descripción" />
+                        </div>
+                        <div class="advertencia"
+                            *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+                            <p *ngIf="descripcion.errors.required">La descripcion es obligatoria</p>
                         </div>
                     </div>
                 </div>
                 <div class="fila">
                     <div class="botonGuardar centrarBoton">
-                        <!-- <button type="button">Guardar</button> -->
-                        <a class="botonMyGreen" type="button">ENVIAR</a>
+                        <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit"
+                            [disabled]="!tareasForm.valid">CREAR</button>
+                        <button *ngIf="!botonFormulario" class="botonMyGreen" [disabled]="!tareasForm.valid"
+                            id="crear-modificar" type="button" (click)="modificarTarea()">MODIFICAR</button>
                     </div>
                 </div>
             </div>
 
-           
 
-        </div>
+        </form>
+        <!-- </div> -->
 
-    <div class="tabla-tarea">
-        <div class="tablaUltimasTareas">
-            <h3 class="tituloCard">TAREAS ASIGNADAS</h3>
-            <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
-                <thead>
-                    <th scope="col" id="tablaCabecera">
-                        PRIORIDAD
-                    </th>
-                    <th scope="col" id="tablaCabecera">
-                        USUARIO
-                    </th>
-                    <th scope="col" id="tablaCabecera">
-                        FECHA
-                    </th>
-                    <th scope="col" id="tablaCabecera">
-                        DESCRIPCION
-                    </th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let tarea of tareas" id="tablaFila">
-                        <td>{{tarea.prioridad}}</td>
-                        <td>{{tarea.usuario_id}}</td>
-                        <td>{{tarea.fecha}}</td>
-                        <td>{{tarea.descripcion}}</td>
-                    </tr>
+        <div class="tabla-tarea">
+            <div class="tablaUltimasTareas">
+                <h3 class="tituloCard">TAREAS ASIGNADAS</h3>
+                <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                    <thead>
+                        <th scope="col" id="tablaCabecera">
+                            PRIORIDAD
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            USUARIO
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            FECHA
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            DESCRIPCION
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tarea of tareas;let indice = index " id="tablaFila">
+                            <td>{{tarea.prioridad}}</td>
+                            <td>{{tarea.nombre}} {{tarea.apellidos}}</td>
+                            <td>{{tarea.fecha | fecha }}</td>
+                            <td>{{tarea.descripcion}}</td>
+                            <td>
+                                <div class=iconos><a (click)="eliminarTarea(indice)"><img
+                                            src="../../../assets/img/iconoEliminar.png"></a><a
+                                        (click)="cargarDatos(indice)"><img
+                                            src="../../../assets/img/iconoModificar.png"></a></div>
+                            </td>
+                        </tr>
 
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
