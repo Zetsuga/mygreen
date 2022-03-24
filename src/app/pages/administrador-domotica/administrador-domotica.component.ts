@@ -21,6 +21,7 @@ export class AdministradorDomoticaComponent implements OnInit {
   public dataTension = [];
   public dataTemperatura = [];
   public dataHumedad = [];
+  public dataFecha = [];
 
   constructor(public usuario:UsuarioService, private router:Router, public mediciones:MedicionesService) {
    }
@@ -41,18 +42,15 @@ export class AdministradorDomoticaComponent implements OnInit {
     })
 
     this.mediciones.buscarRango(null,null).subscribe((datos:any)=>{
-      console.log(datos);
-
-      for( let i = datos.resultado.length-1; i>datos.resultado.length - 8 ; i--){
+    
+      for( let i = datos.resultado.length-1; i>datos.resultado.length - 40 ; i--){
+        let dateTimeParts= datos.resultado[i].fecha.split(/[- : T]/);
+        this.dataFecha.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ datos.resultado[i].hora);
         this.dataTension.push(datos.resultado[i].tensionmatricial);
         this.dataTemperatura.push(datos.resultado[i].temperatura);
         this.dataHumedad.push(datos.resultado[i].humedad);
 
       }
-
-      console.log(this.dataTension);
-      console.log(this.dataTemperatura);
-      console.log(this.dataHumedad);
       
       
       
@@ -82,7 +80,7 @@ export class AdministradorDomoticaComponent implements OnInit {
       {
         type: 'category',
         boundaryGap: false,
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: this.dataFecha
       }
     ],
     yAxis: [

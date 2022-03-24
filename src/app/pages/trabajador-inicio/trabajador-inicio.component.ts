@@ -39,7 +39,7 @@ export class TrabajadorInicioComponent implements OnInit {
       }
     })
 
-    this.parte = new Tarea(0,0,new Date,"","","","");
+    this.parte = new Tarea(0,0,"","","","","");
   
  }
 

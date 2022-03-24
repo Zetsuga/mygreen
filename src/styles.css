@@ -150,14 +150,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   /* text-shadow: 1px 1px 8px black; */
   text-align: center;
 }
-.botonMyGreen:disabled{
+.botonMyGreen:disabled {
   background-color: #ccc;
+  cursor: default;
 }
 .botonMyGreen:hover {
-	/* background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%); */
-	background-color:#8a9669;
-    text-shadow: none;
-    color: var(--grisOscuro);
+  /* background:linear-gradient(to bottom, #8a9669 5%, #69af07 100%); */
+  background-color: #8a9669;
+  text-shadow: none;
+  color: var(--grisOscuro);
 }
 .botonMyGreen:active {
   position: relative;
@@ -187,7 +188,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   text-shadow: 1px 1px 16px black;
   text-align: center;
 }
-.botonMyGreen2:disabled{
+.botonMyGreen2:disabled {
   background-color: #ccc;
 }
 .botonMyGreen2:hover {
@@ -201,17 +202,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   top: 1px;
 }
 
-
-
-
-.rojo{
-  background-color:var(--rojowarning);
+.rojo {
+  background-color: var(--rojowarning);
 }
 
-.amarillo{
-  background-color:var(--amariloAdvertencia);
+.amarillo {
+  background-color: var(--amariloAdvertencia);
 }
 
-.verde{
-  background-color:var(--verdeCorrecto);
+.verde {
+  background-color: var(--verdeCorrecto);
 }
