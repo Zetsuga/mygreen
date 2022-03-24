@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="perfilAdm">
+            <form class="perfilAdm" #perfilForm="ngForm" (ngSubmit)="onSubmit(perfilForm)">
 
             <div class="perfilAdm-detalle">
                 <div class="tituloCard">
@@ -57,13 +57,17 @@
                     <div class="campo">
                         <span>Nombre</span>
                         <div class="class-input nombre">
-                            <input type="text" id="nombre" placeholder="  Nombre" />
+                            <input type="text" id="nombre"
+                            name="nombre" [(ngModel)]="usuario.nombre"
+                            #nombre="ngModel"/>
                         </div>
                     </div>
                     <div class="campo">
                         <span>Apellidos</span>
                         <div class="class-input apellidos">
-                            <input type="text" id="apellidos" placeholder="  Apellidos" />
+                            <input type="text" id="apellidos"
+                            name="apellidos" [(ngModel)]="usuario.apellidos"
+                            #apellidos="ngModel"/>
                         </div>
                     </div>
                 </div>
@@ -71,13 +75,17 @@
                     <div class="campo">
                         <span>Teléfono</span>
                         <div class="class-input telefono">
-                            <input type="text" id="telefono" placeholder="  Su teléfono" />
+                            <input type="text" id="telefono" 
+                            name="telefono" [(ngModel)]="usuario.telefono"
+                            #telefono="ngModel"/>
                         </div>
                     </div>
                     <div class="campo">
                         <span>Dirección</span>
                         <div class="class-input direccion">
-                            <input type="text" id="direccion" placeholder=" Su dirección" />
+                            <input type="text" id="direccion"
+                            name="direccion" [(ngModel)]="usuario.direccion"
+                            #direccion="ngModel"/>
                         </div>
                     </div>
                 </div>
@@ -85,13 +93,17 @@
                     <div class="campo">
                         <span>CP</span>
                         <div class="class-input cp">
-                            <input type="text" id="cp" placeholder=" Su CP" />
+                            <input type="text" id="cp"
+                            name="codigoPostal" [(ngModel)]="usuario.cp"
+                            #codigoPostal="ngModel" />
                         </div>
                     </div>
                     <div class="campo">
                         <span>Población</span>
                         <div class="class-input poblacion">
-                            <input type="text" id="poblacion" placeholder="  Su Poblacion" />
+                            <input type="text" id="poblacion"
+                            name="poblacion" [(ngModel)]="usuario.poblacion"
+                            #poblacion="ngModel"/>
                         </div>
                     </div>
                 </div>
@@ -99,13 +111,17 @@
                     <div class="campo">
                         <span>Ciudad</span>
                         <div class="class-input ciudad">
-                            <input type="text" id="ciudad" placeholder="Su ciudad" />
+                            <input type="text" id="ciudad"
+                            name="ciudad" [(ngModel)]="usuario.ciudad"
+                            #ciudad="ngModel" />
                         </div>
                     </div>
                     <div class="campo">
                         <span>Número de Cuenta</span>
                         <div class="class-input ncuenta">
-                            <input type="text" id="ncuenta" placeholder=" Su nº de Cuenta" />
+                            <input type="text" id="ncuenta"
+                            name="cuenta" [(ngModel)]="usuario.num_cuenta"
+                            #cuenta="ngModel" />
                         </div>
                     </div>
                 </div>
@@ -113,13 +129,22 @@
                     <div class="campo">
                         <span>Contraseña</span>
                         <div class="class-input password">
-                            <input type="password" id="password" placeholder="  *******" />
-                        </div>
+                            <input type="password" id="password"
+                            name="password" [(ngModel)]="usuario.contrasenia"
+                            #password="ngModel"
+                            [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="4" required placeholder="  *******" />
+                    </div>
+                        <div class="advertencia" *ngIf="password.invalid && (password.dirty || password.touched)">
+                            <p *ngIf="password.errors.required">La contraseña es obligatoria</p>
+                            <p *ngIf="password.errors.minlength">Minimo 4 caracteres</p>
+                        </div> 
                     </div>
                     <div class="campo">
                         <span>Dirección de email</span>
                         <div class="class-input email">
-                            <input type="text" id="email" placeholder="  email" />
+                            <input type="text" id="email"
+                            name="email" [(ngModel)]="usuario.email"
+                            #email="ngModel" />
                         </div>
                     </div>
                 </div>
@@ -127,18 +152,27 @@
                     <div class="campo">
                         <span>Repetir Contraseña</span>
                         <div class="class-input repetirpassword">
-                            <input type="password" id="password" placeholder="  *******" />
-                        </div>
+                            <input type="password" id="password"
+                            name="ConfirmPassword"   
+                            ngValidateEqual="password"              
+                            #ConfirmPassword="ngModel"
+                            [(ngModel)]="usuario.confirmPassword"
+                            [ngClass]="{'is-invalid':ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)}" minlength="4" required placeholder="  Repita la contraseña" />
+                    </div>
+                        <div class="advertencia" *ngIf="  ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)">
+                            <p *ngIf="ConfirmPassword.errors.required">La contraseña es obligatoria</p>
+                            <p *ngIf="ConfirmPassword.errors.minlength">Minimo 4 caracteres</p>
+                            <p *ngIf="ConfirmPassword.hasError('notEqual') && password.valid">Contraseñas no coinciden</p>
+                        </div> 
                     </div>
                     <div class="campo"></div>
                 </div>                
 
                 <div class="botonGuardar detalle">
-                    <!-- <button type="button">Guardar</button> -->
-                    <button class="botonMyGreen" type="button">ENVIAR</button>
+                    <button class="botonMyGreen" [disabled]="!perfilForm.valid" type="submit">ENVIAR</button>
                 </div>
 
             
         </div>
-    </div>
+    </form>
 </div>
