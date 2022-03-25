@@ -41,7 +41,4 @@ export class MenuPanelComponent implements OnInit {
     this.botonFormulario=true;
     this.eventoSalida.emit(true);
   }
-
-  
-
 }
