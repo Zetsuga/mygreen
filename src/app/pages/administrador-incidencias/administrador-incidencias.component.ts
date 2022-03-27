@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Finca } from 'src/app/models/finca';
 import { Incidencia } from 'src/app/models/incidencia';
+import { Usuario } from 'src/app/models/usuario';
 import { FincaService } from 'src/app/shared/finca.service';
 import { IncidenciasService } from 'src/app/shared/incidencias.service';
 import { ToastService } from 'src/app/shared/toast.service';
@@ -16,14 +18,19 @@ export class AdministradorIncidenciasComponent implements OnInit {
   public incidencias:Incidencia[];
   public incidencia:Incidencia;
   public indice:number;
+  public finca: Finca;
+  public usuario:Usuario;
 
-  constructor(private usuarioService:UsuarioService,private fincaService:FincaService,
+  constructor(public usuarioService:UsuarioService,public fincaService:FincaService,
     private incidenciaService:IncidenciasService, private router:Router,private toastService:ToastService) {
 
       this.incidencia = new Incidencia(0,0,new Date,true,"","","");
+      this.finca = new Finca("",0,"","",0,0);
+      this.usuario = new Usuario("","","","",0,"","","","","","")
 
     this.usuarioService.buscarUno(usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
+      
       this.incidenciaService.buscar(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
         this.incidencias = datos.resultado;
       })
@@ -33,6 +40,10 @@ export class AdministradorIncidenciasComponent implements OnInit {
    public cargarDatos(id){
       this.incidencia = this.incidencias[id];
       this.indice = id;
+      this.usuarioService.buscarUno(this.incidencia.id_usuario).subscribe((datos:any)=>{
+        this.finca = new Finca(datos.resultado[0].fincadireccion,0,"","",0,0);
+        this.usuario = datos.resultado[0];
+      })
    }
 
    public finalizar(incidencia){
