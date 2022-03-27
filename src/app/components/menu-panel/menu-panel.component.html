@@ -15,7 +15,7 @@
 
         </ng-template>
     </div>
-    <div class="menu" *ngIf="usuarioService.usuario.rol =='2'; else siTrabajador">
+    <div class="menu" *ngIf="usuarioService.usuario.rol =='2'; else siSuperAdmin">
         <div class="menuBoton">
             <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
             <a routerLink="/administrador/inicio" class="tituloCard">INICIO</a>
@@ -63,6 +63,14 @@
         </div>
 
     </div>
+    <ng-template #siSuperAdmin>
+        <div #siSuperAdmin class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
+            <div class="menuBoton">
+                <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
+                <a routerLink="/administrador/inicio" class="tituloCard">MENU ADMIN</a>
+            </div>
+        </div>
+    </ng-template>
     <ng-template #siTrabajador>
         <div class="menu">
             <div class="menuBoton">

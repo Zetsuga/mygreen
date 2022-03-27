@@ -1,1 +1,194 @@
-<p>super-administrador works!</p>
+<div class="contenido">
+    <div class="header">
+        <app-header-panel></app-header-panel>
+    </div>
+    <div class="menu">
+        <app-menu-panel></app-menu-panel>
+    </div>
+
+    <div class="admin-usuarios">
+
+        <!--Formulario Usuarios  -->
+        <form class="formulario" #usuariosForm="ngForm" (ngSubmit)="onSubmit(usuariosForm)"
+            class="contenedor_datos_input">
+            <div class="usuariosForm">
+                <div class="titulo-usuariosForm">
+                    <h2 class="tituloCard">CREAR ADMINISTRADOR</h2>
+                </div>
+                <span>NOMBRE</span>
+                <div class="subForm">
+                    <div class="class-input nombre">
+                        <input type="text" id="nombre-usuariosForm" name="nombre" [(ngModel)]="usuario.nombre"
+                            #nombre="ngModel"
+                            [ngClass]="{'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}" required
+                            placeholder="  Nombre" />
+                    </div>
+                    <div class="advertencia" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                        <p *ngIf="nombre.errors.required">El nombre es obligatorio</p>
+                    </div>
+                </div>
+
+                <span>APELLIDOS</span>
+                <div class="subForm">
+                    <div class="class-input apellidos">
+                        <input type="text" id="apellidos-usuariosForm" name="apellidos" [(ngModel)]="usuario.apellidos"
+                            #apellidos="ngModel" [ngClass]="{'is-invalid':usuariosForm.submitted && apellidos.invalid}"
+                            required placeholder="  Apellidos..." />
+                    </div>
+                    <div class="advertencia" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+                        <p *ngIf="apellidos.errors.required">Los apellidos son obligatorios</p>
+                    </div>
+                </div>
+
+                <span>TELÉFONO</span>
+                <div class="subForm">
+                    <div class="class-input telefono">
+                        <input type="text" id="telefono-usuariosForm" name="telefono" [(ngModel)]="usuario.telefono"
+                            #telefono="ngModel" [ngClass]="{'is-invalid': usuariosForm.submitted && telefono.invalid}"
+                            required placeholder="  Teléfono..." />
+                    </div>
+                    <div class="advertencia" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                        <p *ngIf="telefono.errors.required">El teléfono es obligatorio</p>
+                    </div>
+                </div>
+
+                <span>E-MAIL</span>
+                <div class="subForm">
+                    <div class="class-input email">
+                        <input type="email" id="email-usuariosForm" name="correo" [(ngModel)]="usuario.email"
+                            #correo="ngModel"
+                            [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email required
+                            placeholder="  E-mail..." />
+                    </div>
+                    <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                        <p *ngIf="correo.errors.required" class="advertencia">El correo es obligatorio</p>
+                    </div>
+                </div>
+
+                <span>CONTRASEÑA</span>
+                <div class="subForm">
+                    <div class="class-input">
+                        <input type="password" name="password" [(ngModel)]="usuario.contrasenia" #password="ngModel"
+                            [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}"
+                            minlength="4" required placeholder="  *******" />
+                    </div>
+                    <div class="advertencia" *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <p *ngIf="password.errors.required">La contraseña es obligatoria</p>
+                        <p *ngIf="password.errors.minlength">Minimo 4 caracteres</p>
+                    </div>
+                </div>
+
+                <span>REPETIR CONTRASEÑA</span>
+                <div class="subForm">
+                    <div class="class-input">
+                        <input type="password" name="ConfirmPassword" ngValidateEqual="password"
+                            #ConfirmPassword="ngModel" [(ngModel)]="usuario.confirmPassword"
+                            [ngClass]="{'is-invalid':ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)}"
+                            minlength="4" required placeholder="  *******" />
+                    </div>
+                    <div class="advertencia"
+                        *ngIf="  ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)">
+                        <p *ngIf="ConfirmPassword.errors.required">La contraseña es obligatoria</p>
+                        <p *ngIf="ConfirmPassword.errors.minlength">Minimo 4 caracteres</p>
+                        <p *ngIf="ConfirmPassword.hasError('notEqual') && password.valid">Contraseñas no coinciden</p>
+                    </div>
+                </div>
+
+
+                <div id="boton-form">
+                    <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit"
+                        [disable]="usuariosForm">CREAR</button>
+                    <button *ngIf="!botonFormulario" class="botonMyGreen" id="crear-modificar" type="button"
+                        (click)="modificarUsuario()">MODIFICAR</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Tabla Usuarios Super Admin -->
+
+        <div class="tablaUltimasTareas">
+            <div class="titulo-usuariosForm">
+                <h2 class="tituloCard">USUARIOS SUPER ADMIN</h2>
+            </div>
+            <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                <thead>
+                    <th scope="col" id="tablaCabecera">
+                        NOMBRE
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        APELLIDOS
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        TELÉFONO
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        E-MAIL
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of superAdmin; let indice=index" id="tablaFila">
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.apellidos}}</td>
+                        <td>{{user.telefono}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <div class=iconos><a (click)="eliminarUsuario(indice)"><img
+                                        src="../../../assets/img/iconoEliminar.png"></a><a
+                                    (click)="cargarDatos(indice)"><img src="../../../assets/img/iconoModificar.png"></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Tabla usuarios administradores -->
+            <div class="titulo-usuariosForm">
+                <h2 class="tituloCard">USUARIOS ADMINISTRADORES</h2>
+            </div>
+            <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                <thead>
+                    <th scope="col" id="tablaCabecera">
+                        NOMBRE
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        APELLIDOS
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        TELÉFONO
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+                        E-MAIL
+                    </th>
+                    <th scope="col" id="tablaCabecera">
+
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of administradores; let indice=index" id="tablaFila">
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.apellidos}}</td>
+                        <td>{{user.telefono}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <div class=iconos><a (click)="eliminarUsuario(indice)"><img
+                                        src="../../../assets/img/iconoEliminar.png"></a><a
+                                    (click)="cargarDatos(indice)"><img src="../../../assets/img/iconoModificar.png"></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+
+</div>

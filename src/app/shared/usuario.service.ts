@@ -76,4 +76,10 @@ export class UsuarioService {
     };
     return this.http.delete(this.url,options);
   }
+
+  /* La funcion buscarAdmin busca en la base de datos los usuarios administradores
+  y superAdmin, hay que pasarle el rol a buscar.*/
+  public buscarAdmin(rol:number):Observable<object>{
+    return this.http.get(this.url3+"?rol="+rol);
+  }
 }
