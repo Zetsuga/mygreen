@@ -36,11 +36,24 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 100px;
+    padding: 5px;
   }
 
   .boton-login img {
-    padding-right: 10px;
-    max-width: 40px;
+    height: 100%;
+    width: auto;
+  }
+
+  .boton-login img:hover{
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.308));
+    filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.315));
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.301);
+    border-radius: 50%;
   }
 
   .boton-login p {
