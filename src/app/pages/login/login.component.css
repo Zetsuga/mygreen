@@ -100,6 +100,9 @@ span{
     font-size: 0.88em;
     color: black;
 }
+.form-check{
+    padding: 0;
+}
 .form-check label{
     font-family: 'Lato';
     font-style: normal;
@@ -110,7 +113,6 @@ span{
     color: var(--grisOscuro);
 }
 .recordar-contraseña{
-    margin-left: 20px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
