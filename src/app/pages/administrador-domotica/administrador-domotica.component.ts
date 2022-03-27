@@ -45,7 +45,7 @@ export class AdministradorDomoticaComponent implements OnInit {
 
     this.mediciones.buscarRango(null,null).subscribe((datos:any)=>{
     
-      for( let i = datos.resultado.length-1; i>datos.resultado.length - 100 ; i--){
+      for( let i = datos.resultado.length-1; i>datos.resultado.length - 40 ; i--){
         let dateTimeParts= datos.resultado[i].fecha.split(/[- : T]/);
         this.dataFecha.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ datos.resultado[i].hora);
         this.dataTension.push(datos.resultado[i].tensionmatricial);

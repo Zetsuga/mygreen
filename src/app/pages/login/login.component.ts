@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
           this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
           this.toastService.showOk(datos.mensaje,datos.titulo)
           if(datos.resultado[0].rol == "1"){
-            
+            this.router.navigateByUrl('/super/administrador');
           }else if(datos.resultado[0].rol == "2"){
             this.router.navigateByUrl('/administrador/inicio');
           }else{

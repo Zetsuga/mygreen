@@ -10,7 +10,7 @@ export class BotonSliceComponent implements OnInit {
 @Input() usuariohijo:number;
 
   constructor() { 
-    console.log(this.usuariohijo);
+    
   }
   
   ngOnInit(): void {

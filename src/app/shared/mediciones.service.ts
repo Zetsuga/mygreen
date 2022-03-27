@@ -23,12 +23,9 @@ export class MedicionesService {
   public buscarRango(inicio:Date,fin:Date):Observable<object>{
     //Comprobamos que inicio y fin no sean null
     if(inicio!=null && fin != null){
-      console.log("LLamada: "+this.url+ "?inicio="+inicio+"&fin="+fin);
-      
       return this.http.get(this.url+ "?inicio="+inicio+"&fin="+fin);
     }
     else{
-      console.log("LLamada: "+this.url);
       return this.http.get(this.url);
     }
       

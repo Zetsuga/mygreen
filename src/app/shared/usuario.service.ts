@@ -10,6 +10,7 @@ export class UsuarioService {
 
   private url:string;
   private url2:string;
+  private url3:string;
   public logueado:boolean;
   public usuario:Usuario;
 
@@ -17,6 +18,7 @@ export class UsuarioService {
 
     this.url2 =`https://mygreenapi.herokuapp.com/login`;
     this.url =`https://mygreenapi.herokuapp.com/usuario`;
+    this.url3 =`https://mygreenapi.herokuapp.com/superAdmin`;
 
     this.logueado=false;
     this.usuario = new Usuario("","","","",0,"","","","","","");
