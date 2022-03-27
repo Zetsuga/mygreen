@@ -46,10 +46,17 @@
   font-size: 15px;
 }
 
+.cajaClima{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .cajaTituloClima {
   color: white;
   font-family: var(--lato);
-  font-size: 15px;
+  font-size: 25px;
   text-align: left;
 }
 

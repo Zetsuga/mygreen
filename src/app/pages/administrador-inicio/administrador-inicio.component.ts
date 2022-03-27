@@ -120,7 +120,7 @@ export class AdministradorInicioComponent implements OnInit {
     this.climaService.getClima().subscribe((datos:any)=>{
       this.maxTemp = datos.temperaturas.max;
       this.minTemp = datos.temperaturas.min;
-      this.clima = datos.stateSky.description;
+      this.clima = datos.stateSky.description.toUpperCase();
     })
 
     this.usuario.buscarUno(usuario.usuario.id_usuario).subscribe((datos:any)=>{
