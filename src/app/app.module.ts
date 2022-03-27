@@ -37,6 +37,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { UsuarioPipe } from './pipes/usuario.pipe';
 import { UploadComponent } from './components/upload/upload.component';
+import { SuperAdministradorComponent } from './pages/super-administrador/super-administrador.component';
+import { SuperSuperadministradorComponent } from './pages/super-superadministrador/super-superadministrador.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { UploadComponent } from './components/upload/upload.component';
     FechaPipe,
     ModalComponent,
     UsuarioPipe,
-    UploadComponent
+    UploadComponent,
+    SuperAdministradorComponent,
+    SuperSuperadministradorComponent
   ],
   imports: [
     BrowserModule,
