@@ -127,9 +127,11 @@
   box-shadow: var(--sombra);
   border: var(--borde);
   display: flex;
-  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
+  flex-direction: column;
   background-color: white;
+  padding-top: 15px;
 }
 
 .tareasPendientes {
@@ -206,12 +208,16 @@ p {
 }
 /* ========================= */
 .graficaTension {
-  width: 600px;
+  /* border: 1px solid black; */
+  width: 650px;
   height: auto;
 }
-
 .demo-chart{
-  max-height: 200px;
-  max-width: 600px;
-  margin-top:-40px;
+  max-height: 250px;
+  max-width: 650px;
+  /* margin-top:-40px; */
+}
+.tensionMatricial h3{
+  position: absolute;
+  /* margin-top: 30px; */
 }

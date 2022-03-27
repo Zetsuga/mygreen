@@ -134,6 +134,11 @@
 .separacion {
   margin: 10px 0 10px 10px;
 }
+.separacion, .separacionSuperior{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .descripcion-caja,
 .incidencia-caja {

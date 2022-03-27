@@ -58,7 +58,7 @@ a {
   display: flex;
   align-items: flex-end;
 }
-a:hover {
+nav a:hover {
   border: 1px solid white;
   border-radius: 2px;
   background-color: white;
@@ -74,26 +74,33 @@ a:hover {
 }
 .zona-dcha {
   display: flex;
+  gap: 20px;
   align-items: center;
   width: auto;
   margin-right: 51px;
 }
 .btn-login {
   /* border: 1px solid black; */
-  margin-right: 20px;
+  /* margin-right: 20px; */
   border-radius: 4px;
-  height: 45px;
-  width: 120px;
-  overflow: hidden;
+  height: 70px;
+  width: 70px;
+  overflow: hiddsen;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .btn-login:hover {
-  box-shadow: 4px 4px 4px grey;
-  background-color: #69af07;
-  border: 1px outset white;
-  /* background-color: white; */
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.loginPng:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+.loginPng{
+  height: 100%;
+  width: auto;
 }
 .redes {
   display: flex;

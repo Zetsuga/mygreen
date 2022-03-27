@@ -29,7 +29,7 @@
                         placeholder="  Esto es una descripción de una tarea" disabled></textarea>
                 </div>
                 <div class="botonMygreen-caja">
-                    <a class="botonMyGreen" type="button" (click)="finalizar(incidencia)" >TERMINAR</a>
+                    <button class="botonMyGreen" [disabled]="!incidenciaForm.valid" type="button" (click)="finalizar(incidencia)" >TERMINAR</button>
                 </div>
             </div>
         </form>

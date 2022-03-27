@@ -39,7 +39,7 @@
                         <div class="class-input fecha">
                             <input [(ngModel)]="tarea.fecha" type="text" name="fecha" placeholder="  Fecha" disabled>
                         </div>
-                        <a class="botonMyGreen" type="button" (click)="eliminarTarea(tarea.id_tarea)">FINALIZAR</a>
+                        <button class="botonMyGreen" type="button" (click)="eliminarTarea(tarea.id_tarea)">FINALIZAR</button>
                     </div>
 
                     <div class="descripcion-derecha">
@@ -58,7 +58,7 @@
                             <input [(ngModel)]="incidencia.fecha" type="date" name="fecha" placeholder="  Fecha">
 
                         </div>
-                        <a class="botonMyGreen" type="button" (click)="guardarIncidencia()">GENERAR</a>
+                        <button class="botonMyGreen" type="button" (click)="guardarIncidencia()">GENERAR</button>
                     </div>
                     <div class="incidencia-derecha">
                         <textarea [(ngModel)]="incidencia.descripcion"  name="descripcion2" id="descripcion2" cols="40" rows="6" fixed

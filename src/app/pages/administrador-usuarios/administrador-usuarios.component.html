@@ -99,8 +99,8 @@
 
                  
                 <div id="boton-form">
-                    <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit" [disable]="usuariosForm" >CREAR</button>
-                    <button *ngIf="!botonFormulario" class="botonMyGreen" id ="crear-modificar" type="button" (click)="modificarUsuario()" >MODIFICAR</button>
+                    <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit" [disabled]="!usuariosForm.valid" >CREAR</button>
+                    <button *ngIf="!botonFormulario" class="botonMyGreen" id ="crear-modificar" type="button" [disabled]="!usuariosForm.valid" (click)="modificarUsuario()" >MODIFICAR</button>
                 </div>
             </div>
         </form> 
