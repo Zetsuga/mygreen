@@ -5,7 +5,7 @@
     <div class="menu">
         <app-menu-panel></app-menu-panel>
     </div>
-    
+
     <div class="tarjetas">
         <div class="tareas">
             <div class="tareas-cabecera">
@@ -27,19 +27,22 @@
                     </div>
                 </div>
             </div>
-            <div class="tareasPendientes-contenedor" >
+            <div class="tareasPendientes-contenedor">
                 <div *ngFor="let tarea of tareas; let indice = index" class="tarjeta-tarea">
                     <div class="{{tarea.prioridad}}">
                         <div class="cabecera">
                             <p class="cabecera-titulo">{{tarea.fecha | fecha}}</p>
-                            <img class="cabecera-imagen" src="../../../assets/img/close.png" (click)="eliminarTarea(tarea.id_tarea,indice)">
+                            <img class="cabecera-imagen" src="../../../assets/img/close.png"
+                                (click)="eliminarTarea(tarea.id_tarea,indice)">
                         </div>
-                        <a (click)="openPopup(indice)"><div class="contenido-tarjeta">
-                            <p class="descripcion">
-                                {{tarea.descripcion}}
-                            </p>
-                            <img src="../../../assets/img/mas.png">
-                        </div></a>
+                        <a (click)="openPopup(indice)">
+                            <div class="contenido-tarjeta">
+                                <p class="descripcion">
+                                    {{tarea.descripcion}}
+                                </p>
+                                <img src="../../../assets/img/mas.png">
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -48,7 +51,9 @@
         <div class="nominas">
             <h3 class="tituloCard--sinmargen">ÚLTIMAS NÓMINAS</h3>
             <div class="nominas-caja">
-                <a class="botonMyGreen separacion" type="button" *ngFor="let nomina of nominas">{{nomina.mes}}</a>
+                <a href="../../../assets/documents/nominas/{{nomina.id_usuario}}/{{nomina.id_usuario}}{{nomina.fecha | fecha}}.pdf"
+                    download="{{nomina.id_usuario}}{{nomina.fecha | fecha}}.pdf" class="botonMyGreen separacion"
+                    type="button" *ngFor="let nomina of nominas">{{nomina.mes}}</a>
 
             </div>
         </div>
@@ -56,25 +61,23 @@
     </div>
 
     <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">PRIORIDAD: {{parte.prioridad}} - {{parte.fecha|fecha}}</h4>
-      </div>
-      <div class="modal-body">
-        <p>{{parte.descripcion}}</p>
-  
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="botonMyGreen2" 
-                (click)="closePopup()">
-          Cerrar
-        </button>
-      </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">PRIORIDAD: {{parte.prioridad}} - {{parte.fecha|fecha}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{parte.descripcion}}</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="botonMyGreen2" (click)="closePopup()">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-    
-</div>
 
+</div>

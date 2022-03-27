@@ -36,9 +36,9 @@ export class TrabajadorFicharComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="4"){
-      this.router.navigateByUrl('/login');
-    }
+  //   if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="4"){
+  //     this.router.navigateByUrl('/login');
+  //   }
   }
 
   public entrada(evento){

@@ -36,6 +36,7 @@ import { FechaPipe } from './pipes/fecha.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { UsuarioPipe } from './pipes/usuario.pipe';
+import { UploadComponent } from './components/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { UsuarioPipe } from './pipes/usuario.pipe';
     TablaIncidenciasComponent,
     FechaPipe,
     ModalComponent,
-    UsuarioPipe
+    UsuarioPipe,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

@@ -53,6 +53,7 @@ export class AdministradorParteComponent implements OnInit {
           this.tarea.nombre = data.resultado[0].nombre;
           this.tarea.apellidos = data.resultado[0].apellidos;
           this.tareas.push(this.tarea);
+          this.tarea = new Tarea(0,0,"","","",""," ");
         })  
       }
       console.log(data.resultado);
@@ -76,8 +77,9 @@ export class AdministradorParteComponent implements OnInit {
   }
 
   public cargarDatos (id:number){
-    this.tarea = this.tareas[id];
-    console.log(this.tarea.fecha);
+    this.tarea = new Tarea(this.tareas[id].id_usuario,this.tareas[id].id_finca,
+      this.tareas[id].fecha, this.tareas[id].prioridad,this.tareas[id].descripcion,
+      this.tareas[id].nombre,this.tareas[id].apellidos);
     
     let dateTimeParts= this.tareas[id].fecha.toString().split(/[- : T]/);
     this.fecha1= (dateTimeParts[0] + "-" + dateTimeParts[1]+ "-" + dateTimeParts[2]);
@@ -96,6 +98,7 @@ export class AdministradorParteComponent implements OnInit {
         this.toastService.showOk(data.mensaje,data.titulo);
         this.tareas[this.indice] = this.tarea;
         this.botonFormulario = true;
+        this.tarea = new Tarea(0,0,"","","",""," ");
       }
     })
   }

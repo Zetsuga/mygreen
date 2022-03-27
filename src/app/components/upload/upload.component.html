@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="content">
+        <div class="header">
+            <h1>Subir nominas</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span id="btnUpload" class="input-group-text upload" (click)="onUpload()">
+                            Subir
+                        </span>
+                    </div>
+                    <div class="custom-file">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <input type="file" class="custon-file-input" id="input-custom-file"
+                                (change)="onFileChange($event)">
+                            <label for="input-custom-file">Elige el archivo</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

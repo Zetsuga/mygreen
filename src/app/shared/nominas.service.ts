@@ -22,4 +22,8 @@ export class NominasService {
   public buscar(id_usuario:Number):Observable<object>{
     return this.http.get(this.url+ "?id_usuario="+id_usuario)
   }
+
+  public sendPost(body:FormData):Observable<any>{
+    return this.http.post( `https://mygreenapi.herokuapp.com/nominas`, body);
+  }
 }

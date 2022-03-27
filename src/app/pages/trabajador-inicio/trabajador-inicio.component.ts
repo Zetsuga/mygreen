@@ -29,7 +29,9 @@ export class TrabajadorInicioComponent implements OnInit {
         this.tareas = datos.resultado;
       }
     })
-
+    
+    console.log("Buscamos nominas de: "+ this.usuarioService.usuario.id_usuario);
+    
     this.nominasService.buscar(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);

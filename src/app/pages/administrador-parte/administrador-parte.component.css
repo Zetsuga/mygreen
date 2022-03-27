@@ -131,8 +131,16 @@
   text-align: center;
 }
 
-#nombreyaplleidos,
+#nombreyapellidos,
 #prioridad {
   width: 100%;
   border: none;
+}
+
+.advertencia {
+  color: red;
+}
+
+.advertencia p {
+  margin-bottom: 0;
 }

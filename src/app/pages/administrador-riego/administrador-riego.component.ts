@@ -27,17 +27,17 @@ export class AdministradorRiegoComponent implements OnInit {
   this.mediciones.buscarRango(fechaInicio,fechaFin).subscribe((datos:any)=>{
     this.xAxisData = [];
     this.data1 = [];
-    this.data2 = [];
+    //this.data2 = [];
     for (let i = 0; i < datos.resultado.length; i++) {
       let dateTimeParts= datos.resultado[i].fecha.split(/[- : T]/);
       this.xAxisData.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ datos.resultado[i].hora);
       this.data1.push(datos.resultado[i].tensionmatricial);
-      this.data2.push(datos.resultado[i].temperatura);
+      //this.data2.push(datos.resultado[i].temperatura);
     }
 
     this.options = {
       legend: {
-        data: ['TensionM', 'Temperatura'],
+        data: ['TensionM'], //, 'Temperatura'
         align: 'left',
       },
       tooltip: {},
@@ -56,12 +56,12 @@ export class AdministradorRiegoComponent implements OnInit {
           data: this.data1,
           animationDelay: (idx) => idx * 10,
         },
-        {
-          name: 'Temperatura',
-          type: 'bar',
-          data: this.data2,
-          animationDelay: (idx) => idx * 10 + 100,
-        },
+        // {
+        //   name: 'Temperatura',
+        //   type: 'bar',
+        //   data: this.data2,
+        //   animationDelay: (idx) => idx * 10 + 100,
+        // },
       ],
       animationEasing: 'elasticOut',
       animationDelayUpdate: (idx) => idx * 5,
@@ -107,12 +107,12 @@ export class AdministradorRiegoComponent implements OnInit {
       let dateTimeParts= datos.resultado[i].fecha.split(/[- : T]/);
       this.xAxisData.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ datos.resultado[i].hora);
       this.data1.push(datos.resultado[i].tensionmatricial);
-      this.data2.push(datos.resultado[i].temperatura);
+     // this.data2.push(datos.resultado[i].temperatura);
     }
 
     this.options = {
       legend: {
-        data: ['TensionM', 'Temperatura'],
+        data: ['TensionM'], //, 'Temperatura'
         align: 'left',
       },
       tooltip: {},
@@ -131,12 +131,12 @@ export class AdministradorRiegoComponent implements OnInit {
           data: this.data1,
           animationDelay: (idx) => idx * 10,
         },
-        {
-          name: 'Temperatura',
-          type: 'bar',
-          data: this.data2,
-          animationDelay: (idx) => idx * 10 + 100,
-        },
+        // {
+        //   name: 'Temperatura',
+        //   type: 'bar',
+        //   data: this.data2,
+        //   animationDelay: (idx) => idx * 10 + 100,
+        // },
       ],
       animationEasing: 'elasticOut',
       animationDelayUpdate: (idx) => idx * 5,

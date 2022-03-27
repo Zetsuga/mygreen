@@ -18,6 +18,8 @@ export class AdministradorDomoticaComponent implements OnInit {
   public humedad: number;
   public isLoading: boolean;
   public options:any;
+  public options1:any;
+  public options2:any;
   public dataTension = [];
   public dataTemperatura = [];
   public dataHumedad = [];
@@ -43,7 +45,7 @@ export class AdministradorDomoticaComponent implements OnInit {
 
     this.mediciones.buscarRango(null,null).subscribe((datos:any)=>{
     
-      for( let i = datos.resultado.length-1; i>datos.resultado.length - 40 ; i--){
+      for( let i = datos.resultado.length-1; i>datos.resultado.length - 100 ; i--){
         let dateTimeParts= datos.resultado[i].fecha.split(/[- : T]/);
         this.dataFecha.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ datos.resultado[i].hora);
         this.dataTension.push(datos.resultado[i].tensionmatricial);
@@ -51,7 +53,11 @@ export class AdministradorDomoticaComponent implements OnInit {
         this.dataHumedad.push(datos.resultado[i].humedad);
 
       }
-      
+
+      this.dataFecha.reverse();
+      this.dataHumedad.reverse();
+      this.dataTemperatura.reverse();
+      this.dataTension.reverse();
       
       
 
@@ -68,7 +74,11 @@ export class AdministradorDomoticaComponent implements OnInit {
       }
     },
     legend: {
-      data: ['Tensión', 'Temp.', 'Humedad']
+      data: ['Tensión', 'Temp.', 'Humedad'],
+      selected: {
+        'Temp.': false,
+        'Humedad':false
+      }
     },
     grid: {
       left: '3%',
@@ -94,14 +104,15 @@ export class AdministradorDomoticaComponent implements OnInit {
         type: 'line',
         stack: 'counts',
         areaStyle: { normal: {} },
-        data: this.dataTension
+        data: this.dataTension,
+        
       },
       {
         name: 'Temp.',
         type: 'line',
         stack: 'counts',
         areaStyle: { normal: {} },
-        data: this.dataTemperatura
+        data: this.dataTemperatura,
       },
       {
         name: 'Humedad',
@@ -112,6 +123,133 @@ export class AdministradorDomoticaComponent implements OnInit {
       },
     ]
   };
+
+  this.options1 = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'cross',
+        label: {
+          backgroundColor: '#6a7985'
+        }
+      }
+    },
+    legend: {
+      data: ['Tensión', 'Temp.', 'Humedad'],
+      selected: {
+        'Tensión': false,
+        'Humedad': false
+      }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: [
+      {
+        type: 'category',
+        boundaryGap: false,
+        data: this.dataFecha
+      }
+    ],
+    yAxis: [
+      {
+        type: 'value'
+      }
+    ],
+    series: [
+      {
+        name: 'Tensión',
+        type: 'line',
+        stack: 'counts',
+        areaStyle: { normal: {} },
+        data: this.dataTension,
+        
+      },
+      {
+        name: 'Temp.',
+        type: 'line',
+        stack: 'counts',
+        areaStyle: { normal: {} },
+        data: this.dataTemperatura,
+      },
+      {
+        name: 'Humedad',
+        type: 'line',
+        stack: 'counts',
+        areaStyle: { normal: {} },
+        data: this.dataHumedad
+      },
+    ]
+  };
+
+
+  this.options2 = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'cross',
+        label: {
+          backgroundColor: '#6a7985'
+        }
+      }
+    },
+    legend: {
+      data: ['Tensión', 'Temp.', 'Humedad'],
+      selected: {
+        'Tensión': false,
+        'Temp.': false
+      }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: [
+      {
+        type: 'category',
+        boundaryGap: false,
+        data: this.dataFecha
+      }
+    ],
+    yAxis: [
+      {
+        type: 'value'
+      }
+    ],
+    series: [
+      {
+        name: 'Tensión',
+        type: 'line',
+        stack: 'counts',
+        areaStyle: { normal: {} },
+        data: this.dataTension,
+        
+      },
+      {
+        name: 'Temp.',
+        type: 'line',
+        stack: 'counts',
+        areaStyle: { normal: {} },
+        data: this.dataTemperatura,
+      },
+      {
+        name: 'Humedad',
+        type: 'line',
+        stack: 'counts',
+        areaStyle: { normal: {} },
+        data: this.dataHumedad
+      },
+    ]
+  };
+
+
+
+
     })
   }
 
