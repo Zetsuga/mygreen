@@ -1,14 +1,14 @@
-<section class="menuAdministrador" >
+<section class="menuAdministrador">
     <div class="contenido">
         <div class="contenido_imagen">
             <img src="../../../assets/img/perfil.png">
         </div>
         <div class="contenido_texto">
-            <p>Prueba Fernandez Fernandez</p>
-            <p>prueba@gmail.com</p>
+            <p>{{usuario.nombre}} {{usuario.apellidos}}</p>
+            <p>{{usuario.email}}</p>
         </div>
         <div class="zona-dcha" *ngIf="usuarioService.usuario.rol =='4' else falso">
-            <button *ngIf="botonFormulario" class="botonMyGreen2" type="button" (click)="entrada()" >ENTRADA</button>
+            <button *ngIf="botonFormulario" class="botonMyGreen2" type="button" (click)="entrada()">ENTRADA</button>
             <button *ngIf="!botonFormulario" class="botonMyGreen2" type="button" (click)="salida()">SALIDA</button>
         </div>
         <ng-template #falso>
@@ -63,21 +63,21 @@
         </div>
 
     </div>
-<ng-template #siTrabajador>
-    <div class="menu">
-        <div class="menuBoton">
-            <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
-            <a routerLink="/trabajador/inicio" class="tituloCard">INICIO</a>
+    <ng-template #siTrabajador>
+        <div class="menu">
+            <div class="menuBoton">
+                <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
+                <a routerLink="/trabajador/inicio" class="tituloCard">INICIO</a>
+            </div>
+            <div class="menuBoton">
+                <img src="../../../assets/img/perfil-del-usuario 1.png" alt="" class="iconoMenuBoton">
+                <a routerLink="/trabajador/fichar" class="tituloCard">FICHAR</a>
+            </div>
+            <div class="menuBoton">
+                <img src="../../../assets/img/add-user.png" alt="" class="iconoMenuBoton">
+                <a routerLink="/trabajador/tareas" class="tituloCard">TAREAS</a>
+            </div>
         </div>
-        <div class="menuBoton">
-            <img src="../../../assets/img/perfil-del-usuario 1.png" alt="" class="iconoMenuBoton">
-            <a routerLink="/trabajador/fichar" class="tituloCard">FICHAR</a>
-        </div>
-        <div class="menuBoton">
-            <img src="../../../assets/img/add-user.png" alt="" class="iconoMenuBoton">
-            <a routerLink="/trabajador/tareas" class="tituloCard">TAREAS</a>
-        </div>
-    </div>
-</ng-template>
+    </ng-template>
 
 </section>

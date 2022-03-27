@@ -76,10 +76,13 @@ export class AdministradorParteComponent implements OnInit {
     })
   }
 
-  public cargarDatos (id:number){
+  public cargarDatos (id:number){   
     this.tarea = new Tarea(this.tareas[id].id_usuario,this.tareas[id].id_finca,
       this.tareas[id].fecha, this.tareas[id].prioridad,this.tareas[id].descripcion,
       this.tareas[id].nombre,this.tareas[id].apellidos);
+      this.tarea.id_tarea = this.tareas[id].id_tarea;
+      
+      
     
     let dateTimeParts= this.tareas[id].fecha.toString().split(/[- : T]/);
     this.fecha1= (dateTimeParts[0] + "-" + dateTimeParts[1]+ "-" + dateTimeParts[2]);
@@ -91,6 +94,8 @@ export class AdministradorParteComponent implements OnInit {
   }
 
   public modificarTarea(id:number){
+    console.log(this.tarea);
+    
     this.tareasService.modificar(this.tarea).subscribe((data:any)=>{
       if(data.error == true)
       this.toastService.showError(data.mensaje,data.titulo);

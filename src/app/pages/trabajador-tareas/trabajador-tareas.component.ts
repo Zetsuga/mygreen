@@ -61,6 +61,7 @@ export class TrabajadorTareasComponent implements OnInit {
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
+        this.incidencia = new Incidencia(0,0,new Date,true,"","","");
       }
      })
    }

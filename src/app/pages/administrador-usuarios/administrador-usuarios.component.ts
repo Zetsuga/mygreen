@@ -42,6 +42,7 @@ export class AdministradorUsuariosComponent implements OnInit {
            }else{
              this.toastService.showOk(datos.mensaje, datos.titulo);
              this.usuarios.push(this.usuario)
+             this.usuario = new Usuario("","","","",0,"","","","4","","");
            }
          })
        }
@@ -51,7 +52,10 @@ export class AdministradorUsuariosComponent implements OnInit {
    }
 
    public cargarDatos(id){
-     this.usuario = this.usuarios[id];
+     this.usuario = new Usuario(this.usuarios[id].nombre,this.usuarios[id].apellidos,this.usuarios[id].telefono,
+      this.usuarios[id].direccion,this.usuarios[id].cp,this.usuarios[id].poblacion,this.usuarios[id].ciudad,
+      this.usuarios[id].contrasenia,this.usuarios[id].rol,this.usuarios[id].num_cuenta,this.usuarios[id].email);
+      this.usuario.id_usuario = this.usuarios[id].id_usuario;
      this.botonFormulario = false;
      this.indice=id;
    }
@@ -65,6 +69,7 @@ export class AdministradorUsuariosComponent implements OnInit {
         this.toastService.showOk(datos.mensaje, datos.titulo);
         this.usuarios.splice(id,1);
         this.botonFormulario=true;
+        
       }
      })
    }
@@ -77,6 +82,7 @@ export class AdministradorUsuariosComponent implements OnInit {
         this.toastService.showOk(datos.mensaje, datos.titulo);
         this.usuarios[this.indice]=this.usuario;
         this.botonFormulario=true;
+        this.usuario = new Usuario("","","","",0,"","","","4","","");
       }
      })
    }
