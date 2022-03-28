@@ -33,8 +33,13 @@ export class FicharService {
     /*
       La función buscar retorna todas las entradas de fichar
     */
-    public buscar(id_usuario:number):Observable<object>{
-      return this.http.get(this.url + "?id_usuario=" + id_usuario)
+    public buscar(id_usuario:number,fecha:string):Observable<object>{
+      if(fecha!=null){
+        return this.http.get(this.url + "?fecha=" + fecha + "&id_usuario=" + id_usuario)
+      }else{
+        return this.http.get(this.url + "?id_usuario=" + id_usuario)
+      }
+      
     }
 
 

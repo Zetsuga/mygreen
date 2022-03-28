@@ -3,7 +3,7 @@
         <app-header-panel></app-header-panel>
     </div>
     <div class="menu">
-        <app-menu-panel></app-menu-panel>
+        <app-menu-panel (eventoEntrada)="entrada($event)" (eventoSalida)="salida($event)" [estado]='estado'></app-menu-panel>
     </div>
 
     <div class="tarjetas">

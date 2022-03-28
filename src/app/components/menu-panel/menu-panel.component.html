@@ -8,8 +8,8 @@
             <p>{{usuario.email}}</p>
         </div>
         <div class="zona-dcha" *ngIf="usuarioService.usuario.rol =='4' else falso">
-            <button *ngIf="botonFormulario" class="botonMyGreen2" type="button" (click)="entrada()">ENTRADA</button>
-            <button *ngIf="!botonFormulario" class="botonMyGreen2" type="button" (click)="salida()">SALIDA</button>
+            <button *ngIf="estado" class="botonMyGreenEntrada" type="button" (click)="entrada()">ENTRADA</button>
+            <button *ngIf="!estado" class="botonMyGreenSalida" type="button" (click)="salida()">SALIDA</button>
         </div>
         <ng-template #falso>
 

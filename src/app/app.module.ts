@@ -33,7 +33,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FechaPipe } from './pipes/fecha.pipe';
-import { ModalComponent } from './components/modal/modal.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { UsuarioPipe } from './pipes/usuario.pipe';
 import { UploadComponent } from './components/upload/upload.component';
@@ -64,7 +63,6 @@ import { SuperSuperadministradorComponent } from './pages/super-superadministrad
     BotonSliceComponent,
     TablaIncidenciasComponent,
     FechaPipe,
-    ModalComponent,
     UsuarioPipe,
     UploadComponent,
     SuperAdministradorComponent,

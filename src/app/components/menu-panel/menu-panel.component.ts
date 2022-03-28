@@ -1,5 +1,4 @@
-import { Time } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import{faAddressBook} from '@fortawesome/free-solid-svg-icons';
 import{faDoorClosed} from '@fortawesome/free-solid-svg-icons';
 import { Fichar } from 'src/app/models/fichar';
@@ -18,17 +17,16 @@ export class MenuPanelComponent implements OnInit {
 
   @Output() eventoEntrada = new EventEmitter<any>();
   @Output() eventoSalida = new EventEmitter<any>();
+  @Input() estado:boolean;
 
   public faAddressBook;
   public faDoorClosed;
   public fichar:Fichar;
-  public botonFormulario:boolean;
   public usuario:Usuario;
   
   constructor(public usuarioService:UsuarioService, private ficharService:FicharService, private toastService:ToastService) {
     this.faAddressBook = faAddressBook;
     this.faDoorClosed = faDoorClosed;
-    this.botonFormulario = true;
   }
 
   ngOnInit(): void {
@@ -36,12 +34,10 @@ export class MenuPanelComponent implements OnInit {
   }
 
   public entrada(){
-    this.botonFormulario=false;
     this.eventoEntrada.emit(true);
   }
 
   public salida(){
-    this.botonFormulario=true;
     this.eventoSalida.emit(true);
   }
 }

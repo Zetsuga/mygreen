@@ -14,9 +14,11 @@ export class TrabajadorFicharComponent implements OnInit {
 
   public fichajes:Fichar[];
   public fichar:Fichar;
+  public estado:boolean;
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService,
     private router:Router, private ficharService:FicharService) {
+      this.estado = true;
 
       let fecha = new Date().getFullYear + "-" + new Date().getMonth + "-" + new Date().getDay
 
@@ -24,13 +26,13 @@ export class TrabajadorFicharComponent implements OnInit {
 
       console.log(this.fichar)
 
-      this.ficharService.buscar(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
+      this.ficharService.buscar(this.usuarioService.usuario.id_usuario,null).subscribe((datos:any)=>{
 
         if(datos.error==true){
           this.toastService.showError(datos.mensaje,datos.titulo);
         }else{
           this.toastService.showOk(datos.mensaje,datos.titulo);
-          this.fichajes=datos.resultado;  
+          this.fichajes=datos.resultado; 
         }
       })
   }
@@ -45,13 +47,21 @@ export class TrabajadorFicharComponent implements OnInit {
     let date = new Date;
     let hora = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds(); 
     this.fichar.entrada = hora;
-    this.ficharService.crear(this.fichar).subscribe((datos:any)=>{
-      if(datos.error==true){
-        this.toastService.showError(datos.mensaje,datos.titulo);
+    let hoy = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+    this.ficharService.buscar(this.usuarioService.usuario.id_usuario,hoy).subscribe((datos:any)=>{
+      if(datos.resultado.length>0){
+       this.toastService.showError("Existen datos de fichar del día de hoy",datos.titulo);
       }else{
-        this.toastService.showOk(datos.mensaje, datos.titulo);
-        
-        this.fichar.id_fichaje=datos.resultado;
+         this.ficharService.crear(this.fichar).subscribe((datos:any)=>{
+           if(datos.error==true){
+             this.toastService.showError(datos.mensaje,datos.titulo);
+           }else{
+             this.toastService.showOk(datos.mensaje, datos.titulo);
+             
+             this.fichar.id_fichaje=datos.resultado;
+             this.estado = false;
+           }
+         })
       }
     })
   }
@@ -66,6 +76,7 @@ export class TrabajadorFicharComponent implements OnInit {
         this.toastService.showOk(datos.mensaje, datos.titulo);
         this.fichajes.push(this.fichar);
         this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+        this.estado = true;
       }
     })
   }
