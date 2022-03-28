@@ -9,11 +9,10 @@
     <div class="tarjetas">
         <div class="tareas">
             <h3 class="tituloCard separacion">TAREAS ASIGNADAS</h3>
-            <div class="tareaPendiente" *ngFor="let tarea of tareas;let indice=index" (click)="cargarDatos(indice)">
-                
-                    <div class="lineaSeparacion">
-                        <hr>
-                    </div>
+            <div
+            [ngClass]="{'urgente':'tareaPendiente bordeRojo','media':'tareaPendiente bordeVerde',
+                        'baja':'tareaPendiente bordeAmarillo'}[tarea.prioridad]" 
+            *ngFor="let tarea of tareas;let indice=index" (click)="cargarDatos(indice)">
                     <div class="caja">
                         <div class="tarea-Izquierda">
                             <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>

@@ -59,11 +59,17 @@
 
 .iconoMenuBoton {
   padding-right: 10px;
+  width: 30px;
+  padding-bottom: 8px;
 }
 
 .icnoMenuBotonSub {
   padding-left: 15px;
   padding-right: 0px;
+}
+
+.tituloCard{
+  padding-top: 0;
 }
 
 .tituloCardSub:hover,
