@@ -110,9 +110,9 @@ export class AdministradorParteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="2"){
-    //   this.router.navigateByUrl('/login');
-    // }
+    if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="2"){
+      this.router.navigateByUrl('/login');
+    }
 
   }
 

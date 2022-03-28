@@ -35,9 +35,7 @@ export class TrabajadorTareasComponent implements OnInit {
       this.indice = 0;
       this.tareaService.buscarTodosUsuario(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
         if(datos.error==true){
-          this.toastService.showError(datos.mensaje,datos.titulo);
         }else{
-          this.toastService.showOk(datos.mensaje,datos.titulo);
           this.tareas = datos.resultado;
         }
       })

@@ -29,9 +29,7 @@ export class TrabajadorFicharComponent implements OnInit {
       this.ficharService.buscar(this.usuarioService.usuario.id_usuario,null).subscribe((datos:any)=>{
 
         if(datos.error==true){
-          this.toastService.showError(datos.mensaje,datos.titulo);
         }else{
-          this.toastService.showOk(datos.mensaje,datos.titulo);
           this.fichajes=datos.resultado; 
         }
       })

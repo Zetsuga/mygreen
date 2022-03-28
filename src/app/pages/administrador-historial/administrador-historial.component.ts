@@ -32,9 +32,7 @@ export class AdministradorHistorialComponent implements OnInit {
 
     this.medicionService.buscar().subscribe((datos:any)=>{
       if(datos.error ==true){
-        this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
-        this.toastService.showOk(datos.mensaje,datos.titulo);
         this.mediciones = datos.resultado;
       this.contador = datos.resultado.length;
 

@@ -20,9 +20,7 @@ export class AdministradorPerfilComponent implements OnInit {
     
     this.usuarioService.buscarUno(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){
-        this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
-        this.toastService.showOk(datos.mensaje, datos.titulo);
         this.usuario=datos.resultado[0];
         console.log(datos.resultado[0])
       }    

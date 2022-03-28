@@ -32,9 +32,7 @@ export class TrabajadorInicioComponent implements OnInit {
     
     this.tareasService.buscarTodosUsuario(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){
-        this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
-        this.toastService.showOk(datos.mensaje,datos.titulo);
         this.tareas = datos.resultado;
       }
     })
@@ -43,9 +41,7 @@ export class TrabajadorInicioComponent implements OnInit {
     
     this.nominasService.buscar(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){
-        this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
-        this.toastService.showOk(datos.mensaje,datos.titulo);
         this.nominas = datos.resultado;
       }
     })
