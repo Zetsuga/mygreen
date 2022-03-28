@@ -62,14 +62,15 @@
 
     <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"> 
         <div role="document" id="modal"
-        [ngClass]="{'urgente':'modal-dialog  bordeRojo','media':'modal-dialog bordeVerde',
-                        'baja':'modal-dialog bordeAmarillo'}[parte.prioridad]">
+        [ngClass]="{'urgente':'modal-dialog  bordeRojo','media':'modal-dialog bordeAmarillo',
+                        'baja':'modal-dialog bordeVerde'}[parte.prioridad]">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" [ngClass]="{'urgente':'headerRojo','media':'headerAmarillo',
+                'baja':'headerVerde'}[parte.prioridad]">
                     <h4 class="modal-title"><span class="tituloSpan">PRIORIDAD: {{parte.prioridad}} - {{parte.fecha|fecha}}</span></h4>
                 </div>
                 <div class="modal-body">
-                    <p class="texto1">{{parte.descripcion}}</p>
+                    <p>{{parte.descripcion}}</p>
 
                 </div>
                 <div class="modal-footer">

@@ -82,16 +82,16 @@ nav a:hover {
 .btn-login {
   /* border: 1px solid black; */
   /* margin-right: 20px; */
-  border-radius: 4px;
-  height: 70px;
-  width: 70px;
-  overflow: hiddsen;
+  /* border-radius: 4px; */
+  height: 40px;
+  width: 50px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .btn-login:hover {
-  border-radius: 50%;
+  border-radius: 7px;
   border: 1px solid white;
 }
 .loginPng:hover{
@@ -99,8 +99,8 @@ nav a:hover {
     filter: drop-shadow(5px 5px 5px #222);
   }
 .loginPng{
-  height: 100%;
-  width: auto;
+  /* height: auto; */
+  width: 170%;
 }
 .redes {
   display: flex;
