@@ -23,7 +23,7 @@ export class SuperAdministradorComponent implements OnInit {
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService, private fincaService:FincaService,private router:Router) { 
     this.botonFormulario=true
-    this.usuario=new Usuario("","","","",0,"","","","4","","");
+    this.usuario=new Usuario("","","","",0,"","","","","","");
     this.usuarioService.buscarAdmin(this.rolSuperAdmin).subscribe((datos:any)=>{
       this.superAdmin=datos.resultado;
     })
@@ -42,16 +42,24 @@ export class SuperAdministradorComponent implements OnInit {
          this.toastService.showError(datos.mensaje,datos.titulo);
        }else{
          this.toastService.showOk(datos.mensaje, datos.titulo);
-         this.fincaService.insertarUsuarioFinca(datos.resultado,this.fincaService.finca.id_finca).subscribe((datos:any)=>{
-           if(datos.error==true){
-             this.toastService.showError(datos.mensaje,datos.titulo);
-           }else{
-             this.toastService.showOk(datos.mensaje, datos.titulo);
-             this.superAdmin.push(this.usuario)
-             this.usuario = new Usuario("","","","",0,"","","","4","","");
+         if(this.usuario.rol == "2"){
+          this.administradores.push(this.usuario);
+        }else{
+           if (this.usuario.rol == "1"){
+             this.superAdmin.push(this.usuario);
            }
-         })
-       }
+         }
+         }
+        //  this.fincaService.insertarUsuarioFinca(datos.resultado,this.fincaService.finca.id_finca).subscribe((datos:any)=>{
+        //    if(datos.error==true){
+        //      this.toastService.showError(datos.mensaje,datos.titulo);
+        //    }else{
+        //      this.toastService.showOk(datos.mensaje, datos.titulo);
+        //      this.superAdmin.push(this.usuario)
+        //      this.usuario = new Usuario("","","","",0,"","","","4","","");
+        //    }
+        //  })
+       //}
 
     })
 
@@ -65,6 +73,14 @@ export class SuperAdministradorComponent implements OnInit {
      this.botonFormulario = false;
      this.indice=id;
    }
+   public cargarDatos2(id){
+    this.usuario = new Usuario(this.administradores[id].nombre,this.administradores[id].apellidos,this.administradores[id].telefono,
+     this.administradores[id].direccion,this.administradores[id].cp,this.administradores[id].poblacion,this.administradores[id].ciudad,
+     this.administradores[id].contrasenia,this.administradores[id].rol,this.administradores[id].num_cuenta,this.administradores[id].email);
+     this.usuario.id_usuario = this.administradores[id].id_usuario;
+    this.botonFormulario = false;
+    this.indice=id;
+  }
 
    public eliminarUsuario(id){
      console.log(this.superAdmin[id].id_usuario)
@@ -79,6 +95,20 @@ export class SuperAdministradorComponent implements OnInit {
       }
      })
    }
+
+   public eliminarUsuario2(id){
+    console.log(this.administradores[id].id_usuario)
+    this.usuarioService.eliminar(this.administradores[id].id_usuario).subscribe((datos:any)=>{
+     if(datos.error==true){
+       this.toastService.showError(datos.mensaje,datos.titulo);
+     }else{
+       this.toastService.showOk(datos.mensaje, datos.titulo);
+       this.administradores.splice(id,1);
+       this.botonFormulario=true;
+       
+     }
+    })
+  }
 
    public modificarUsuario(){
      this.usuarioService.modificar(this.usuario).subscribe((datos:any)=>{

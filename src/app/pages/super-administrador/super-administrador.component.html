@@ -51,6 +51,28 @@
                         <p *ngIf="telefono.errors.required">El teléfono es obligatorio</p>
                     </div>
                 </div>
+                <!-- <span>DIRECCIÓN</span>
+                <div class="subForm">
+                    <div class="class-input telefono">
+                        <input type="text" id="direccion-usuariosForm" name="direccion" [(ngModel)]="usuario.direccion"
+                            #direccion="ngModel" [ngClass]="{'is-invalid': usuariosForm.submitted && direccion.invalid}"
+                            required placeholder="  Direccion..." />
+                    </div>
+                    <div class="advertencia" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+                        <p *ngIf="direccion.errors.required">La dirección es obligatoria</p>
+                    </div>
+                </div> -->
+                <span>ROL</span>
+                <div class="subForm">
+                    <div class="class-input telefono">
+                        <input type="text" id="rol-usuariosForm" name="rol" [(ngModel)]="usuario.rol" #rol="ngModel"
+                            [ngClass]="{'is-invalid': usuariosForm.submitted && rol.invalid}" required
+                            placeholder="  CP..." />
+                    </div>
+                    <div class="advertencia" *ngIf="rol.invalid && (rol.dirty || rol.touched)">
+                        <p *ngIf="rol.errors.required">El Rol es obligatorio</p>
+                    </div>
+                </div>
 
                 <span>E-MAIL</span>
                 <div class="subForm">
@@ -174,9 +196,10 @@
                         <td>{{user.telefono}}</td>
                         <td>{{user.email}}</td>
                         <td>
-                            <div class=iconos><a (click)="eliminarUsuario(indice)"><img
+                            <div class=iconos><a (click)="eliminarUsuario2(indice)"><img
                                         src="../../../assets/img/iconoEliminar.png"></a><a
-                                    (click)="cargarDatos(indice)"><img src="../../../assets/img/iconoModificar.png"></a>
+                                    (click)="cargarDatos2(indice)"><img
+                                        src="../../../assets/img/iconoModificar.png"></a>
                             </div>
                         </td>
                     </tr>
