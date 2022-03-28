@@ -21,7 +21,7 @@
   grid-column: x1/x2;
   grid-row: y1/y2;
   grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4];
-  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5];
+  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5] 1fr [y6] 1fr [y7] 1fr [y8] 1fr [y9];
   padding: 50px;
   gap: 20px;
 }
@@ -56,13 +56,13 @@
 .cajaTituloClima {
   color: white;
   font-family: var(--lato);
-  font-size: 25px;
+  font-size: 20px;
   text-align: left;
 }
 
 .temperatura {
   grid-column: x0/x1;
-  grid-row: y0/y1;
+  grid-row: y0/y2;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -73,7 +73,7 @@
 
 .humedad {
   grid-column: x1/x2;
-  grid-row: y0/y1;
+  grid-row: y0/y2;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -85,7 +85,7 @@
 
 .tension {
   grid-column: x2/x3;
-  grid-row: y0/y1;
+  grid-row: y0/y2;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -97,7 +97,7 @@
 
 .clima {
   grid-column: x3/x4;
-  grid-row: y0/y1;
+  grid-row: y0/y2;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -110,7 +110,7 @@
 
 .incidencias {
   grid-column: x0/x2;
-  grid-row: y1/y5;
+  grid-row: y2/y9;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -122,7 +122,7 @@
 
 .tensionMatricial {
   grid-column: x2/x4;
-  grid-row: y1/y3;
+  grid-row: y2/y7;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -134,9 +134,28 @@
   padding-top: 15px;
 }
 
-.tareasPendientes {
+.tareas-cabecera{
   grid-column: x2/x4;
-  grid-row: y3/y5;
+  grid-row: y7/y9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: var(--borde);
+  box-shadow: var(--sombra);
+}
+
+.derecha{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+/* .tareasPendientes {
+  grid-column: x2/x4;
+  grid-row: y8/y9;
   border-radius: 7px;
   box-shadow: var(--sombra);
   border: var(--borde);
@@ -144,7 +163,7 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
-}
+} */
 .tareasPendientes h3 {
   margin-top: 10px;
 }
@@ -220,4 +239,36 @@ p {
 .tensionMatricial h3{
   position: absolute;
   /* margin-top: 30px; */
+}
+
+.leyenda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+}
+.cuadrado {
+  width: 12px;
+  height: 12px;
+}
+
+
+.leyenda-titulo{
+  color:black;
+  font-family: var(--lato);
+}
+
+.urgente {
+  background-color: #da3232;
+  border-radius: 7px;
+}
+
+.media {
+  background-color: #ffc800c0;
+  border-radius: 7px;
+}
+
+.baja {
+  background-color: var(--verdePrincipal);
+  border-radius: 7px;
 }
