@@ -53,7 +53,7 @@ export class AdministradorParteComponent implements OnInit {
           this.tarea.nombre = data.resultado[0].nombre;
           this.tarea.apellidos = data.resultado[0].apellidos;
           this.tareas.push(this.tarea);
-          this.tarea = new Tarea(0,0,"","","",""," ");
+          this.tarea = new Tarea(1,1,"","","",""," ");
         })  
       }
       console.log(data.resultado);
