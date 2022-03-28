@@ -60,14 +60,16 @@
 
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-        <div class="modal-dialog" role="document">
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"> 
+        <div role="document" id="modal"
+        [ngClass]="{'urgente':'modal-dialog  bordeRojo','media':'modal-dialog bordeVerde',
+                        'baja':'modal-dialog bordeAmarillo'}[parte.prioridad]">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">PRIORIDAD: {{parte.prioridad}} - {{parte.fecha|fecha}}</h4>
+                    <h4 class="modal-title"><span class="tituloSpan">PRIORIDAD: {{parte.prioridad}} - {{parte.fecha|fecha}}</span></h4>
                 </div>
                 <div class="modal-body">
-                    <p>{{parte.descripcion}}</p>
+                    <p class="texto1">{{parte.descripcion}}</p>
 
                 </div>
                 <div class="modal-footer">

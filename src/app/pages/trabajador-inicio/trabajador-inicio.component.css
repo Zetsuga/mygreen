@@ -112,7 +112,8 @@
   flex-direction: column;
   align-content: space-between;
   border-radius: 7px;
-  max-width: 170px;
+  max-width: 200px;
+  width: 400px;
   margin: 10px;
 }
 
@@ -138,15 +139,23 @@
 .contenido-tarjeta {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   background-color: white;
   margin: 10px;
+  /* overflow: hidden; */
+  /* width: auto; */
 }
 
 .descripcion {
-  display: flex;
-  align-self: flex-start;
+  float: right;
   padding: 4px;
+}
+.contenido-tarjeta p{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  padding-left: 5px;
 }
 
 .urgente {
@@ -182,4 +191,40 @@
 .cuadrado {
   width: 12px;
   height: 12px;
+}
+.modal-content{
+  border: none;
+  border-radius: none;
+}
+
+#modal{
+  display: flex;
+  justify-content: center;
+}
+.bordeRojo{
+  border: 5px solid red;
+  border-radius: 7px;
+}
+.modal-header{
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  background-color: red;
+}
+.modal-body{
+  display: flex;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+.modal-footer{
+  display: flex;
+  justify-content: center;
+}
+.tituloSpan{
+  color: white;
+}
+
+.letraUrgente{
+  color: white;
 }
