@@ -5,6 +5,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder, NgForm, AbstractControl } from '@angular/forms';
 import { FincaService } from 'src/app/shared/finca.service';
+import { AltausuarioService } from 'src/app/shared/altausuario.service';
 
 @Component({
   selector: 'app-administrador-usuarios',
@@ -19,7 +20,8 @@ export class AdministradorUsuariosComponent implements OnInit {
   public indice:number;
 
 
-  constructor(public usuarioService:UsuarioService, private toastService:ToastService, private fincaService:FincaService,private router:Router) {
+  constructor(public usuarioService:UsuarioService, private toastService:ToastService, private fincaService:FincaService,
+    private router:Router,private altaUsuarioService:AltausuarioService) {
 
     this.botonFormulario=true
     this.usuario=new Usuario("","","","",0,"","","","4","","");
@@ -42,7 +44,14 @@ export class AdministradorUsuariosComponent implements OnInit {
            }else{
              this.toastService.showOk(datos.mensaje, datos.titulo);
              this.usuarios.push(this.usuario)
-             this.usuario = new Usuario("","","","",0,"","","","4","","");
+             this.altaUsuarioService.mandarCorreo(this.usuario).subscribe((datos:any)=>{
+               if(datos.error == true){
+                 console.log(datos);
+               }else{
+                 this.usuario = new Usuario("","","","",0,"","","","4","","");
+               }
+               
+             })
            }
          })
        }

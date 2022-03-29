@@ -190,6 +190,11 @@
   width: 12px;
   height: 12px;
 }
+
+.leyenda-titulo{
+color: black;
+}
+
 .modal-content{
   border: none;
   border-radius: none;
