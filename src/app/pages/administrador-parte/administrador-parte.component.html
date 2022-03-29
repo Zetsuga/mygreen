@@ -85,8 +85,9 @@
                     <div class="botonGuardar centrarBoton">
                         <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit"
                             [disabled]="!tareasForm.valid">CREAR</button>
-                        <button *ngIf="!botonFormulario" class="botonMyGreen" [disabled]="!tareasForm.valid"
-                            id="crear-modificar" type="button" (click)="modificarTarea()">MODIFICAR</button>
+                        <button *ngIf="!botonFormulario" class="botonMyGreen btnModificar"
+                            [disabled]="!tareasForm.valid" id="crear-modificar" type="button"
+                            (click)="modificarTarea()">MODIFICAR</button>
                     </div>
                 </div>
             </div>
@@ -120,7 +121,7 @@
                             <td>{{tarea.fecha | fecha }}</td>
                             <td>{{tarea.descripcion}}</td>
                             <td>
-                                <div class=iconos><a (click)="eliminarTarea(indice)"><img
+                                <div class=iconos><a (click)="openPopup(indice)"><img
                                             src="../../../assets/img/iconoEliminar.png"></a><a
                                         (click)="cargarDatos(indice)"><img
                                             src="../../../assets/img/iconoModificar.png"></a></div>
@@ -133,4 +134,27 @@
         </div>
 
     </div>
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Seguro que desea eliminar el usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Se eliminará de forma permanente en la base de datos.</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="botonMyGreen2" (click)="closePopup()">
+                        Cerrar
+                    </button>
+                    <button type="button" class="botonMyGreen2" (click)="eliminarTarea()">
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -13,6 +13,7 @@ export class AdministradorDomoticaComponent implements OnInit {
 
   mensaje = 1;
   mensaje2 = 2;
+  mensaje3 = 3;
   public tension: number;
   public temperatura: number;
   public humedad: number;
