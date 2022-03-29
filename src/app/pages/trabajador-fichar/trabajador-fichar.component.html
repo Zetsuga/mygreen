@@ -27,12 +27,17 @@
                             </th>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let fichaje of fichajes" id="tablaFila">
+                            <tr *ngFor="let fichaje of fichajeSlice" id="tablaFila">
                                 <td>{{fichaje.fecha | fecha}}</td>
                                 <td>{{fichaje.entrada}}</td>
                                 <td>{{fichaje.salida}}</td>
                             </tr>
                         </tbody>
+                        <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                        </ul>
+                      </nav>
                     </table>
                 </div>
             </div>

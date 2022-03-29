@@ -16,6 +16,8 @@ import { DataSource } from '@angular/cdk/collections';
 export class AdministradorParteComponent implements OnInit {
 
   public tareas:Tarea[];
+  public tareaSlice:Tarea[];
+  public paginador:number[];
   public tarea:Tarea;
   public botonFormulario:Boolean;
   public fecha:Date;
@@ -27,8 +29,15 @@ export class AdministradorParteComponent implements OnInit {
   constructor(public usuarioService:UsuarioService, private router:Router, public tareasService:TareasService, private toastService:ToastService) {
     this.botonFormulario=true;
     this.tarea = new Tarea(1,1,"","","","","");
+    this.paginador = [];
     this.tareasService.buscarTodosFinca(1).subscribe((data:any)=>{
       this.tareas = data.resultado;
+
+      for(let i=0;i<Math.ceil(data.resultado.length/6);i++){
+        this.paginador.push(i)
+      }
+      
+      this.tareaSlice = this.tareas.slice(0,6);
       
     })
 
@@ -114,6 +123,11 @@ export class AdministradorParteComponent implements OnInit {
       this.router.navigateByUrl('/login');
     }
 
+  }
+
+  public cargarTabla(indice:number){
+    let multiplicador = indice +1;
+    this.tareaSlice = this.tareas.slice(indice*6,multiplicador*6);
   }
 
 }

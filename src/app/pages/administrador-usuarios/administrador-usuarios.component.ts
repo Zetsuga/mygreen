@@ -16,17 +16,24 @@ export class AdministradorUsuariosComponent implements OnInit {
 
   public usuarios:Usuario[];
   public usuario:Usuario;
+  public usuarioSlice : Usuario[];
+  public paginador : number[];
   public botonFormulario:Boolean;
   public indice:number;
 
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService, private fincaService:FincaService,
     private router:Router,private altaUsuarioService:AltausuarioService) {
-
+      this.paginador=[];
     this.botonFormulario=true
     this.usuario=new Usuario("","","","",0,"","","","4","","");
     this.usuarioService.buscarTodos(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
       this.usuarios=datos.resultado;
+      for(let i=0;i<Math.ceil(datos.resultado.length/8);i++){
+        this.paginador.push(i)
+      }
+      
+      this.usuarioSlice = this.usuarios.slice(0,12);
     })
 
    }
@@ -104,6 +111,9 @@ export class AdministradorUsuariosComponent implements OnInit {
     }
   }
 
-
+  public cargarTabla(indice:number){
+    let multiplicador = indice +1;
+    this.usuarioSlice = this.usuarios.slice(indice*12,multiplicador*12);
+  }
 
 }

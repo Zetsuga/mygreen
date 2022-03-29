@@ -127,7 +127,7 @@
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let user of usuarios; let indice=index" id="tablaFila">
+                    <tr *ngFor="let user of usuarioSlice; let indice=index" id="tablaFila">
                         <td>{{user.nombre}}</td>
                         <td>{{user.apellidos}}</td>
                         <td>{{user.telefono}}</td>
@@ -136,6 +136,11 @@
                     </tr>
 
                 </tbody>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                    </ul>
+                  </nav>
             </table>
         </div> 
 

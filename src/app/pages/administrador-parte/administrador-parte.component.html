@@ -114,11 +114,11 @@
                         </th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let tarea of tareas;let indice = index " id="tablaFila">
+                        <tr *ngFor="let tarea of tareaSlice;let indice = index " id="tablaFila">
                             <td>{{tarea.prioridad}}</td>
                             <td>{{tarea.nombre}} {{tarea.apellidos}}</td>
                             <td>{{tarea.fecha | fecha }}</td>
-                            <td>{{tarea.descripcion}}</td>
+                            <td class="celdaDescripcion"><p>{{tarea.descripcion}}</p></td>
                             <td>
                                 <div class=iconos><a (click)="eliminarTarea(indice)"><img
                                             src="../../../assets/img/iconoEliminar.png"></a><a
@@ -128,6 +128,11 @@
                         </tr>
 
                     </tbody>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                        </ul>
+                      </nav>
                 </table>
             </div>
         </div>

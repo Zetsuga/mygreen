@@ -1,4 +1,3 @@
-import { identifierName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Fichar } from 'src/app/models/fichar';
@@ -20,6 +19,8 @@ export class TrabajadorTareasComponent implements OnInit {
 
   public tareas:Tarea[];
   public tarea:Tarea;
+  public tareaSlice:Tarea[];
+  public paginador:number[];
   public incidencia:Incidencia;
   public indice:number;
   public fichar:Fichar;
@@ -29,6 +30,7 @@ export class TrabajadorTareasComponent implements OnInit {
     private incidenciaService:IncidenciasService,private toastService:ToastService,
     private router:Router,public fincaService:FincaService,private ficharService:FicharService) {
       this.estado = true;
+      this.paginador = [];
       this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
       this.tarea = new Tarea(0,0,"","","","","");
       this.incidencia = new Incidencia(0,0,new Date,true,"","","");
@@ -37,6 +39,11 @@ export class TrabajadorTareasComponent implements OnInit {
         if(datos.error==true){
         }else{
           this.tareas = datos.resultado;
+          for(let i=0;i<Math.ceil(datos.resultado.length/7);i++){
+            this.paginador.push(i)
+          }
+          
+          this.tareaSlice = this.tareas .slice(0,7);
         }
       })
 
@@ -114,4 +121,10 @@ export class TrabajadorTareasComponent implements OnInit {
       }
     })
   }
+
+  public cargarTabla(indice:number){
+    let multiplicador = indice +1;
+    this.tareaSlice = this.tareas.slice(indice*7,multiplicador*7);
+  }
+
 }
