@@ -38,6 +38,7 @@ import { UsuarioPipe } from './pipes/usuario.pipe';
 import { UploadComponent } from './components/upload/upload.component';
 import { SuperAdministradorComponent } from './pages/super-administrador/super-administrador.component';
 import { SuperSuperadministradorComponent } from './pages/super-superadministrador/super-superadministrador.component';
+import { SuperUsuarioAdministradorComponent } from './pages/super-usuario-administrador/super-usuario-administrador.component';
 
 
 // paginación
@@ -73,7 +74,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     UsuarioPipe,
     UploadComponent,
     SuperAdministradorComponent,
-    SuperSuperadministradorComponent
+    SuperSuperadministradorComponent,
+    SuperUsuarioAdministradorComponent
   ],
   imports: [
     BrowserModule,

@@ -5,37 +5,43 @@
     <div class="menu">
         <app-menu-panel></app-menu-panel>
     </div>
-    
+
     <div class="tarjetas">
         <div class="historial">
             <mat-tab-group mat-align-tabs="start">
                 <mat-tab label="Humedad y Temperatura">
                     <div class="fechas">
+                        <span>Fencha inicio</span>
                         <div class="fechaInicio class-input">
-                            <input type="date" class="inputFechaInico" placeholder="Fecha inicial" #tyhInicio/>
+                            <input type="date" class="inputFechaInico" placeholder="Fecha inicial" #tyhInicio />
                         </div>
+                        <span>Fencha fin</span>
                         <div class="fechaFin class-input">
-                            <input type="date" class="inputFechaFin" placeholder="Fecha final" #tyhFin/>
+                            <input type="date" class="inputFechaFin" placeholder="Fecha final" #tyhFin />
                         </div>
                         <div class="botonBuscar">
-                            <a class="botonMyGreen" type="button" (click)="buscarHumedadTemperatura(tyhFin.value,tyhInicio.value)" >BUSCAR</a>
+                            <a class="botonMyGreen" type="button"
+                                (click)="buscarHumedadTemperatura(tyhFin.value,tyhInicio.value)">BUSCAR</a>
                         </div>
                     </div>
                     <div class="graficaTension">
-                    
-                      <div echarts [options]="options" theme="macarons" class="demo-chart"></div>
+
+                        <div echarts [options]="options" theme="macarons" class="demo-chart"></div>
                     </div>
                 </mat-tab>
                 <mat-tab label="Tensión Matricial">
                     <div class="fechas">
+                        <span>Fencha inicio</span>
                         <div class="fechaInicio class-input">
-                            <input type="date" class="inputFechaInico" placeholder="Fecha inicial" #tensionInicio/>
+                            <input type="date" class="inputFechaInico" placeholder="Fecha inicial" #tensionInicio />
                         </div>
+                        <span>Fencha fin</span>
                         <div class="fechaFin class-input">
-                            <input type="date" class="inputFechaFin" placeholder="Fecha final" #tensionFin/>
+                            <input type="date" class="inputFechaFin" placeholder="Fecha final" #tensionFin />
                         </div>
                         <div class="botonBuscar">
-                            <a class="botonMyGreen" type="button" (click)="buscarTension(tensionFin.value,tensionInicio.value   )">BUSCAR</a>
+                            <a class="botonMyGreen" type="button"
+                                (click)="buscarTension(tensionFin.value,tensionInicio.value   )">BUSCAR</a>
                         </div>
                     </div>
                     <div class="graficaTension">
@@ -45,6 +51,5 @@
             </mat-tab-group>
         </div>
     </div>
-    
-</div>
 
+</div>

@@ -142,7 +142,7 @@
   text-shadow: none;
   color: var(--grisOscuro);
 }
-.botonMyGreen:hover:disabled{
+.botonMyGreen:hover:disabled {
   background-color: #ccc;
   cursor: default;
 }
@@ -177,7 +177,7 @@
   text-shadow: none;
   color: var(--grisOscuro);
 }
-.botonMyGreen2:hover:disabled{
+.botonMyGreen2:hover:disabled {
   background-color: #ccc;
   cursor: default;
 }
@@ -196,4 +196,8 @@
 
 .verde {
   background-color: var(--verdeCorrecto);
+}
+
+.btnModificar {
+  background-color: #e4c201;
 }
