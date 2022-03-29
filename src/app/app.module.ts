@@ -39,6 +39,13 @@ import { UploadComponent } from './components/upload/upload.component';
 import { SuperAdministradorComponent } from './pages/super-administrador/super-administrador.component';
 import { SuperSuperadministradorComponent } from './pages/super-superadministrador/super-superadministrador.component';
 
+
+// paginación
+
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +88,8 @@ import { SuperSuperadministradorComponent } from './pages/super-superadministrad
     ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ValidateEqualModule
+    ValidateEqualModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
