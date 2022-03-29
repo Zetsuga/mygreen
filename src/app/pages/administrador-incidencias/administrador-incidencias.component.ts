@@ -17,6 +17,8 @@ export class AdministradorIncidenciasComponent implements OnInit {
 
   public incidencias:Incidencia[];
   public incidencia:Incidencia;
+  public incidenciaSlice:Incidencia[];
+  public paginador:number[];
   public indice:number;
   public finca: Finca;
   public usuario:Usuario;
@@ -27,12 +29,20 @@ export class AdministradorIncidenciasComponent implements OnInit {
       this.incidencia = new Incidencia(0,0,new Date,true,"","","");
       this.finca = new Finca("",0,"","",0,0);
       this.usuario = new Usuario("","","","",0,"","","","","","")
+      this.paginador = [];
 
     this.usuarioService.buscarUno(usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
       
       this.incidenciaService.buscar(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
         this.incidencias = datos.resultado;
+        for(let i=0;i<Math.ceil(datos.resultado.length/8);i++){
+          this.paginador.push(i)
+        }
+        
+        this.incidenciaSlice = this.incidencias.slice(0,8);
+        console.log(this.incidencias);
+        
       })
     })
    }
@@ -64,5 +74,9 @@ export class AdministradorIncidenciasComponent implements OnInit {
     }
   }
 
+  public cargarTabla(indice:number){
+    let multiplicador = indice +1;
+    this.incidenciaSlice = this.incidencias.slice(indice*8,multiplicador*8);
+  }
   
 }

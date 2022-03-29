@@ -12,7 +12,7 @@
             <div
             [ngClass]="{'urgente':'tareaPendiente bordeRojo','media':'tareaPendiente bordeVerde',
                         'baja':'tareaPendiente bordeAmarillo'}[tarea.prioridad]" 
-            *ngFor="let tarea of tareas;let indice=index" (click)="cargarDatos(indice)">
+            *ngFor="let tarea of tareaSlice;let indice=index" (click)="cargarDatos(indice)">
                     <div class="caja">
                         <div class="tarea-Izquierda">
                             <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>
@@ -24,7 +24,11 @@
                     </div>
                 
             </div>
-
+            <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                        </ul>
+                      </nav>
         </div>
         <div class="descripcion">
             <h3 class="tituloCard separacionSuperior">DETALLES TAREA</h3>

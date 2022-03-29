@@ -50,12 +50,16 @@
                         </th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let incidencia of incidencias;let indice=index" id="tablaFila" (click)="cargarDatos(indice)">
+                        <tr *ngFor="let incidencia of incidenciaSlice;let indice=index" id="tablaFila" (click)="cargarDatos(indice)">
                             <td>{{incidencia.fecha |fecha}}</td>
                             <td>{{incidencia.nombre}} {{incidencia.apellidos}}</td>
                             <td>{{incidencia.descripcion}}</td>
                         </tr>
-                        
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                            </ul>
+                          </nav>
                     </tbody>
                 </table>
             </div>

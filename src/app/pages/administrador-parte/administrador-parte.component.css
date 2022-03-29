@@ -144,3 +144,14 @@
 .advertencia p {
   margin-bottom: 0;
 }
+
+.celdaDescripcion{
+/* float:right; */
+}
+
+.celdaDescripcion p{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px;
+}

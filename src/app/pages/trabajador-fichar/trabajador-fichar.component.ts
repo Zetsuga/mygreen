@@ -14,11 +14,14 @@ export class TrabajadorFicharComponent implements OnInit {
 
   public fichajes:Fichar[];
   public fichar:Fichar;
+  public fichajeSlice:Fichar[];
+  public paginador:number[];
   public estado:boolean;
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService,
     private router:Router, private ficharService:FicharService) {
       this.estado = true;
+      this.paginador = [];
 
       let fecha = new Date().getFullYear + "-" + new Date().getMonth + "-" + new Date().getDay
 
@@ -31,6 +34,12 @@ export class TrabajadorFicharComponent implements OnInit {
         if(datos.error==true){
         }else{
           this.fichajes=datos.resultado; 
+
+          for(let i=0;i<Math.ceil(datos.resultado.length/12);i++){
+            this.paginador.push(i)
+          }
+          
+          this.fichajeSlice = this.fichajes.slice(0,12);
         }
       })
   }
@@ -77,5 +86,10 @@ export class TrabajadorFicharComponent implements OnInit {
         this.estado = true;
       }
     })
+  }
+
+  public cargarTabla(indice:number){
+    let multiplicador = indice +1;
+    this.fichajeSlice = this.fichajes.slice(indice*12,multiplicador*12);
   }
 }

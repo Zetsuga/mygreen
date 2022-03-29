@@ -32,7 +32,6 @@
   box-shadow: var(--sombra);
   width: 100%;
   min-width: 30%;
-  height: 520px;
   min-height: 400px;
   display: flex;
   flex-direction: column;

@@ -18,6 +18,8 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 export class AdministradorInicioComponent implements OnInit {
 
   public incidencias:Incidencia[];
+  public incidenciaSlice:Incidencia[];
+  public paginador:number[];
   public tareas:Tarea[];
   public medicion:Medicion;
   public temperatura:number;
@@ -39,11 +41,11 @@ export class AdministradorInicioComponent implements OnInit {
       this.colorTemperatura="";
       this.colorHumedad="";
       this.colorTension="";
+      this.paginador=[];
 
       
     
     this.medicionService.buscar().subscribe((datos:any)=>{
-      console.log(datos)
       this.medicion = datos.resultado;
       this.temperatura = this.medicion[datos.resultado.length -1].temperatura;
       this.humedad = this.medicion[datos.resultado.length -1].humedad;
@@ -127,6 +129,12 @@ export class AdministradorInicioComponent implements OnInit {
       this.fincaService.finca.id_finca = datos.resultado[0].id_finca;
       this.incidenciaService.buscar(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
         this.incidencias = datos.resultado;
+
+        for(let i=0;i<Math.ceil(datos.resultado.length/8);i++){
+          this.paginador.push(i)
+        }
+        
+        this.incidenciaSlice = this.incidencias.slice(0,8);
       })
 
       this.tareasService.buscarTodosFinca(this.fincaService.finca.id_finca).subscribe((datos:any)=>{
@@ -138,8 +146,11 @@ export class AdministradorInicioComponent implements OnInit {
   ngOnInit(): void {
     if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
       this.router.navigateByUrl('/login');
-    }
+    }    
+  }
 
-    
+  public cargarTabla(indice:number){
+    let multiplicador = indice +1;
+    this.incidenciaSlice = this.incidencias.slice(indice*8,multiplicador*8);
   }
 }
