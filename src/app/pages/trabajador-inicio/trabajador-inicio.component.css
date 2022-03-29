@@ -1,21 +1,18 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 255px) [x2];
+  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
   grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
-
 .header {
   grid-column: x0/x2;
   grid-row: y0/y1;
 }
-
 .menu {
   display: grid;
   grid-column: x0/x1;
   grid-row: y1/y2;
 }
-
 .tarjetas {
   display: grid;
   grid-column: x1/x2;
@@ -25,7 +22,6 @@
   padding: 50px;
   gap: 20px;
 }
-
 .tareas {
   grid-column: x0/x4;
   grid-row: y0/y5;
@@ -36,18 +32,6 @@
   flex-direction: column;
   background-color: #c4c4c4;
 }
-
-/* .horario{
-    grid-column: x2/x4;
-    grid-row: y0/y3;
-    border-radius: 7px;
-    box-shadow: var(--sombra);
-    border: var(--borde);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 .nominas {
   grid-column: x0/x4;
   grid-row: y5/y6;
@@ -69,13 +53,11 @@
   flex-wrap: wrap;
   gap: 50px;
 }
-
 .separacion {
   margin-top: 5px;
   margin-bottom: 10px;
   margin-left: 10px;
 }
-
 .tareas-cabecera {
   background-color: var(--grisOscuro);
   display: flex;
@@ -83,7 +65,6 @@
   justify-content: space-between;
   padding: 10px 0;
 }
-
 .derecha {
   display: flex;
   flex-direction: row;
@@ -91,28 +72,29 @@
   gap: 10px;
   padding-right: 20px;
 }
-
 .leyenda-titulo {
   color: white;
   margin: 0 !important;
   font-family: var(--lato);
   font-weight: 600;
 }
-
 .tareasPendientes-contenedor {
   background-color: #c4c4c4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-height: 100px;
-}
+  justify-content: flex-start;
+  padding-left: 45px;
+  /* max-height: 100px; */
+  overflow: scroll;
 
+}
 .tarjeta-tarea {
   display: flex;
   flex-direction: column;
   align-content: space-between;
   border-radius: 7px;
-  max-width: 200px;
+  max-width: 250px;
   width: 400px;
   margin: 10px;
 }
@@ -188,11 +170,6 @@
   width: 12px;
   height: 12px;
 }
-
-.leyenda-titulo{
-color: black;
-}
-
 .modal-content{
   border: none;
   border-radius: none;
@@ -243,4 +220,14 @@ color: black;
 
 .letraUrgente{
   color: white;
+}
+
+@media (max-width: 1060px){
+  .tarjeta-tarea {
+    width: 200px;
+  }
+
+  .tareasPendientes-contenedor {
+    padding-left: 10px;
+  }
 }
