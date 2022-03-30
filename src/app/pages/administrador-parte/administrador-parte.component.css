@@ -165,11 +165,14 @@ td {
   margin-bottom: 0;
 }
 
-.celdaDescripcion{
-/* float:right; */
+#descripcion {
+  height: 100%;
+  width: 100%;
+  resize: none;
+  background: #f4f4f4;
 }
 
-.celdaDescripcion p{
+.celdaDescripcion p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

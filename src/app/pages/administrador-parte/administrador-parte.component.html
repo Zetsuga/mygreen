@@ -70,10 +70,10 @@
                     <div class="campo campodescripcion">
                         <span>Descripción</span>
                         <div class="class-input descripcion">
-                            <input type="text" id="descripcion" name="descripcion" [(ngModel)]="tarea.descripcion"
+                            <textarea type="text" id="descripcion" name="descripcion" [(ngModel)]="tarea.descripcion"
                                 #descripcion="ngModel"
                                 [ngClass]="{'is-invalid': descripcion.invalid && (descripcion.dirty || descripcion.touched)}"
-                                required placeholder="  Descripción" />
+                                required placeholder="  Descripción"></textarea>
                         </div>
                         <div class="advertencia"
                             *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
@@ -119,7 +119,9 @@
                             <td>{{tarea.prioridad}}</td>
                             <td>{{tarea.nombre}} {{tarea.apellidos}}</td>
                             <td>{{tarea.fecha | fecha }}</td>
-                            <td class="celdaDescripcion"><p>{{tarea.descripcion}}</p></td>
+                            <td class="celdaDescripcion">
+                                <p>{{tarea.descripcion}}</p>
+                            </td>
                             <td>
                                 <div class=iconos><a (click)="openPopup(indice)"><img
                                             src="../../../assets/img/iconoEliminar.png"></a><a
@@ -131,9 +133,10 @@
                     </tbody>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                          <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                            <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link"
+                                    (click)="cargarTabla(indice)">{{indice+1}}</a></li>
                         </ul>
-                      </nav>
+                    </nav>
                 </table>
             </div>
         </div>
