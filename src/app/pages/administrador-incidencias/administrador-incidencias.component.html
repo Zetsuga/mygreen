@@ -12,21 +12,24 @@
             <h3 class="tituloCard--conEspacio">DETALLES</h3>
 
             <div class="incidencias-form-inputs">
-                <div class="class-input fecha">
-                    <input [(ngModel)]="incidencia.fecha" type="text" name="fecha" placeholder="  Fecha..." disabled>
-                </div>
-
-                <div class="class-input finca">
-                    <input [(ngModel)]="finca.direccion" type="text" name="finca" placeholder="  Finca..." disabled>
-                </div>
-
-                <div class="class-input usuario">
-                    <input [(ngModel)]="usuario.nombre" type="text" name="usuario" placeholder="  Usuario..." disabled>
-                </div>
-
-                <div class="class-input descripcion">
-                    <textarea [(ngModel)]="incidencia.descripcion" name="descripcion" id="descricion" cols="40" rows="6"
-                        fixed placeholder="  Esto es una descripción de una tarea" disabled></textarea>
+                <div class="parteInputs">
+                    <div class="parteIzq">
+                        <div class="class-input fecha">
+                            <input [(ngModel)]="incidencia.fecha" type="text" name="fecha" placeholder="  Fecha..." disabled>
+                        </div>
+        
+                        <div class="class-input finca">
+                            <input [(ngModel)]="finca.direccion" type="text" name="finca" placeholder="  Finca..." disabled>
+                        </div>
+        
+                        <div class="class-input usuario">
+                            <input [(ngModel)]="usuario.nombre" type="text" name="usuario" placeholder="  Usuario..." disabled>
+                        </div>
+                    </div>    
+                    <div class="class-input descripcion">
+                        <textarea [(ngModel)]="incidencia.descripcion" name="descripcion" id="descricion" cols="40" rows="6"
+                            fixed placeholder="  Esto es una descripción de una tarea" disabled></textarea>
+                    </div>
                 </div>
                 <div class="botonMygreen-caja">
                     <button class="botonMyGreen" [disabled]="!incidenciaForm.valid" type="button"
