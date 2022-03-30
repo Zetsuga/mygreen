@@ -146,9 +146,9 @@ public onSubmit(form:NgForm){
 
 
   ngOnInit(): void {
-    // if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="4"){
-    //   this.router.navigateByUrl('/login');
-    // }
+    if(this.usuarioService.logueado==false && this.usuarioService.usuario.rol!="4"){
+      this.router.navigateByUrl('/login');
+    }
   }
 
 }

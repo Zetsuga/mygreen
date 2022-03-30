@@ -260,43 +260,56 @@ p {
   border-radius: 50%;
 }
 
-@media (max-width: 1060px){
-.tareas-cabecera{
-  display: none;
-}
-.contenido {
-  grid-template-columns: [x0]200px [x1]calc(100vw - 200px) [x2];
-  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
-}
-.tarjetas{
-  padding: 5px;
-  gap: 5px;
-}
-.indicencias-contenedor{
-  overflow: scroll;
-}
-.incidencias {
-  grid-column: x0/x4;
-  grid-row: y6/y9;
-}
-.tensionMatricial {
+.descripcion {
   overflow: hidden;
-  grid-column: x0/x4;
-  grid-row: y2/y6;
-}
-.tituloCard{
-  display: none;
-}
-img{
-  display: none;
-}
-.graficaTension {
-  width: 700px;
-  height: auto;
-}
-.demo-chart{
-  max-height: 300px;
-  max-width: 720px;
+  white-space: nowrap;
+  text-overflow: ellipsis !important;
+  max-width: 150px;
+  padding-left: 5px;
 }
 
+.modal-body p {
+  color: black;
+  font-family: var(--roboto);
+  font-size: 17px;
+}
+
+@media (max-width: 1060px) {
+  .tareas-cabecera {
+    display: none;
+  }
+  .contenido {
+    grid-template-columns: [x0]200px [x1]calc(100vw - 200px) [x2];
+    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  }
+  .tarjetas {
+    padding: 5px;
+    gap: 5px;
+  }
+  .indicencias-contenedor {
+    overflow: scroll;
+  }
+  .incidencias {
+    grid-column: x0/x4;
+    grid-row: y6/y9;
+  }
+  .tensionMatricial {
+    overflow: hidden;
+    grid-column: x0/x4;
+    grid-row: y2/y6;
+  }
+  .tituloCard {
+    display: none;
+  }
+  img {
+    display: none;
+  }
+  .graficaTension {
+    width: 700px;
+    height: auto;
+  }
+  .demo-chart {
+    max-height: 300px;
+    max-width: 720px;
+  }
 }
