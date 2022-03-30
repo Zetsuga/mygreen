@@ -21,7 +21,7 @@
   /* grid-template-columns: [x0]1fr[x1];
   grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3]; */
   padding: 50px;
-  min-height: 1000px;
+  /* min-height: 1000px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -47,21 +47,7 @@
   width: 100%;
   max-width: 1000px;
 }
-/* .fechas input {
-  height: 30px;
-  margin: 5px;
-  text-align: center;
-  background-color: #f4f4f4;
-  border: 1px solid rgb(124, 124, 124);
-  border-left: 1px solid rgb(124, 124, 124);
-  border-top: 1px solid rgb(124, 124, 124);
-  border-bottom: 1px solid rgb(124, 124, 124);
-  border-right: none;
-}
 
-.fechas input:focus {
-  outline: none;
-} */
 .botonBuscar {
   display: flex;
   flex-direction: row;
@@ -70,31 +56,15 @@
   height: 100%;
   width: 80px;
 }
-/* .fechaInicio,
-.fechaFin {
-  background-image: url(../../../assets/img/calendario.png);
-  background-repeat: no-repeat;
-  background-position: 5px center;
-  background-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 28px;
-  height: 30px;
-  border: 1px solid rgb(124, 124, 124);
-  border-radius: 3px;
-  margin-right: 10px;
-} */
-
 .graficaTension {
-  width: 100%;
+  width:100%;
+  height: 80%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
-
 .graficaTension img {
   width: 100%;
   max-width: 1000px;
@@ -127,11 +97,15 @@
 .botonRiego {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: flex-end;
   width: 100%;
   margin-top: 20px;
   max-width: 1000px;
   padding-left: 25px;
+  position:absolute;
+  z-index: 1;
+  top: 300px;
+  /* right: 20px; */
 }
 
 .botonRiego p {

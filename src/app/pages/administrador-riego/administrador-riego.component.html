@@ -24,6 +24,11 @@
                 </div>
             </div>
             <div class="graficaTension">
+                <div class="botonRiego">
+                    <p>ON</p>
+                    <app-boton-slice></app-boton-slice>
+                    <p>OFF</p>
+                </div>
                 <div echarts [options]="options" class="tensionMatricial"></div>
             </div>
             <div class="valorTension">
@@ -34,6 +39,7 @@
                         <h2 class="cajaValor">{{tension}} Cb</h2>
                         <h4 class="cajaTitulo">TENSIÓN MATRICIAL</h4>
                     </div>
+
                 </div>
                 <div class="tituloSugerencia">
                     <h2>{{mensaje}}</h2>
@@ -42,11 +48,7 @@
                         En determinadas ocasiones estas medidas pueden variar.</p>
                 </div>
             </div>
-            <div class="botonRiego">
-                <p>ON</p>
-                <app-boton-slice></app-boton-slice>
-                <p>OFF</p>
-            </div>
+
         </div>
     </div>
 </div>

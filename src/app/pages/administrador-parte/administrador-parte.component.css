@@ -33,7 +33,7 @@
   grid-row: y0/y4;
   width: 100%;
   min-width: 300px;
-  max-height: 500px;
+  max-height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -58,7 +58,9 @@
   width: 100%;
   min-width: 600px;
   max-width: 800px;
-  max-height: 500px;
+  max-height: 550px;
+  padding-bottom: 20px;
+  overflow: hidden;
 }
 
 .tituloFormNuevaTarea {
@@ -114,6 +116,7 @@
   min-height: 50%;
   max-width: 1000px;
   margin-top: 10px;
+
 }
 /* th {
   height: 30px;
