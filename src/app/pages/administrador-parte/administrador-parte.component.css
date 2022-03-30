@@ -115,6 +115,26 @@
   max-width: 1000px;
   margin-top: 10px;
 }
+/* th {
+  height: 30px;
+} */
+td {
+  text-align: center;
+  height: 30px;
+}
+.iconos {
+  /* border: 1px solid black; */
+  width: auto;
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+}
+.iconos img {
+  height: 100%;
+  width: auto;
+}
 .centrarBoton {
   display: flex;
   width: 100%;
