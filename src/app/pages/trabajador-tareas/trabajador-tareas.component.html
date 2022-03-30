@@ -9,7 +9,7 @@
     <div class="tarjetas">
         <div class="tareas">
             <h3 class="tituloCard separacion">TAREAS ASIGNADAS</h3>
-            <div
+            <div class="tareasCuerpo"
             [ngClass]="{'urgente':'tareaPendiente bordeRojo','media':'tareaPendiente bordeVerde',
                         'baja':'tareaPendiente bordeAmarillo'}[tarea.prioridad]" 
             *ngFor="let tarea of tareaSlice;let indice=index" (click)="cargarDatos(indice)">
@@ -36,18 +36,18 @@
                 <div class="descripcion-caja">
                     <div class="descripcion-izquierda">
                         <div class="class-input urgencia">
-                            <input [(ngModel)]="tarea.prioridad" type="text" name="urgencia" placeholder="  Urgencia" disabled>
+                            <input [(ngModel)]="tarea.prioridad" type="text" name="urgencia" placeholder=" Urgencia" disabled>
                         </div>
 
                         <div class="class-input fecha">
-                            <input [(ngModel)]="tarea.fecha" type="text" name="fecha" placeholder="  Fecha" disabled>
+                            <input [(ngModel)]="tarea.fecha" type="text" name="fecha" placeholder=" Fecha" disabled>
                         </div>
                         <button class="botonMyGreen" type="button" (click)="eliminarTarea(tarea.id_tarea)">FINALIZAR</button>
                     </div>
 
                     <div class="descripcion-derecha">
                         <textarea [(ngModel)]="tarea.descripcion" name="descripcion" id="descripcion" cols="40" rows="6" fixed
-                            placeholder="  Esto es una descripción de una tarea" disabled></textarea>
+                            placeholder="Esto es una descripción de una tarea" disabled></textarea>
                     </div>
                 </div>
             </form>
@@ -58,14 +58,14 @@
                 <form class="incidencia-caja" #incidenciaForm="ngForm">
                     <div class="incidencia-izquierda">
                         <div class="class-input fecha">
-                            <input [(ngModel)]="incidencia.fecha" type="date" name="fecha" placeholder="  Fecha">
+                            <input [(ngModel)]="incidencia.fecha" type="date" name="fecha" placeholder=" Fecha">
 
                         </div>
                         <button class="botonMyGreen" type="button" (click)="guardarIncidencia()">GENERAR</button>
                     </div>
                     <div class="incidencia-derecha">
                         <textarea [(ngModel)]="incidencia.descripcion"  name="descripcion2" id="descripcion2" cols="40" rows="6" fixed
-                            placeholder="  Esto es una descripción de una incidencia"></textarea>
+                            placeholder="Esto es una descripción de una incidencia"></textarea>
                     </div>
                 </form>
             </div>
