@@ -15,68 +15,72 @@
 
         </ng-template>
     </div>
-    <div class="menu" *ngIf="usuarioService.usuario.rol =='2'; else siSuperAdmin">
-        <div class="menuBoton">
-            <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
-            <a routerLink="/administrador/inicio" class="tituloCard">INICIO</a>
-        </div>
-        <div class="menuBoton">
-            <img src="../../../assets/img/perfil-del-usuario 1.png" alt="" class="iconoMenuBoton">
-            <a routerLink="/administrador/perfil" class="tituloCard">PERFIL</a>
-        </div>
-        <div class="menuBoton">
-            <img src="../../../assets/img/obrero 1.png" alt="" class="iconoMenuBoton">
-            <a class="tituloCard2">FINCA</a>
-            <div class="menuBotonSub">
-                <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
-                <a routerLink="/administrador/parte" class="tituloCardSub">PARTES DE TRABAJO</a>
-
-            </div>
-            <div class="menuBotonSub">
-                <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
-                <a routerLink="/administrador/incidencias" class="tituloCardSub">INCIDENCIAS</a>
-
-            </div>
-        </div>
-        <div class="menuBoton">
-            <img src="../../../assets/img/planta2.png" alt="" class="iconoMenuBoton">
-            <a class="tituloCard2">INVERNADEROS</a>
-            <div class="menuBotonSub">
-                <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
-                <a routerLink="/administrador/riego" class="tituloCardSub">RIEGO</a>
-
-            </div>
-            <div class="menuBotonSub">
-                <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
-                <a routerLink="/administrador/domotica" class="tituloCardSub">ACTUADORES</a>
-
-            </div>
-            <div class="menuBotonSub">
-                <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
-                <a routerLink="/administrador/historial" class="tituloCardSub">HISTORIAL</a>
-
-            </div>
-        </div>
-        <div class="menuBoton">
-            <img src="../../../assets/img/add-user.png" alt="" class="iconoMenuBoton">
-            <a routerLink="/administrador/usuarios" class="tituloCard">USUARIOS</a>
-        </div>
-
-    </div>
-    <ng-template #siSuperAdmin>
-        <div class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
+    <div class="menu" *ngIf="usuarioService.usuario.rol =='2' || usuarioService.usuario.rol == '1'; else siTrabajador">
+        <div *ngIf="usuarioService.usuario.rol == '2'; else siSuperAdmin">
             <div class="menuBoton">
                 <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
-                <a routerLink="/super/administrador" class="tituloCard">ALTA ADMIN</a>
+                <a routerLink="/administrador/inicio" class="tituloCard">INICIO</a>
+            </div >
+                <div class="menuBoton">
+                    <img src="../../../assets/img/perfil-del-usuario 1.png" alt="" class="iconoMenuBoton">
+                    <a routerLink="/administrador/perfil" class="tituloCard">PERFIL</a>
+                </div>
+                <div class="menuBoton">
+                    <img src="../../../assets/img/obrero 1.png" alt="" class="iconoMenuBoton">
+                    <a class="tituloCard2">FINCA</a>
+                    <div class="menuBotonSub">
+                        <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
+                        <a routerLink="/administrador/parte" class="tituloCardSub">PARTES DE TRABAJO</a>
+        
+                    </div>
+                    <div class="menuBotonSub">
+                        <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
+                        <a routerLink="/administrador/incidencias" class="tituloCardSub">INCIDENCIAS</a>
+        
+                    </div>
+                </div>
+                <div class="menuBoton">
+                    <img src="../../../assets/img/planta2.png" alt="" class="iconoMenuBoton">
+                    <a class="tituloCard2">INVERNADEROS</a>
+                    <div class="menuBotonSub">
+                        <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
+                        <a routerLink="/administrador/riego" class="tituloCardSub">RIEGO</a>
+        
+                    </div>
+                    <div class="menuBotonSub">
+                        <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
+                        <a routerLink="/administrador/domotica" class="tituloCardSub">ACTUADORES</a>
+        
+                    </div>
+                    <div class="menuBotonSub">
+                        <img src="../../../assets/img/proximo 1.png" alt="" class="icnoMenuBotonSub">
+                        <a routerLink="/administrador/historial" class="tituloCardSub">HISTORIAL</a>
+        
+                    </div>
+                </div>
+                <div class="menuBoton">
+                    <img src="../../../assets/img/add-user.png" alt="" class="iconoMenuBoton">
+                    <a routerLink="/administrador/usuarios" class="tituloCard">USUARIOS</a>
+                </div>
+        
             </div>
+            <ng-template #siSuperAdmin>
+                <div class="menu">
+                    <div class="menuBoton">
+                        <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
+                        <a routerLink="/super/administrador" class="tituloCard">ALTA ADMIN</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menuBoton">
+                        <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
+                        <a routerLink="/super/superadministrador" class="tituloCard">ALTA SUPER ADMIN</a>
+                    </div>
+                </div>
+            </ng-template>
+
         </div>
-        <div class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
-            <div class="menuBoton">
-                <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
-                <a routerLink="/super/superadministrador" class="tituloCard">ALTA SUPER ADMIN</a>
-            </div>
-        </div>
-    </ng-template>
+
     <ng-template #siTrabajador>
         <div class="menu">
             <div class="menuBoton">

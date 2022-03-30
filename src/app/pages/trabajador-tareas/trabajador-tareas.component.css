@@ -37,6 +37,7 @@
   background-color: white;
   padding: 0 10px;
   gap: 10px;
+
 }
 
 .descripcion {
@@ -46,9 +47,9 @@
   box-shadow: var(--sombra);
   border: var(--borde);
   display: flex;
-  /* border: 1px solid rgba(104, 104, 104, 0.26); */
   flex-direction: column;
   background-color: white;
+  overflow: hidden;
 }
 
 .incidencia {
@@ -58,9 +59,9 @@
   box-shadow: var(--sombra);
   border: var(--borde);
   display: flex;
-  /* border: 1px solid rgba(104, 104, 104, 0.26); */
   flex-direction: column;
   background-color: white;
+  overflow: hidden;
 }
 
 .tareaPendiente {
@@ -162,7 +163,7 @@
 .incidencia-derecha textarea {
   border: 1px solid var(--verdeSecundario);
   border-radius: 7px;
-  padding-left: 5px;
+  padding: 7px;
 }
 
 .descripcion-derecha textarea:hover,
@@ -208,4 +209,39 @@ textarea {
   border: 3px solid var(--verdePrincipal);
   border-radius: 7px;
   box-shadow: 3px 3px 10px var(--grisOscuro);
+}
+
+@media (max-width: 1060px){
+
+  .contenido{
+    grid-template-columns: [x0]200px [x1]calc(100vw - 255px) [x2];
+
+  }
+  .tarjetas{
+    padding: 10px;
+  }
+  .tareasCuerpo{
+    overflow: scroll;
+  }
+  .descripcion{
+    height: 100%;
+  }
+  .descripcion-caja,
+  .descripcion-izquierda{
+    gap: 5px;
+  }
+  .descripcion-derecha textarea,
+  .incidencia-derecha textarea{
+    overflow: scroll;
+    height: 90px;
+  } 
+  .incidencia-izquierda{
+    gap: 20px;
+  }
+  .separacionSuperior{
+    margin: 4px 0 8px 4px;
+  }
+  .botonMyGreen{
+    margin: 5px;
+  }
 }
