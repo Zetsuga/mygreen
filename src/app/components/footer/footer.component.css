@@ -1,12 +1,11 @@
 footer{
     position: relative;
     bottom: 0;
-    /* left: 0; */
     background-color:#414141;
     display: flex;
     justify-content: space-between;
-    padding: 35px 40px 30px 40px;
-    height: 220px;
+    padding: 2vw 6.6vh 1.95vw 6.6vh;
+    height: 22.3vh;
     width: 100%;
     color: white;
 }
@@ -15,20 +14,24 @@ footer{
     justify-content: left;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: .5em;
 }
 .bloque1{
     display: flex;
     align-content: center;
-    gap: 20px;
+    gap: 1em;
+}
+.parte-izq p{
+    display: none;
+
 }
 .parte-izq h1{
     font-family: 'Roboto Condensed';
     font-style: bold;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 56px;
-    margin-top: 10px;
+    font-size: 3em;
+    line-height: 7.8vh;
+    margin-top: 1.40vh;
 }
 
 .canvas-log img{
@@ -40,43 +43,44 @@ footer{
     justify-content: center;
     align-content: flex-end;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.6em;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 7vh;
 }
 .parte-med h2{
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 1.87em;
+    line-height: 4.9vh;
 }
 .parte-med h3{
     font-family: 'Lato';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1.5em;
+    line-height: 4vh;
 }
 .parte-med p{
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75em;
+    line-height: 1.96vh;
 }
 .parte-dcha{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: auto;
+    overflow: hidden;
 
 }
 .parte-dcha h2{
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 1.75em;
+    line-height: 4vh;
 }
 .parte-dcha ul{
     display: flex;
@@ -88,14 +92,23 @@ footer{
     font-family: 'Lato';
     font-style: normal;
     font-weight: 500;
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 0.9em;
+    line-height: 2vh;
     display: flex;
-    margin-top: 10px;
+    margin-top: 1vh;
 }
 .parte-dcha li img{
     margin-right: 8px;
 }
 a{
     color: white;
+}
+
+@media (max-width: 1060px){
+    .parte-med{
+        display: none;
+    }
+    p{
+        display: none;
+    }
 }

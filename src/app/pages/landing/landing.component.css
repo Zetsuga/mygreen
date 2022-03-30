@@ -1,13 +1,7 @@
 body {
-  /* display: inline-block; */
   justify-content: center;
   flex-direction: column;
   scroll-behavior: smooth;
-  /* background-color: var(--verdePrincipal);
-        background-image: 
-          linear-gradient(to right, rgba(255, 255, 255, 0.103) 10%, transparent 0),
-          linear-gradient( white, #8a9669 );
-        background-size: .75em 100%, 100% 100%; */
 }
 /* ============Primera Seccion============== */
 .goUpBtn{
