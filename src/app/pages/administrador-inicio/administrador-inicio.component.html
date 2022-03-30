@@ -26,8 +26,9 @@
                 </div>
             </div>
         </div>
-        <div [ngClass]="{'rojo':'rojo temperatura','amarillo':'amarillo temperatura','verde':'verde temperatura'}[colorTemperatura]">
-                
+        <div
+            [ngClass]="{'rojo':'rojo temperatura','amarillo':'amarillo temperatura','verde':'verde temperatura'}[colorTemperatura]">
+
             <img src="../../../assets/img/TermometroB 1.png">
             <div class="caja">
                 <h3 class="cajaValor">{{temperatura}}</h3>
@@ -74,18 +75,21 @@
                         </th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let incidencia of incidenciaSlice" id="tablaFila">
+                        <tr *ngFor="let incidencia of incidenciaSlice; let indice = index" id="tablaFila">
                             <td>{{incidencia.fecha|fecha}}</td>
                             <td>{{incidencia.nombre}} {{incidencia.apellidos}}</td>
-                            <td>{{incidencia.descripcion}}</td>
+
+                            <td class="descripcion"><a (click)="openPopup(indice)">{{incidencia.descripcion}}</a></td>
+
                         </tr>
 
                     </tbody>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                          <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                            <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link"
+                                    (click)="cargarTabla(indice)">{{indice+1}}</a></li>
                         </ul>
-                      </nav>
+                    </nav>
                 </table>
 
             </div>
@@ -95,6 +99,24 @@
             <h3 class="tituloCard">TENSIÓN MATRICIAL</h3>
             <div class="graficaTension">
                 <div echarts [options]="options" class="demo-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Descripción Incidencia</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{incidenciaModal.descripcion}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="botonMyGreen2" (click)="closePopup()">
+                        Cerrar
+                    </button>
+                </div>
             </div>
         </div>
     </div>

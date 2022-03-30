@@ -46,7 +46,7 @@
   font-size: 15px;
 }
 
-.cajaClima{
+.cajaClima {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,7 +134,7 @@
   padding-top: 15px;
 }
 
-.tareas-cabecera{
+.tareas-cabecera {
   grid-column: x2/x4;
   grid-row: y7/y9;
   display: flex;
@@ -148,7 +148,7 @@
   box-shadow: var(--sombra);
 }
 
-.derecha{
+.derecha {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -221,7 +221,7 @@ p {
   width: 700px;
   height: auto;
 }
-.demo-chart{
+.demo-chart {
   max-height: 250px;
   max-width: 700px;
 }
@@ -238,9 +238,8 @@ p {
   height: 20px;
 }
 
-
-.leyenda-titulo{
-  color:black;
+.leyenda-titulo {
+  color: black;
   font-family: var(--lato);
   font-size: 1.2em;
   margin-bottom: 0;

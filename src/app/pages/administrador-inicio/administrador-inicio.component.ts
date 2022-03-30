@@ -32,6 +32,8 @@ export class AdministradorInicioComponent implements OnInit {
   public colorTemperatura:string;
   public colorHumedad:string;
   public colorTension:string;
+  public indicePopUP:number;
+  public incidenciaModal:Incidencia;
 
 
   constructor(public usuario:UsuarioService,public medicionService:MedicionesService,
@@ -42,6 +44,7 @@ export class AdministradorInicioComponent implements OnInit {
       this.colorHumedad="";
       this.colorTension="";
       this.paginador=[];
+      this.incidenciaModal = new Incidencia(0,0,new Date,false,"","","");
 
       
     
@@ -153,4 +156,20 @@ export class AdministradorInicioComponent implements OnInit {
     let multiplicador = indice +1;
     this.incidenciaSlice = this.incidencias.slice(indice*8,multiplicador*8);
   }
+
+
+  displayStyle = "none";
+ 
+  openPopup(id) {
+    //this.parte = this.tareas[id];
+   this.indicePopUP  = id;
+   this.displayStyle = "block";
+   this.incidenciaModal = this.incidenciaSlice[id];
+   
+ }
+ closePopup() {
+   this.displayStyle = "none";
+   this.indicePopUP = -1;
+ }
+
 }

@@ -99,7 +99,6 @@
 .class-input input {
   height: 30px;
   width: 100%;
-  /* margin: 5px; */
   text-align: start;
   background-color: #f4f4f4;
   border-left: 1px solid rgb(124, 124, 124);
@@ -151,7 +150,7 @@
   top: 1px;
 }
 
-/* BOTON MYGREEN2 */
+
 .botonMyGreen2 {
   transition: all 0.8s ease;
   background-color: #8a9669;
@@ -201,3 +200,4 @@
 .btnModificar {
   background-color: #e4c201;
 }
+ 

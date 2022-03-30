@@ -86,7 +86,11 @@ import { RecordarPasswordComponent } from './pages/recordar-password/recordar-pa
     NgxEchartsModule.forRoot({
       echarts:()=>import('echarts'),
     }),
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 0,
+    positionClass: 'toast-top-right',
+    preventDuplicates: true,
+    }),
     HttpClientModule,
     FormsModule,
     ValidateEqualModule,
