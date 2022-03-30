@@ -8,11 +8,6 @@
   grid-column: x0/x2;
   grid-row: y0/y1;
 }
-
-.menuppal {
-  grid-column: x0/x1;
-  grid-row: y1/y2;
-}
 .cuerpo {
   grid-column: x1/x2;
   grid-row: y1/y2;
@@ -39,6 +34,7 @@
   align-items: center;
   border-radius: 7px;
   background-color: white;
+  padding-bottom: 25px;
 }
 
 .cuerpoTabla {
@@ -68,4 +64,16 @@
 .tituloFichajes {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 1060px){
+.contenedor {
+  display: grid;
+  grid-template-columns: [x0]200px[x1]calc(100vw - 255px) [x2];
+  grid-template-rows: [y0]112px[y1]calc(720px - 112px) [y2];
+}
+.tituloFichajes {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 }

@@ -97,3 +97,11 @@
 textarea {
   resize: none;
 }
+
+.celdaDescripcion {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  padding-left: 5px;
+}

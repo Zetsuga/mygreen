@@ -84,9 +84,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-content: flex-start;
   padding-left: 45px;
-  /* max-height: 100px; */
   overflow: scroll;
+  height: 100%;
 
 }
 .tarjeta-tarea {

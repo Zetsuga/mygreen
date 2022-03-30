@@ -95,18 +95,6 @@
                         <p *ngIf="ciudad.errors.required">La Ciudad es obligatoria</p>
                     </div>
                 </div>
-                <!-- <span>ROL</span>
-                <div class="subForm">
-                    <div class="class-input telefono">
-                        <input type="text" id="rol-usuariosForm" name="rol" [(ngModel)]="usuario.rol" #rol="ngModel"
-                            [ngClass]="{'is-invalid': usuariosForm.submitted && rol.invalid}" required
-                            placeholder="  Rol..." />
-                    </div>
-                    <div class="advertencia" *ngIf="rol.invalid && (rol.dirty || rol.touched)">
-                        <p *ngIf="rol.errors.required">El Rol es obligatorio</p>
-                    </div>
-                </div> -->
-
                 <span>E-MAIL</span>
                 <div class="subForm">
                     <div class="class-input email">
@@ -154,7 +142,9 @@
                     <button *ngIf="botonFormulario" class="botonMyGreen" id="crear-modificar" type="submit"
                         [disable]="usuariosForm">CREAR</button>
                     <button *ngIf="!botonFormulario" class="botonMyGreen btnModificar" id="crear-modificar"
-                        type="button" (click)="modificarUsuario()">MODIFICAR</button>
+                        type="button" [disabled]="!nombre.valid || !apellidos.valid || !telefono.valid || 
+                        !correo.valid || !direccion.valid || !cp.valid || !poblacion.valid || !ciudad.valid"
+                        (click)="modificarUsuario()">MODIFICAR</button>
                 </div>
             </div>
         </form>
