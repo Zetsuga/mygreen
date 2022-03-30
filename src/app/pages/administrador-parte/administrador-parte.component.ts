@@ -25,6 +25,7 @@ export class AdministradorParteComponent implements OnInit {
   public indice:number;
   public fecha1: string;
   @ViewChild("fechaTarea") fechaTarea:ElementRef;
+  private indicePopUP:number;
 
   constructor(public usuarioService:UsuarioService, private router:Router, public tareasService:TareasService, private toastService:ToastService) {
     this.botonFormulario=true;
@@ -71,18 +72,19 @@ export class AdministradorParteComponent implements OnInit {
     })
   }
 
-  public eliminarTarea(id:number){
-    console.log(this.tareas[id].id_tarea);
+  public eliminarTarea(){
+    console.log(this.indicePopUP);
     
-    this.tareasService.eliminar(this.tareas[id].id_tarea).subscribe((datos:any)=>{
+    this.tareasService.eliminar(this.tareas[this.indicePopUP].id_tarea).subscribe((datos:any)=>{
       if(datos.error == true)
       this.toastService.showError(datos.mensaje,datos.titulo);
       else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
-        this.tareas.splice(id,1);
+        this.tareas.splice(this.indicePopUP,1);
         this.botonFormulario = true;
       }
     })
+    this.closePopup();
   }
 
   public cargarDatos (id:number){   
@@ -116,6 +118,19 @@ export class AdministradorParteComponent implements OnInit {
       }
     })
   }
+
+
+  displayStyle = "none";
+ 
+  openPopup(id) {
+    //this.parte = this.tareas[id];
+   this.indicePopUP  = id;
+   this.displayStyle = "block";
+ }
+ closePopup() {
+   this.displayStyle = "none";
+   this.indicePopUP = -1;
+ }
 
   ngOnInit(): void {
 

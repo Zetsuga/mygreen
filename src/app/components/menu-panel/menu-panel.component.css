@@ -123,3 +123,8 @@
   text-shadow: none;
   color: var(--grisOscuro);
 }
+@media (max-width: 1060px){
+  .menuAdministrador {
+    width: 200px;
+  }
+}

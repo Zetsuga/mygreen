@@ -1,7 +1,9 @@
+<body>
+    <app-header></app-header>
 
-    <body>
-        <app-header></app-header>
+    <div class="cuerpo1">
 
+<<<<<<< HEAD
         <div class="cuerpo1">
 
             
@@ -51,44 +53,56 @@
 
             </form>
         </div>
+=======
+>>>>>>> 496278a64bd1b2b3238163f7eb2787107f88802b
         
-        <app-footer></app-footer>
-      </body>
+        <div class="wrapper">
+            <img src="https://source.unsplash.com/random/600x600?water" alt="">
+            <img src="https://source.unsplash.com/random/600x600?summer" alt="">
+            <img src="https://source.unsplash.com/random/600x600?plants" alt="">
+            <img src="" alt="">
+            <img src="https://source.unsplash.com/random/600x600?roses" alt="">
+            <img src="https://source.unsplash.com/random/600x600?sky" alt="">
+            <img src="" alt="">
+            <img src="https://source.unsplash.com/random/600x600?blossom" alt="">
+            <img src="https://source.unsplash.com/random/600x600?ice" alt="">
+            <img src="https://source.unsplash.com/random/600x600?spring" alt="">
+          </div>
 
-
-
-
-      <!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="contenedor_datos_input">
-                <div class="form-group">
-                    <label>Correo</label>
-                    <input class="input" type="email" name="correo" [(ngModel)]="usuario.email" #correo="ngModel" 
-                    [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email required>
+        <form class="formulario" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="contenedor_datos_input">
+            <div class="form">
+                <div class="tituloForm">
+                    <h2>¡Bienvenido!</h2>
+                    <p>Entra en tu cuenta para controlar tu explotación.</p>
+                </div>
+                <span>Introduce tu e-mail</span>
+                <div>
+                    <input class="form-input" type="email" id="email-login" name="correo" [(ngModel)]="usuario.email" #correo="ngModel"
+                    [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email required placeholder="  E-mail..." />
                     <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
                         <p *ngIf="correo.errors.required" class="advertencia">El correo es obligatorio</p>
                         <p *ngIf="correo.errors.email" class="advertencia">El correo no es válido</p>
                     </div>
-                </div>
-        
-                <div class="form-group">
-                    <label>Password</label>
-                    <input class="input" type="text" name="password" [(ngModel)]="usuario.contrasenia" #password="ngModel" 
-                    [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="5" required>
+                </div> 
+                <span>Introduce tu contraseña</span>
+                <div>
+                    <input class="form-input" type="password" id="contraseña-login" name="password" [(ngModel)]="usuario.contrasenia" #password="ngModel"
+                    [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}" minlength="4" required placeholder="  Contraseña..." />
                     <div *ngIf="password.invalid && (password.dirty || password.touched)">
                         <p *ngIf="password.errors.required" class="advertencia">La contraseña es obligatoria</p>
                     </div>
                 </div>
-        
-                <div class="form-group">
-                    <button class="boton_loguear" [disabled]="!loginForm.valid">Ingresar</button>
+                <div class="form-check">
+                    <a class="recordar-contraseña" href="https://shitday.de/">¿Olvidaste tu contraseña?</a>
+                  </div>
+                <div id="boton-form" >
+                    <button class="botonMyGreen" type="submit" [disabled]="!loginForm.valid" >ENVIAR</button>
                 </div>
-            </form> -->
+            </div>
 
-
-
-
-
-
-
+        </form>
+    </div>
     
-  
+    <app-footer></app-footer>
+</body>
 

@@ -1,0 +1,114 @@
+.contenido {
+  display: grid;
+  grid-template-columns: [x0]238px [x1]calc(100vw - 255px) [x2];
+  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  background-color: var(--fondo);
+  min-height: 900px;
+}
+
+.header {
+  grid-column: x0/x2;
+  grid-row: y0/y1;
+}
+
+.menu {
+  display: grid;
+  grid-column: x0/x1;
+  grid-row: y1/y2;
+}
+
+.admin-usuarios {
+  display: grid;
+  grid-column: x1/x2;
+  grid-row: y1/y2;
+  /* grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4];
+      grid-template-rows: [y0]90% [y1]; */
+  padding: 3.125em;
+  gap: 1.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 1300px;
+  min-height: 800px;
+}
+
+.usuariosForm {
+  grid-column: x0/x1;
+  grid-row: y0/y1;
+  border: var(--borde);
+  box-shadow: var(--sombra);
+  border-radius: 7px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2.16vh 0;
+  gap: 0.63em;
+  background-color: white;
+  height: 100%;
+  min-width: 350px;
+  min-height: 600px;
+  max-height: 690px;
+}
+#boton-form {
+  margin: 20px;
+}
+.tablaUltimasTareas {
+  grid-column: x1/x4;
+  grid-row: y0/y1;
+  border-radius: 7px;
+  box-shadow: var(--sombra);
+  border: var(--borde);
+  /* background-color: var(--rojowarning); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.16vh 1.63vw 0;
+  /* margin-bottom: 50px; */
+  background-color: white;
+  width: 100%;
+  max-width: 950px;
+  max-height: 600px;
+  min-width: 750px;
+  min-height: 690px;
+}
+th {
+  height: 30px;
+}
+td {
+  text-align: center;
+}
+.iconos {
+  /* border: 1px solid black; */
+  width: auto;
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+}
+.iconos img {
+  height: 100%;
+  width: auto;
+}
+.usuariosForm p {
+  color: red;
+  font-size: smaller;
+  text-align: start;
+}
+.advertencia {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: calc(100% - 33px);
+  position: absolute;
+}
+.subForm {
+  width: 100%;
+  margin-left: 40px;
+}
+
+.usuariosForm span {
+  margin-top: 10px;
+}

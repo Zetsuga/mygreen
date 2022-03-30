@@ -38,7 +38,11 @@ import { UsuarioPipe } from './pipes/usuario.pipe';
 import { UploadComponent } from './components/upload/upload.component';
 import { SuperAdministradorComponent } from './pages/super-administrador/super-administrador.component';
 import { SuperSuperadministradorComponent } from './pages/super-superadministrador/super-superadministrador.component';
-import { RecordarPasswordComponent } from './pages/recordar-password/recordar-password.component';
+import { SuperUsuarioAdministradorComponent } from './pages/super-usuario-administrador/super-usuario-administrador.component';
+import { CommonModule } from '@angular/common';
+
+
+
 
 @NgModule({
   declarations: [
@@ -68,7 +72,7 @@ import { RecordarPasswordComponent } from './pages/recordar-password/recordar-pa
     UploadComponent,
     SuperAdministradorComponent,
     SuperSuperadministradorComponent,
-    RecordarPasswordComponent
+    SuperUsuarioAdministradorComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,8 @@ import { RecordarPasswordComponent } from './pages/recordar-password/recordar-pa
     ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ValidateEqualModule
+    ValidateEqualModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

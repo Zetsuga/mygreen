@@ -20,6 +20,7 @@ export class AdministradorUsuariosComponent implements OnInit {
   public paginador : number[];
   public botonFormulario:Boolean;
   public indice:number;
+  private indicePopUP:number;
 
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService, private fincaService:FincaService,
@@ -70,27 +71,31 @@ export class AdministradorUsuariosComponent implements OnInit {
    public cargarDatos(id){
      this.usuario = new Usuario(this.usuarios[id].nombre,this.usuarios[id].apellidos,this.usuarios[id].telefono,
       this.usuarios[id].direccion,this.usuarios[id].cp,this.usuarios[id].poblacion,this.usuarios[id].ciudad,
-      this.usuarios[id].contrasenia,this.usuarios[id].rol,this.usuarios[id].num_cuenta,this.usuarios[id].email);
+      null,this.usuarios[id].rol,this.usuarios[id].num_cuenta,this.usuarios[id].email);
       this.usuario.id_usuario = this.usuarios[id].id_usuario;
      this.botonFormulario = false;
      this.indice=id;
    }
 
-   public eliminarUsuario(id){
-     console.log(this.usuarios[id].id_usuario)
-     this.usuarioService.eliminar(this.usuarios[id].id_usuario).subscribe((datos:any)=>{
+   public eliminarUsuario(){
+     console.log(this.indicePopUP)
+     this.usuarioService.eliminar(this.usuarios[this.indicePopUP].id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje, datos.titulo);
-        this.usuarios.splice(id,1);
+        this.usuarios.splice(this.indicePopUP,1);
         this.botonFormulario=true;
         
       }
      })
+     this.closePopup();
    }
 
    public modificarUsuario(){
+    if(this.usuario.contrasenia == ""){
+      this.usuario.contrasenia = null;
+    }
      this.usuarioService.modificar(this.usuario).subscribe((datos:any)=>{
       if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);
@@ -102,6 +107,19 @@ export class AdministradorUsuariosComponent implements OnInit {
       }
      })
    }
+
+
+   displayStyle = "none";
+ 
+  openPopup(id) {
+    //this.parte = this.tareas[id];
+   this.indicePopUP  = id;
+   this.displayStyle = "block";
+ }
+ closePopup() {
+   this.displayStyle = "none";
+   this.indicePopUP = -1;
+ }
 
 
 

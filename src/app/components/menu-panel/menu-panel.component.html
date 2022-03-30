@@ -64,10 +64,16 @@
 
     </div>
     <ng-template #siSuperAdmin>
-        <div #siSuperAdmin class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
+        <div class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
             <div class="menuBoton">
                 <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
-                <a routerLink="/super/administrador" class="tituloCard">MENU ADMIN</a>
+                <a routerLink="/super/administrador" class="tituloCard">ALTA ADMIN</a>
+            </div>
+        </div>
+        <div class="menu" *ngIf="usuarioService.usuario.rol =='1'; else siTrabajador">
+            <div class="menuBoton">
+                <img src="../../../assets/img/configuraciones1.png" alt="" class="iconoMenuBoton">
+                <a routerLink="/super/superadministrador" class="tituloCard">ALTA SUPER ADMIN</a>
             </div>
         </div>
     </ng-template>

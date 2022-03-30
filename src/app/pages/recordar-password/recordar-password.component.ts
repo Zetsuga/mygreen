@@ -27,6 +27,7 @@ export class RecordarPasswordComponent implements OnInit {
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
+        this.router.navigateByUrl("/login");
       }
     })
   }
