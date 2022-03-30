@@ -73,9 +73,9 @@ export class AdministradorRiegoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //  if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
-    //    this.router.navigateByUrl('/login');
-    //  }
+     if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
+       this.router.navigateByUrl('/login');
+     }
 
     this.mediciones.buscar().subscribe((datos:any)=>{
       this.tension = datos.resultado[datos.resultado.length-1].tensionmatricial;
