@@ -1,7 +1,7 @@
 /*Escritorio*/
 .contenedor {
   display: grid;
-  grid-template-columns: [x0]238px[x1]calc(100vw - 255px) [x2];
+  grid-template-columns: [x0]238px[x1]calc(100vw - 238px) [x2];
   grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
 }
 

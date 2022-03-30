@@ -1,6 +1,6 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 255px) [x2];
+  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
   grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
@@ -218,19 +218,13 @@ p {
 }
 /* ========================= */
 .graficaTension {
-  /* border: 1px solid black; */
   width: 700px;
   height: auto;
 }
 .demo-chart{
-  max-height: 350px;
+  max-height: 250px;
   max-width: 700px;
-  /* margin-top:-40px; */
 }
-/* .tensionMatricial h3{
-  position: absolute;
-  margin-top: 30px;
-} */
 
 .leyenda {
   display: flex;
@@ -265,4 +259,45 @@ p {
 .baja {
   background-color: var(--verdePrincipal);
   border-radius: 50%;
+}
+
+@media (max-width: 1060px){
+.tareas-cabecera{
+  display: none;
+}
+.contenido {
+  grid-template-columns: [x0]200px [x1]calc(100vw - 200px) [x2];
+  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+}
+.tarjetas{
+  padding: 5px;
+  gap: 5px;
+}
+.indicencias-contenedor{
+  overflow: scroll;
+}
+.incidencias {
+  grid-column: x0/x4;
+  grid-row: y6/y9;
+}
+.tensionMatricial {
+  overflow: hidden;
+  grid-column: x0/x4;
+  grid-row: y2/y6;
+}
+.tituloCard{
+  display: none;
+}
+img{
+  display: none;
+}
+.graficaTension {
+  width: 700px;
+  height: auto;
+}
+.demo-chart{
+  max-height: 300px;
+  max-width: 720px;
+}
+
 }
