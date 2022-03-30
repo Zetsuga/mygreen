@@ -87,7 +87,7 @@ import { RecordarPasswordComponent } from './pages/recordar-password/recordar-pa
       echarts:()=>import('echarts'),
     }),
     ToastrModule.forRoot({
-      timeOut: 0,
+      timeOut: 2000,
     positionClass: 'toast-top-right',
     preventDuplicates: true,
     }),

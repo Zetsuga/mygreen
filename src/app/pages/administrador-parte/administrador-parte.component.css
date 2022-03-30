@@ -23,9 +23,9 @@
   gap: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center;
   min-width: 1000px;
-  min-height: 600px;
+  min-height: 600px; */
 }
 
 .formNuevaTarea {
@@ -180,4 +180,47 @@ td {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 200px;
+}
+
+
+@media (max-width: 1060px){
+
+.contenedor {
+  display: grid;
+  grid-template-columns: [x0]200px[x1]calc(100vw - 200px) [x2];
+  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+}
+
+.cuerpo {
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 5px;
+min-width: none !important; 
+min-height: none !important;
+
+}
+.formNuevaTarea {
+  display: flex;
+  justify-content: center;
+  height: calc((100vh - 112px)/2);
+  width: 797px;
+  max-width: none;
+  min-width: none;
+}
+.tabla-tarea {
+  display: flex;
+  justify-content: center;
+  height: calc((100vh - 112px)/2);
+  overflow: scroll;
+}
+.parteInputs{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.cuerpoForm{
+  margin: 5px 0 0;
+}
 }

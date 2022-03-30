@@ -10,7 +10,8 @@
   grid-row: y0/y1;
 }
 
-.menuppal {
+.menu{
+  display: grid;
   grid-column: x0/x1;
   grid-row: y1/y2;
 }
@@ -24,15 +25,7 @@
   justify-content: flex-start;
   align-items: center;
   font-family: var(--roboto);
-  min-height: 750px;
-  min-width: 920px;
 }
-/* .tituloAdmPerfil {
-  width: 100%;
-} */
-/* .tituloAdmPerfil p {
-  font-family: var(--lato);
-} */
 .perfilAdm {
   width: 100%;
   height: 100%;
@@ -41,38 +34,17 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  /* padding: 50px; */
 }
-/* .infoBasicaPerfil {
-  width: 100%;
-  max-width: 400px;
-  min-width: 300px;
-  min-height: 525px;
-  height: 525px;
-  border-radius: 7px;
-  padding: 20px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: var(--borde);
-  box-shadow: var(--sombra);
-} */
+
 
 .perfilAdm-detalle {
   border: 1px solid var(--verdeCorrecto);
-  /* width: 65%;
-  height: 525px; */
   border-radius: 7px;
-  /* margin-left: 30px; */
-  /* min-width: 400px; */
   background-color: white;
   max-width: 800px;
-  min-width: 500px;
+  /* min-width: 500px; */
   border: var(--borde);
   box-shadow: var(--sombra);
-  /* padding: 0px 0px 20px 20px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,56 +59,6 @@
 .tituloCard h3 {
   text-align: center;
 }
-
-/* .pd-titulo {
-  margin: 15px;
-} */
-/* .fotoPerfil {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-} */
-
-/* .fotoPerfil img {
-  width: 70px;
-} */
-
-/* .datosPerfil {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 20px;
-}
-
-.camposBasicos {
-  width: 100%;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.camposBasicos div {
-  margin-bottom: 20px;
-} */
-
-/* .botonGuardar {
-  width: 100%;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */
-
-/* .botonGuardar button {
-  width: 100%;
-  max-width: 300px;
-  height: 30px;
-} */
 
 .nombre,
 .apellidos,
@@ -154,13 +76,11 @@
 }
 .email {
   background-image: url(../../../assets/img/arroba.png);
-  /* margin-bottom: 25.5px !important; */
 }
 
 .password,
 .repetirpassword {
   background-image: url(../../../assets/img/candado-abierto.png);
-  /* margin-bottom: 25.5px !important; */
 }
 .nombre,
 .apellidos {
@@ -195,30 +115,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: left; */
-  /* margin-right: 20px; */
+
 }
-
-/* .detalle {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-} */
-
 .class-input {
   max-width: none;
 }
-
-/* .tituloPerfil {
-  align-self: flex-start;
-} */
 .botonGuardar{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100px;
+}
+
+
+@media (max-width: 1060px){
+  .contenedor{
+    grid-template-columns: [x0]200px [x1]calc(100vw - 200px) [x2];
+    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  }
+  .cuerpo{
+    padding: 5px;
+  }
+  .perfilAdm-detalle{
+    padding: 10px 10px 0 10px; 
+ }
+ .botonGuardar{
+  height: 50px;
+}
 }
