@@ -54,8 +54,21 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
+  padding: 30px;
   /* min-width: 400px;
   min-height: 500px; */
+}
+.parteIzq{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.parteInputs{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 .incidencias-form-inputs {
   display: flex;

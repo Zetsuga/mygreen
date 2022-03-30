@@ -28,8 +28,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-width: 1300px;
-  min-height: 800px;
+  /* min-width: 1300px;
+  min-height: 800px; */
 }
 
 .usuariosForm {
@@ -42,16 +42,33 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   padding: 2.16vh 0;
   gap: 0.63em;
   background-color: white;
-  height: 100%;
-  min-width: 350px;
+  width: 350px;
+  /* min-width: 350px;
   min-height: 600px;
-  max-height: 670px;
+  max-height: 670px; */
+}
+.titulo-usuariosForm{
+  display: flex;
+  justify-content: center;
+}
+.parteIzq{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.parteDcha{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 #boton-form {
+  display: flex;
+  justify-content: center;
   margin: 20px;
 }
 .tablaUltimasTareas {
@@ -68,10 +85,10 @@
   /* margin-bottom: 50px; */
   background-color: white;
   width: 100%;
-  max-width: 950px;
+  /* max-width: 950px;
   max-height: 600px;
   min-width: 750px;
-  min-height: 670px;
+  min-height: 670px; */
 }
 th {
   height: 30px;
@@ -111,4 +128,61 @@ td {
 
 .usuariosForm span {
   margin-top: 10px;
+}
+
+
+@media (max-width: 1060px){
+
+  .contenido {
+    grid-template-columns: [x0]200px [x1]calc(100vw - 200px) [x2];
+    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  }
+
+  .admin-usuarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    min-width: none !important; 
+    min-height: none !important;
+  }
+
+  .usuariosForm {
+    display: flex;
+    justify-content: center;
+    height: calc((100vh - 112px)/2);
+    width: 797px;
+    max-width: none;
+    min-width: none;
+    padding: 5px;
+  }
+  .parteInputs{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .parteIzq{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .parteDcha{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #boton-form {
+    margin: 10px;
+  }
+  .tablaUltimasTareas {
+   display: flex;
+  justify-content: flex-start;
+  height: calc((100vh - 112px)/2);
+  overflow: scroll;
+  padding: 5px;
+  }
 }

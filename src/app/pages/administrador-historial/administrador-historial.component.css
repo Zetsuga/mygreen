@@ -79,3 +79,14 @@
 .mat-primary {
   width: 90%;
 }
+
+
+@media (max-width: 1060px){
+  .botonMyGreen{
+    font-size: 13px;
+    padding: 4px 6px;
+  }
+  .fechas span{
+    font-size: small;
+  }
+}
