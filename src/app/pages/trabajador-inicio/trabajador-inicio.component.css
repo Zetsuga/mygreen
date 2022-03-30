@@ -87,7 +87,6 @@
   padding-left: 45px;
   /* max-height: 100px; */
   overflow: scroll;
-
 }
 .tarjeta-tarea {
   display: flex;
@@ -130,7 +129,7 @@
   float: right;
   padding: 4px;
 }
-.contenido-tarjeta p{
+.contenido-tarjeta p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -170,59 +169,59 @@
   width: 12px;
   height: 12px;
 }
-.modal-content{
+.modal-content {
   border: none;
   border-radius: none;
 }
-#modal{
+#modal {
   display: flex;
   justify-content: center;
 }
-.bordeRojo{
+.bordeRojo {
   border: 5px solid rgb(161, 5, 5);
   border-radius: 7px;
 }
-.bordeVerde{
+.bordeVerde {
   border: 5px solid green;
   border-radius: 7px;
 }
-.bordeAmarillo{
+.bordeAmarillo {
   border: 5px solid rgb(201, 154, 3);
   border-radius: 7px;
 }
-.modal-header{
+.modal-header {
   text-align: justify;
   display: flex;
   justify-content: center;
 }
-.headerRojo{
+.headerRojo {
   background-color: var(--rojowarning);
 }
-.headerAmarillo{
+.headerAmarillo {
   background-color: var(--amariloAdvertencia);
 }
-.headerVerde{
+.headerVerde {
   background-color: var(--verdeCorrecto);
 }
-.modal-body{
+.modal-body {
   display: flex;
   justify-content: center;
   height: auto;
   width: 100%;
 }
-.modal-footer{
+.modal-footer {
   display: flex;
   justify-content: center;
 }
-.tituloSpan{
+.tituloSpan {
   color: white;
 }
 
-.letraUrgente{
+.letraUrgente {
   color: white;
 }
 
-@media (max-width: 1060px){
+@media (max-width: 1060px) {
   .tarjeta-tarea {
     width: 200px;
   }

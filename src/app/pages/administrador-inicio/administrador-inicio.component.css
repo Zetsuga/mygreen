@@ -46,7 +46,7 @@
   font-size: 15px;
 }
 
-.cajaClima{
+.cajaClima {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,7 +134,7 @@
   padding-top: 15px;
 }
 
-.tareas-cabecera{
+.tareas-cabecera {
   grid-column: x2/x4;
   grid-row: y7/y9;
   display: flex;
@@ -146,7 +146,7 @@
   box-shadow: var(--sombra);
 }
 
-.derecha{
+.derecha {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -231,12 +231,12 @@ p {
   width: 650px;
   height: auto;
 }
-.demo-chart{
+.demo-chart {
   max-height: 250px;
   max-width: 650px;
   /* margin-top:-40px; */
 }
-.tensionMatricial h3{
+.tensionMatricial h3 {
   position: absolute;
   /* margin-top: 30px; */
 }
@@ -252,9 +252,8 @@ p {
   height: 12px;
 }
 
-
-.leyenda-titulo{
-  color:black;
+.leyenda-titulo {
+  color: black;
   font-family: var(--lato);
 }
 
@@ -271,4 +270,18 @@ p {
 .baja {
   background-color: var(--verdePrincipal);
   border-radius: 7px;
+}
+
+.descripcion {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  padding-left: 5px;
+}
+
+.modal-body p {
+  color: black;
+  font-family: var(--roboto);
+  font-size: 17px;
 }

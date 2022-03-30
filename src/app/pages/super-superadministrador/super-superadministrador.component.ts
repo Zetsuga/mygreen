@@ -21,7 +21,7 @@ export class SuperSuperadministradorComponent implements OnInit {
   public indice:number;
   private rolSuperAdmin = 1;
   private rolAdministrador = 2;
-  private indicePopUP:number;
+  private indicePopUP:number = -1;
   private nuevaContrasena:string = "";
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService, private fincaService:FincaService,private router:Router) { 
