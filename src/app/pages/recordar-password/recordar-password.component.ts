@@ -10,6 +10,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   templateUrl: './recordar-password.component.html',
   styleUrls: ['./recordar-password.component.css']
 })
+
 export class RecordarPasswordComponent implements OnInit {
 
   public usuario:Usuario;
@@ -27,6 +28,7 @@ export class RecordarPasswordComponent implements OnInit {
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
+        this.router.navigateByUrl("/login");
       }
     })
   }

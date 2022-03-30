@@ -39,13 +39,10 @@ import { UploadComponent } from './components/upload/upload.component';
 import { SuperAdministradorComponent } from './pages/super-administrador/super-administrador.component';
 import { SuperSuperadministradorComponent } from './pages/super-superadministrador/super-superadministrador.component';
 import { SuperUsuarioAdministradorComponent } from './pages/super-usuario-administrador/super-usuario-administrador.component';
-
-
-// paginación
-
-
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CommonModule } from '@angular/common';
+import { RecordarPasswordComponent } from './pages/recordar-password/recordar-password.component';
+
+
 
 
 @NgModule({
@@ -76,7 +73,8 @@ import { CommonModule } from '@angular/common';
     UploadComponent,
     SuperAdministradorComponent,
     SuperSuperadministradorComponent,
-    SuperUsuarioAdministradorComponent
+    SuperUsuarioAdministradorComponent,
+    RecordarPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +90,6 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     FormsModule,
     ValidateEqualModule,
-    MDBBootstrapModule.forRoot(),
     CommonModule
   ],
   providers: [],
