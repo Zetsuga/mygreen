@@ -1,7 +1,7 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
 
@@ -20,8 +20,8 @@
   display: grid;
   grid-column: x1/x2;
   grid-row: y1/y2;
-  grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3];
-  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4];
+  grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+  grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3] 1fr [y4];
   padding: 50px;
   gap: 20px;
 }
@@ -37,6 +37,7 @@
   background-color: white;
   padding: 0 10px;
   gap: 10px;
+
 }
 
 .descripcion {
@@ -48,7 +49,6 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  overflow: hidden;
 }
 
 .incidencia {
@@ -60,7 +60,6 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  overflow: hidden;
 }
 
 .tareaPendiente {
@@ -103,7 +102,6 @@
   font-size: 12px;
   font-family: var(--lato);
 }
-
 .tareaDescripcion {
   margin: 0;
   margin-bottom: 1px;
@@ -217,4 +215,22 @@ textarea {
   border: 3px solid var(--verdePrincipal);
   border-radius: 7px;
   box-shadow: 3px 3px 10px var(--grisOscuro);
+}
+
+
+@media (max-width: 1060px) {
+
+  .tareas {
+    overflow: scroll;
+  
+  }
+  
+  .descripcion {
+    overflow: scroll;
+  }
+  
+  .incidencia {
+    overflow: scroll;
+  }
+
 }

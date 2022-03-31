@@ -1,7 +1,7 @@
 .contenedor {
   display: grid;
-  grid-template-columns: [x0]238px[x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
 }
 
 .cabecera {
@@ -35,7 +35,7 @@
   border: var(--borde);
   box-shadow: var(--sombra);
   border-radius: 7px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   background-color: white;
 }
 
@@ -45,7 +45,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .botonBuscar {
@@ -67,14 +67,14 @@
 }
 .graficaTension img {
   width: 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 .valorTension {
   width: 100%;
   margin-top: 0px;
   padding-left: 35px;
   padding-right: 35px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -150,5 +150,67 @@
 .tensionMatricial {
   height: 500px;
   width: 1500px;
-  max-width: 1500px;
+  /* max-width: 1500px; */
+}
+
+@media (max-width: 1060px) {
+  .contenedor {
+    grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
+    grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
+  }
+  .cuerpo{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+  .fechas{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    z-index: 1;
+    width: 200px;
+    height: 100px;
+    top: 200px;
+    right: 90px;
+    /* padding: 5px; */
+    /* max-width: none; */
+  }
+  .botonRiego{
+    justify-content: center;
+    top: 170px;
+    width: 0;
+    max-width: 0;
+    margin-right: 40px;
+  }
+  .tituloSugerencia{
+    display: none;
+  }
+  .graficaTension{
+    width: 700px;
+    height: 80px;
+    margin-top: 160px;
+  }
+  .tension{
+    position: absolute;
+    width: 160px;
+    height: 100px;
+    z-index: 1;
+    top: 141px;
+  }
+  .tensionMatricial{
+    height: 400px;
+    bottom: 0px;
+  }
+  .tension img{
+    display: none;
+  }
+  .contenidoCuerpo{
+    padding: 5px;
+    justify-content: center;
+    /* overflow: hidden; */
+  }
+  .botonMyGreen{
+    margin: 10px;
+  }
 }

@@ -1,7 +1,7 @@
 .contenedor {
   display: grid;
-  grid-template-columns: [x0]238px[x1]calc(100vw - 255px) [x2];
-  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 255px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
 }
 
 .cabecera {
@@ -18,10 +18,10 @@
   grid-column: x1/x2;
   grid-row: y1/y2;
   background-color: #f4f4f4;
-  grid-template-columns: [x0]1fr[x1];
-  grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3];
+  grid-template-columns: [x0] 1fr [x1];
+  grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3];
   padding: 50px;
-  min-height: 1000px;
+  /* min-height: 1000px; */
 }
 
 .bordeysombra {
@@ -106,35 +106,29 @@
   height: 250px;
 }
 
-@media (max-width: 1325px) {
-  #iconoDomo {
-    display: none;
-  }
+@media (max-width: 1060px) {
 
-  .contenido img,
-  .contenidoTemperatura img,
-  .contenidoHumedad img {
-    width: 300px;
+  .contenedor {
+    display: grid;
+    grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
+    grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   }
-
-  #tension {
-    font-size: 30px;
+  .cuerpo{
+    padding: 5px;
   }
-
-  .botonSlice p {
-    font-family: var(--lato);
-    font-size: 13px;
-    font-weight: bold;
-  }
-
-  .tensionM p {
-    font-size: 17px;
-  }
+.info img{
+  display: none;
 }
-
-@media (min-width: 1600px) {
-  .tensionMatricial {
-    width: 800px;
-    height: 250px;
-  }
+.botonSlice p{
+  display: none;
+}
+#tension{
+  font-size: 39px;
+}
+.tituloCard{
+  text-align: center;
+}
+.tensionMatricial{
+  width: 537px;
+}
 }

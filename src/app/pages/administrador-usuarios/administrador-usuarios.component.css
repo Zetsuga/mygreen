@@ -1,9 +1,9 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   background-color: var(--fondo);
-  min-height: 900px;
+  /* min-height: 900px; */
 }
 
 .header {
@@ -85,6 +85,7 @@
   /* margin-bottom: 50px; */
   background-color: white;
   width: 100%;
+  height: 569px;
   /* max-width: 950px;
   max-height: 600px;
   min-width: 750px;
@@ -134,8 +135,9 @@ td {
 @media (max-width: 1060px){
 
   .contenido {
-    grid-template-columns: [x0]200px [x1]calc(100vw - 200px) [x2];
-    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+    grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
+    grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
+    min-height: none;
   }
 
   .admin-usuarios {
@@ -151,7 +153,7 @@ td {
     display: flex;
     justify-content: center;
     height: calc((100vh - 112px)/2);
-    width: 797px;
+    width: 811px;
     max-width: none;
     min-width: none;
     padding: 5px;
@@ -176,7 +178,8 @@ td {
     align-items: center;
   }
   #boton-form {
-    margin: 10px;
+    margin: 0;
+    margin-bottom: 10px;
   }
   .tablaUltimasTareas {
    display: flex;

@@ -1,7 +1,7 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
 .header {
@@ -17,8 +17,8 @@
   display: grid;
   grid-column: x1/x2;
   grid-row: y1/y2;
-  grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4];
-  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5] 1fr[y6];
+  grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4];
+  grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3] 1fr [y4] 1fr [y5] 1fr [y6];
   padding: 50px;
   gap: 20px;
 }
@@ -87,6 +87,7 @@
   align-content: flex-start;
   padding-left: 45px;
   overflow: scroll;
+  height: 100%;
 }
 .tarjeta-tarea {
   display: flex;

@@ -1,7 +1,7 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
 
@@ -24,7 +24,7 @@
   gap: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   height: 600px;
 }
 
@@ -110,8 +110,8 @@ textarea {
 
   .contenido {
     display: grid;
-    grid-template-columns: [x0]200px[x1]calc(100vw - 200px) [x2];
-    grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+    grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
+    grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   }
   .tarjetas {
     padding: 5px;
