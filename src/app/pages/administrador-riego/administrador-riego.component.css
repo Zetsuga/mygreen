@@ -14,14 +14,10 @@
   grid-row: y1/y2;
 }
 .cuerpo {
-  /* display: grid; */
   grid-column: x1/x2;
   grid-row: y1/y2;
   background-color: #f4f4f4;
-  /* grid-template-columns: [x0]1fr[x1];
-  grid-template-rows: [y0]1fr[y1]1fr[y2]1fr[y3]; */
-  padding: 50px;
-  /* min-height: 1000px; */
+  padding: 22px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -35,7 +31,6 @@
   border: var(--borde);
   box-shadow: var(--sombra);
   border-radius: 7px;
-  /* max-width: 1200px; */
   background-color: white;
 }
 
@@ -45,7 +40,6 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  /* max-width: 1000px; */
 }
 
 .botonBuscar {

@@ -200,4 +200,7 @@
 .btnModificar {
   background-color: #e4c201;
 }
- 
+.page-link{
+  color: var(--grisOscuro);
+  font-family: var(--roboto);
+}

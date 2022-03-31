@@ -76,7 +76,6 @@ body {
   background-color: #fff;
 }
 .img-banner {
-  border: 2px solid black;
   height: 670px;
   width: 100vw;
   overflow: hidden;
@@ -187,7 +186,7 @@ body {
   position: relative;
 }
 .canva img {
-  width: auto;
+  width: 100%;
   /* width: 295px; */
   height: 100%;
 }
@@ -350,7 +349,7 @@ body {
   /* justify-content: center; */
   justify-content: space-between;
   flex-direction: column;
-  width: auto;
+  width: 100%;
   height: 90%;
   gap: 0;
 }
@@ -358,20 +357,21 @@ body {
   border-bottom: 2px solid var(--verdeSecundario);
   border-top: 2px solid var(--verdeSecundario);
   display: flex;
-  justify-content: center;
   flex-direction: row;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 34%;
+  justify-content: space-between;
 }
 .subcanva1a {
   border-right: 2px solid var(--verdeSecundario);
 }
-.subcanva1a .subcanva1b {
+.subcanva1a, .subcanva1b {
   overflow: hidden;
+  width: 50%;
 }
-.subcanva1 img .subcanva1b img {
+.subcanva1 img, .subcanva1b img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .subcanva0 {
   display: flex;
@@ -391,7 +391,7 @@ body {
 }
 .subcanva0 img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 8px 0 0 0;
 }
 .subcanva2 img {
@@ -463,8 +463,8 @@ body {
   /* width: auto; */
 }
 .cont-trabajador img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 /* Texto-card Trabajador */
 .parteTexto-trabajador {

@@ -1,7 +1,7 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
 
@@ -20,8 +20,8 @@
   display: grid;
   grid-column: x1/x2;
   grid-row: y1/y2;
-  grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3] 1fr [x4];
-  grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4] 1fr [y5];
+  grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4];
+  grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3] 1fr [y4] 1fr [y5];
   padding: 50px;
   gap: 20px;
 }
@@ -82,6 +82,14 @@
 
 
 @media (max-width: 1060px){
+  .contenido {
+    grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
+    grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
+
+  }
+  .tarjetas{
+    padding: 5px;
+  }
   .botonMyGreen{
     font-size: 13px;
     padding: 4px 6px;

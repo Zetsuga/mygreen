@@ -33,7 +33,7 @@ export class TrabajadorTareasComponent implements OnInit {
       this.paginador = [];
       this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
       this.tarea = new Tarea(0,0,"","","","","");
-      this.incidencia = new Incidencia(0,0,new Date,true,"","","");
+      this.incidencia = new Incidencia(0,0,"",true,"","","");
       this.indice = 0;
       this.tareaService.buscarTodosUsuario(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
         if(datos.error==true){
@@ -73,7 +73,7 @@ export class TrabajadorTareasComponent implements OnInit {
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
-        this.incidencia = new Incidencia(0,0,new Date,true,"","","");
+        this.incidencia = new Incidencia(0,0,"",true,"","","");
       }
      })
    }

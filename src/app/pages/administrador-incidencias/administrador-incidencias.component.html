@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="botonMygreen-caja">
-                    <button class="botonMyGreen" [disabled]="!incidenciaForm.valid" type="button"
+                    <button class="botonMyGreen"  type="button"
                         (click)="finalizar(incidencia)">TERMINAR</button>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let incidencia of incidenciaSlice;let indice=index" id="tablaFila"
-                            (click)="cargarDatos(indice)">
+                            (click)="cargarDatos(incidencia)">
                             <td>{{incidencia.fecha |fecha}}</td>
                             <td>{{incidencia.nombre}} {{incidencia.apellidos}}</td>
                             <td class="celdaDescripcion">{{incidencia.descripcion}}</td>

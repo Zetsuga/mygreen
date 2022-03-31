@@ -22,7 +22,7 @@ export class AdministradorPerfilComponent implements OnInit {
       if(datos.error==true){
       }else{
         this.usuario=datos.resultado[0];
-        console.log(datos.resultado[0])
+        this.usuario.contrasenia="";
       }    
   })    
 
