@@ -1,0 +1,178 @@
+.contenido {
+    display: grid;
+    grid-template-columns: [x0]238px [x1]calc(100vw - 238px) [x2];
+    grid-template-rows: [y0]112px [y1]calc(100vh - 112px) [y2];
+    background-color: var(--fondo);
+  }
+  
+  .header {
+    grid-column: x0/x2;
+    grid-row: y0/y1;
+  }
+  
+  .menu {
+    display: grid;
+    grid-column: x0/x1;
+    grid-row: y1/y2;
+  }
+  
+  .tarjetas {
+    display: grid;
+    grid-column: x1/x2;
+    grid-row: y1/y2;
+    padding: 50px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 600px;
+  }
+  
+  .incidencias {
+    grid-column: x1/x3;
+    grid-row: y0/y4;
+    border-radius: 7px;
+    box-shadow: var(--sombra);
+    border: var(--borde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    min-width: 700px;
+  }
+  .indicencias-contenedor {
+    width: 90%;
+  }
+  
+  .incidencias-form {
+    grid-column: x0/x1;
+    grid-row: y0/y4;
+    border-radius: 7px;
+    box-shadow: var(--sombra);
+    border: var(--borde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    /* min-width: 400px;
+    min-height: 500px; */
+  }
+  .parteIzq{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .parteInputs{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .incidencias-form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 300px;
+    margin-top: 10px;
+  }
+  .usuario {
+    background-image: url(../../../assets/img/persona.png);
+  }
+  .botonMygreen-caja {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .finca {
+    background-image: url(../../../assets/img/planta2.png);
+  }
+  .descripcion {
+    background-image: url(../../../assets/img/permisos.png);
+    height: 150px;
+  }
+  textarea {
+    resize: none;
+  }
+  .celdaDescripcion {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    padding-left: 5px;
+  }
+  
+  @media (max-width: 1060px){
+  
+    .contenido {
+      display: grid;
+      grid-template-columns: [x0]200px[x1]calc(100vw - 200px) [x2];
+      grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+    }
+    .tarjetas {
+      padding: 5px;
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-height: none;
+    }
+    .parteInputs{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .parteIzq{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+    }
+    .parteIzq input{
+      width: 300px;
+    }
+  
+    .incidencias-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: none;
+      min-height: none;
+    }
+    .incidencias-form h3{
+      margin: 5px;
+    }
+    
+    .incidencias-form-inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      width: 300px;
+    
+      margin-top: 10px;
+    }
+    
+    .incidencias {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      min-width: none;
+      overflow: scroll;
+    }
+    .indicencias-contenedor {
+      width: 100%;
+    }
+    .botonMygreen-caja{
+      margin: 10px;
+    }
+  }
+    
+  

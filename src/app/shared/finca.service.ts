@@ -12,6 +12,7 @@ export class FincaService {
   public finca:Finca;
   public url:string;
   public url2:string;
+  public url3:string;
   public usuarioFinca:UsuarioFinca;
 
 
@@ -20,6 +21,7 @@ export class FincaService {
 
     this.url =`https://mygreenapi.herokuapp.com/usuario`;
     this.url2 =`https://mygreenapi.herokuapp.com/usuarioFinca`;
+    this.url3 = `https://mygreenapi.herokuapp.com/finca`;
    }
 
    public insertarUsuarioFinca(id_usuario:number,id_finca:number):Observable<object>{
@@ -29,4 +31,21 @@ export class FincaService {
     console.log(this.usuarioFinca);
     return this.http.post(this.url2,this.usuarioFinca);
   }
+
+  public mostrar(id_finca:number){
+    return this.http.get(this.url3+"?id_finca = "+id_finca);
+  }
+
+  public buscar(){
+    return this.http.get(this.url3);
+  }
+
+  public guardar(finca:Finca){
+    return this.http.post(this.url3,finca);
+  }
+
+  public modificar(finca:Finca){
+    return this.http.post(this.url3,finca);
+  }
+
 }

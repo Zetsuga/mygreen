@@ -41,6 +41,7 @@ import { SuperSuperadministradorComponent } from './pages/super-superadministrad
 import { SuperUsuarioAdministradorComponent } from './pages/super-usuario-administrador/super-usuario-administrador.component';
 import { CommonModule } from '@angular/common';
 import { RecordarPasswordComponent } from './pages/recordar-password/recordar-password.component';
+import { SuperFincaComponent } from './pages/super-finca/super-finca.component';
 
 
 
@@ -74,7 +75,8 @@ import { RecordarPasswordComponent } from './pages/recordar-password/recordar-pa
     SuperAdministradorComponent,
     SuperSuperadministradorComponent,
     SuperUsuarioAdministradorComponent,
-    RecordarPasswordComponent
+    RecordarPasswordComponent,
+    SuperFincaComponent
   ],
   imports: [
     BrowserModule,

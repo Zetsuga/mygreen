@@ -12,6 +12,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RecordarPasswordComponent } from './pages/recordar-password/recordar-password.component';
 import { SuperAdministradorComponent } from './pages/super-administrador/super-administrador.component';
+import { SuperFincaComponent } from './pages/super-finca/super-finca.component';
 import { SuperSuperadministradorComponent } from './pages/super-superadministrador/super-superadministrador.component';
 import { TrabajadorFicharComponent } from './pages/trabajador-fichar/trabajador-fichar.component';
 import { TrabajadorInicioComponent } from './pages/trabajador-inicio/trabajador-inicio.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:"trabajador/tareas" , component: TrabajadorTareasComponent},
   {path:"super/administrador" , component: SuperAdministradorComponent},
   {path:"super/superadministrador" , component: SuperSuperadministradorComponent},
+  {path:"super/superfinca" , component: SuperFincaComponent}, 
   {path:"recordar-password", component:RecordarPasswordComponent}
 ];
 

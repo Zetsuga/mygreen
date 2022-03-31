@@ -1,0 +1,99 @@
+<div class="contenido">
+    <div class="header">
+        <app-header-panel></app-header-panel>
+    </div>
+    <div class="menu">
+        <app-menu-panel></app-menu-panel>
+    </div>
+
+    <div class="tarjetas">
+
+        <form class="incidencias-form" #incidenciaForm="ngForm">
+            <h3 class="tituloCard--conEspacio">DETALLES</h3>
+
+            <div class="incidencias-form-inputs">
+                <div class="parteInputs">
+                    <div class="parteIzq">
+                        <div class="class-input direccion">
+                            <input [(ngModel)]="finca.direccion" type="text" name="direccion" placeholder="  Dirección..." disabled>
+                        </div>
+        
+                        <div class="class-input cp">
+                            <input [(ngModel)]="finca.cp" type="number" name="cp" placeholder="  Código postal..." disabled>
+                        </div>
+        
+                        <div class="class-input poblacion">
+                            <input [(ngModel)]="finca.poblacion" type="text" name="poblacion" placeholder="  Población..." disabled>
+                        </div>
+                    </div>    
+                    <div class="class-input descripcion">
+                        <div class="class-input provincia">
+                            <input [(ngModel)]="finca.provincia" type="text" name="provincia" placeholder="  Provincia..." disabled>
+                        </div>
+        
+                        <div class="class-input latitud">
+                            <input [(ngModel)]="finca.latitud" type="number" name="latitud" placeholder="  latitud..." disabled>
+                        </div>
+        
+                        <div class="class-input longitud">
+                            <input [(ngModel)]="finca.longitud" type="number" name="longitud" placeholder="  longitud..." disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="botonMygreen-caja">
+                    <button class="botonMyGreen" type="button"
+                        (click)="guardar()">Guardar</button>
+
+                    <button *ngIf="!botonFormulario" class="botonMyGreen btnModificar" id="crear-modificar"
+                        type="button" (click)="modificarFinca()">MODIFICAR</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="incidencias">
+            <h3 class="tituloCard--conEspacio">FINCAS</h3>
+            <div class="indicencias-contenedor">
+                <table class="table table-striped table-hover" id="tablaMygreen" #tablaMygreen>
+                    <thead>
+                        <th scope="col" id="tablaCabecera">
+                            DIRECCIÓN
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            CP
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            POBLACIÓN
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            PROVINCIA
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            LATITUD
+                        </th>
+                        <th scope="col" id="tablaCabecera">
+                            LONGITUD
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let finca of fincaSlice;let indice=index" id="tablaFila"
+                            (click)="cargarDatos(indice)">
+                            <td>{{finca.direccion}}</td>
+                            <td>{{finca.cp}}</td>
+                            <td>{{finca.poblacion}}</td>
+                            <td>{{finca.provincia}}</td>
+                            <td>{{finca.latitud}}</td>
+                            <td>{{finca.longitud}}</td>
+                        </tr>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a
+                                        class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                            </ul>
+                        </nav>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
