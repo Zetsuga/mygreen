@@ -58,7 +58,7 @@
     /* min-width: 400px;
     min-height: 500px; */
   }
-  .parteIzq{
+  .parteIzq,.parteDcha{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -128,13 +128,13 @@
       align-items: center;
       gap: 20px;
     }
-    .parteIzq{
+    .parteIzq,.parteDcha{
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 25px;
     }
-    .parteIzq input{
+    .parteIzq input,.parteDcha input{
       width: 300px;
     }
   
