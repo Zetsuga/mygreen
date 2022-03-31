@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Finca } from '../models/finca';
@@ -32,20 +32,32 @@ export class FincaService {
     return this.http.post(this.url2,this.usuarioFinca);
   }
 
-  public mostrar(id_finca:number){
+  public mostrar(id_finca:number):Observable<object>{
     return this.http.get(this.url3+"?id_finca = "+id_finca);
   }
 
-  public buscar(){
+  public buscar():Observable<object>{
     return this.http.get(this.url3);
   }
 
-  public guardar(finca:Finca){
+  public guardar(finca:Finca):Observable<object>{
     return this.http.post(this.url3,finca);
   }
 
-  public modificar(finca:Finca){
+  public modificar(finca:Finca):Observable<object>{
     return this.http.post(this.url3,finca);
+  }
+
+  public eliminar(id_finca:number):Observable<object>{
+    const options ={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: {
+      id_finca: id_finca
+    },
+  };
+    return this.http.delete(this.url3,options);
   }
 
 }
