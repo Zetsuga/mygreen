@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { number } from 'echarts';
 import { Finca } from 'src/app/models/finca';
 import { Usuario } from 'src/app/models/usuario';
 import { FincaService } from 'src/app/shared/finca.service';
@@ -21,6 +22,7 @@ export class SuperFincaComponent implements OnInit {
   public indice:number;
   public usuario:Usuario;
   public botonFormulario:boolean;
+  public indicePopUP:number;
 
   constructor(public usuarioService:UsuarioService,public fincaService:FincaService,
     private incidenciaService:IncidenciasService, private router:Router,private toastService:ToastService) {
@@ -29,6 +31,7 @@ export class SuperFincaComponent implements OnInit {
       this.usuario = new Usuario("","","","",0,"","","","","","")
       this.paginador = [];
       this.botonFormulario = true;
+      this.indicePopUP=0;
 
       this.fincaService.buscar().subscribe((datos:any)=>{
         this.fincas = datos.resultado;
@@ -70,7 +73,7 @@ export class SuperFincaComponent implements OnInit {
     this.fincaSlice = this.fincas.slice(indice*11,multiplicador*11);
   }
 
-  public modificarUsuario(){
+  public modificarFinca(){
     this.fincaService.modificar(this.finca).subscribe((datos:any)=>{
       if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);
@@ -82,5 +85,32 @@ export class SuperFincaComponent implements OnInit {
       }
     })
   }
+
+  public eliminarFinca(){
+    this.fincaService.eliminar(this.fincas[this.indicePopUP].id_finca).subscribe((datos:any)=>{
+     if(datos.error==true){
+       this.toastService.showError(datos.mensaje,datos.titulo);
+     }else{
+       this.toastService.showOk(datos.mensaje, datos.titulo);
+       this.fincas.splice(this.indicePopUP,1);
+       this.fincaSlice.splice(this.indicePopUP,1)
+       this.botonFormulario=true;
+       
+     }
+    })
+    this.closePopup();
+  }
+
+  displayStyle = "none";
+ 
+  openPopup(id) {
+    //this.parte = this.tareas[id];
+   this.indicePopUP  = id;
+   this.displayStyle = "block";
+ }
+ closePopup() {
+   this.displayStyle = "none";
+   this.indicePopUP = -1;
+ }
 
 }
