@@ -1,7 +1,7 @@
 .contenedor {
   display: grid;
-  grid-template-columns: [x0]238px[x1]calc(100vw - 238px) [x2];
-  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
 }
 
 .cabecera {
@@ -128,7 +128,7 @@ td {
 .iconos {
   /* border: 1px solid black; */
   width: auto;
-  height: 20px;
+  height: 22px;
   overflow: hidden;
   display: flex;
   justify-content: start;
@@ -187,8 +187,8 @@ td {
 
 .contenedor {
   display: grid;
-  grid-template-columns: [x0]200px[x1]calc(100vw - 200px) [x2];
-  grid-template-rows: [y0]112px[y1]calc(100vh - 112px) [y2];
+  grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
+  grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
 }
 
 .cuerpo {

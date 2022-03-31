@@ -21,6 +21,7 @@ export class AdministradorHistorialComponent implements OnInit {
   public datosTemperatura:number[];
   public xAxisData:string[];
   public data1:number[];
+  public isLoading: boolean;
 
   constructor(private medicionService:MedicionesService,private usuarioService:UsuarioService,
     private router:Router,private toastService:ToastService) {
@@ -46,6 +47,9 @@ export class AdministradorHistorialComponent implements OnInit {
       this.grafica2();
       this.grafica1(this.etiquetas,this.datosHumedad,this.datosTemperatura);
       }
+      console.log(this.datosHumedad);
+      console.log(this.datosTemperatura);
+
       
     })
    }
@@ -87,6 +91,7 @@ export class AdministradorHistorialComponent implements OnInit {
 
    public grafica1(etiquetas,datosHumedad,datosTemperatura){
     
+    this.isLoading = false;
     this.options = {
       tooltip: {
         trigger: 'axis',

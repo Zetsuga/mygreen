@@ -26,7 +26,7 @@ export class AdministradorIncidenciasComponent implements OnInit {
   constructor(public usuarioService:UsuarioService,public fincaService:FincaService,
     private incidenciaService:IncidenciasService, private router:Router,private toastService:ToastService) {
 
-      this.incidencia = new Incidencia(0,0,new Date,true,"","","");
+      this.incidencia = new Incidencia(0,0,"",true,"","","");
       this.finca = new Finca("",0,"","",0,0);
       this.usuario = new Usuario("","","","",0,"","","","","","")
       this.paginador = [];
@@ -41,29 +41,46 @@ export class AdministradorIncidenciasComponent implements OnInit {
         }
         
         this.incidenciaSlice = this.incidencias.slice(0,8);
-        console.log(this.incidencias);
         
       })
     })
    }
 
-   public cargarDatos(id){
-      this.incidencia = this.incidencias[id];
-      this.indice = id;
-      this.usuarioService.buscarUno(this.incidencia.id_usuario).subscribe((datos:any)=>{
-        this.finca = new Finca(datos.resultado[0].fincadireccion,0,"","",0,0);
-        this.usuario = datos.resultado[0];
-      })
+   public cargarDatos(incidencia:Incidencia){
+      for(let atributo of this.incidencias){
+        if(atributo.id_incidencia == incidencia.id_incidencia ){
+          let dateTimeParts= String(atributo.fecha).split(/[- : T]/);
+          let fecha=  dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0];      
+          this.incidencia = atributo;
+          this.incidencia.fecha = fecha;
+          this.usuarioService.buscarUno(this.incidencia.id_usuario).subscribe((datos:any)=>{
+            this.finca = new Finca(datos.resultado[0].fincadireccion,0,"","",0,0);
+            this.usuario = datos.resultado[0];
+            
+          })
+        }
+      }
+     
+      // this.indice = id;
+     
    }
 
    public finalizar(incidencia){
      this.incidenciaService.modificar(incidencia).subscribe((datos:any)=>{
        this.incidencias.splice(this.indice,1)
-       this.incidencia=new Incidencia(0,0,new Date,true,"","","");
+       this.incidencia=new Incidencia(0,0,"",true,"","","");
        if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
+        let contador = 0;
+        for(let atributo of this.incidenciaSlice){
+          if(atributo.id_incidencia == incidencia.id_incidencia){
+            this.incidenciaSlice.splice(contador,1)
+          }else{
+            contador++;
+          }
+        }
       }
      })
    }
@@ -77,6 +94,7 @@ export class AdministradorIncidenciasComponent implements OnInit {
   public cargarTabla(indice:number){
     let multiplicador = indice +1;
     this.incidenciaSlice = this.incidencias.slice(indice*8,multiplicador*8);
+
   }
   
 }

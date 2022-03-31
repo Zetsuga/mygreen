@@ -44,7 +44,7 @@ export class AdministradorInicioComponent implements OnInit {
       this.colorHumedad="";
       this.colorTension="";
       this.paginador=[];
-      this.incidenciaModal = new Incidencia(0,0,new Date,false,"","","");
+      this.incidenciaModal = new Incidencia(0,0,"",false,"","","");
 
       
     

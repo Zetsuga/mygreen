@@ -84,7 +84,6 @@ nav a:hover {
 .btn-login {
   height: 5.60vh;
   width: 3.25vw;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

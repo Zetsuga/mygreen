@@ -1,6 +1,6 @@
 .contenido {
   display: grid;
-  grid-template-columns: [x0] 238px [x1] calc(100vw - 238px) [x2];
+  grid-template-columns: [x0] 200px [x1] calc(100vw - 200px) [x2];
   grid-template-rows: [y0] 112px [y1] calc(100vh - 112px) [y2];
   background-color: var(--fondo);
 }
@@ -24,7 +24,7 @@
 }
 .tareas {
   grid-column: x0/x4;
-  grid-row: y0/y5;
+  grid-row: y0/y6;
   border-radius: 7px;
   box-shadow: var(--sombra);
   display: flex;
