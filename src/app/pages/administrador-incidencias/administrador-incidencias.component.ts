@@ -81,6 +81,14 @@ export class AdministradorIncidenciasComponent implements OnInit {
             contador++;
           }
         }
+        contador = 0;
+        for(let atributo of this.incidencias){
+          if(atributo.id_incidencia == incidencia.id_incidencia){
+            this.incidencias.splice(contador,1)
+          }else{
+            contador++;
+          }
+        }
       }
      })
    }

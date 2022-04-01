@@ -29,7 +29,18 @@ export class TrabajadorTareasComponent implements OnInit {
   constructor(public usuarioService:UsuarioService,private tareaService:TareasService,
     private incidenciaService:IncidenciasService,private toastService:ToastService,
     private router:Router,public fincaService:FincaService,private ficharService:FicharService) {
-      this.estado = true;
+  
+      let date = new Date;
+      let hoy = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+      this.ficharService.buscar(this.usuarioService.usuario.id_usuario,hoy).subscribe((datos:any)=>{
+        if(datos.resultado.length>0 && datos.resultado[0].salida == null){
+          this.estado = false;
+          this.fichar=datos.resultado[0];
+        }else{
+          this.estado = true;
+          this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+        }
+      })
       this.paginador = [];
       this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
       this.tarea = new Tarea(0,0,"","","","","");
@@ -55,14 +66,33 @@ export class TrabajadorTareasComponent implements OnInit {
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
-        this.tareas.splice(this.indice,1);
+        let contador = 0;
+        for(let atributo of this.tareaSlice){
+          if(atributo.id_tarea == id_tarea){
+            this.tareaSlice.splice(contador,1);
+          }else{
+            contador++;
+          }
+        }
+        contador = 0;
+        for(let atributo of this.tareas){
+          if(atributo.id_tarea == id_tarea){
+            this.tareas.splice(contador,1);
+          }else{
+            contador++;
+          }
+        }
       }
     })
    }
 
-   public cargarDatos(indice){
-     this.tarea = this.tareas[indice];
-     this.indice = indice;
+   public cargarDatos(tarea:Tarea){
+
+    for(let atributo of this.tareas){
+      if(atributo.id_tarea == tarea.id_tarea){
+        this.tarea = atributo;
+      }
+    }
    }
 
    public guardarIncidencia(){

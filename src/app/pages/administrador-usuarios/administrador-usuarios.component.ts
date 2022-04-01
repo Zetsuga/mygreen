@@ -68,25 +68,42 @@ export class AdministradorUsuariosComponent implements OnInit {
 
    }
 
-   public cargarDatos(id){
-     this.usuario = new Usuario(this.usuarios[id].nombre,this.usuarios[id].apellidos,this.usuarios[id].telefono,
-      this.usuarios[id].direccion,this.usuarios[id].cp,this.usuarios[id].poblacion,this.usuarios[id].ciudad,
-      null,this.usuarios[id].rol,this.usuarios[id].num_cuenta,this.usuarios[id].email);
-      this.usuario.id_usuario = this.usuarios[id].id_usuario;
-     this.botonFormulario = false;
-     this.indice=id;
+   public cargarDatos(usuario:Usuario){
+
+    for(let atributo of this.usuarios){
+      if(atributo.id_usuario == usuario.id_usuario){
+        this.usuario = atributo;
+        this.usuario.contrasenia = "";
+        this.botonFormulario = false;
+      }
+    }
+     
    }
 
    public eliminarUsuario(){
-     console.log(this.indicePopUP)
-     this.usuarioService.eliminar(this.usuarios[this.indicePopUP].id_usuario).subscribe((datos:any)=>{
+     this.usuarioService.eliminar(this.usuario.id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje, datos.titulo);
-        this.usuarios.splice(this.indicePopUP,1);
+        let contador = 0;
+        for(let atributo of this.usuarioSlice){
+          if(atributo.id_usuario ==  this.usuario.id_usuario){
+            this.usuarioSlice.splice(contador,1);
+          }else{
+            contador++;
+          }
+        }
+        contador = 0;
+        for(let atributo of this.usuarios){
+          if(atributo.id_usuario ==  this.usuario.id_usuario){
+            this.usuarios.splice(contador,1);
+          }else{
+            contador++;
+          }
+        }
         this.botonFormulario=true;
-        
+        this.usuario = new Usuario("","","","",0,"","","","4","","");
       }
      })
      this.closePopup();
@@ -111,9 +128,9 @@ export class AdministradorUsuariosComponent implements OnInit {
 
    displayStyle = "none";
  
-  openPopup(id) {
+  openPopup(usuario:Usuario) {
     //this.parte = this.tareas[id];
-   this.indicePopUP  = id;
+   this.usuario = usuario;
    this.displayStyle = "block";
  }
  closePopup() {

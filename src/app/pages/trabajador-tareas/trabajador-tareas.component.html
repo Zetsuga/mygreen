@@ -12,7 +12,7 @@
             <div class="tareasCuerpo"
             [ngClass]="{'urgente':'tareaPendiente bordeRojo','media':'tareaPendiente bordeVerde',
                         'baja':'tareaPendiente bordeAmarillo'}[tarea.prioridad]" 
-            *ngFor="let tarea of tareaSlice;let indice=index" (click)="cargarDatos(indice)">
+            *ngFor="let tarea of tareaSlice;let indice=index" (click)="cargarDatos(tarea)">
                     <div class="caja">
                         <div class="tarea-Izquierda">
                             <p class="tareaPrioridad {{tarea.prioridad}}">{{tarea.prioridad.toUpperCase()}}</p>

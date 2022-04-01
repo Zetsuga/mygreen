@@ -27,8 +27,18 @@ export class TrabajadorInicioComponent implements OnInit {
     private router:Router,private toastService:ToastService,private nominasService:NominasService,
     private ficharService:FicharService) {
 
-    this.estado = true;
-    this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+      let date = new Date;
+      let hoy = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+      this.ficharService.buscar(this.usuarioService.usuario.id_usuario,hoy).subscribe((datos:any)=>{
+        if(datos.resultado.length>0 && datos.resultado[0].salida == null){
+          this.estado = false;
+          this.fichar=datos.resultado[0];
+        }else{
+          this.estado = true;
+          this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+        }
+      })
+    
     
     this.tareasService.buscarTodosUsuario(this.usuarioService.usuario.id_usuario).subscribe((datos:any)=>{
       if(datos.error==true){

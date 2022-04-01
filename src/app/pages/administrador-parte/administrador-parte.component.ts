@@ -75,44 +75,63 @@ export class AdministradorParteComponent implements OnInit {
   public eliminarTarea(){
     console.log(this.indicePopUP);
     
-    this.tareasService.eliminar(this.tareas[this.indicePopUP].id_tarea).subscribe((datos:any)=>{
+    this.tareasService.eliminar(this.tarea.id_tarea).subscribe((datos:any)=>{
       if(datos.error == true)
       this.toastService.showError(datos.mensaje,datos.titulo);
       else{
         this.toastService.showOk(datos.mensaje,datos.titulo);
-        this.tareas.splice(this.indicePopUP,1);
+
+        let contador = 0;
+        for(let atributo of this.tareaSlice){
+          if(atributo.id_tarea == this.tarea.id_tarea){
+            this.tareaSlice.splice(contador,1);
+          }else{
+            contador++;
+          }
+        }
+        contador =0;
+        for(let atributo2 of this.tareas){
+          if(atributo2.id_tarea == this.tarea.id_tarea){
+            this.tareas.splice(contador,1);
+          }else{
+            contador++;
+          }
+        }
         this.botonFormulario = true;
       }
     })
     this.closePopup();
   }
 
-  public cargarDatos (id:number){   
-    this.tarea = new Tarea(this.tareas[id].id_usuario,this.tareas[id].id_finca,
-      this.tareas[id].fecha, this.tareas[id].prioridad,this.tareas[id].descripcion,
-      this.tareas[id].nombre,this.tareas[id].apellidos);
-      this.tarea.id_tarea = this.tareas[id].id_tarea;
-      
-      
-    
-    let dateTimeParts= this.tareas[id].fecha.toString().split(/[- : T]/);
-    this.fecha1= (dateTimeParts[0] + "-" + dateTimeParts[1]+ "-" + dateTimeParts[2]);
-    this.tarea.fecha = this.fecha1;
-    
-
+  public cargarDatos (tarea:Tarea){   
+    for(let atributo of this.tareas){
+      if(atributo.id_tarea == tarea.id_tarea){
+        this.tarea = atributo;
+        let dateTimeParts= atributo.fecha.toString().split(/[- : T]/);
+        this.fecha1= (dateTimeParts[0] + "-" + dateTimeParts[1]+ "-" + dateTimeParts[2]);
+        this.tarea.fecha = this.fecha1;
+      }
+    }
     this.botonFormulario = false;
-    this.indice = id;
   }
 
-  public modificarTarea(id:number){
-    console.log(this.tarea);
+  public modificarTarea(){
     
     this.tareasService.modificar(this.tarea).subscribe((data:any)=>{
       if(data.error == true)
       this.toastService.showError(data.mensaje,data.titulo);
       else{
         this.toastService.showOk(data.mensaje,data.titulo);
-        this.tareas[this.indice] = this.tarea;
+        for(let atributo of this.tareaSlice){
+          if(atributo.id_tarea == this.tarea.id_tarea){
+            atributo =this.tarea;
+          }
+        }
+        for(let atributo of this.tareas){
+          if(atributo.id_tarea == this.tarea.id_tarea){
+            atributo =this.tarea;
+          }
+        }
         this.botonFormulario = true;
         this.tarea = new Tarea(0,0,"","","",""," ");
       }
@@ -122,9 +141,9 @@ export class AdministradorParteComponent implements OnInit {
 
   displayStyle = "none";
  
-  openPopup(id) {
+  openPopup(tarea) {
     //this.parte = this.tareas[id];
-   this.indicePopUP  = id;
+   this.tarea  = tarea;
    this.displayStyle = "block";
  }
  closePopup() {

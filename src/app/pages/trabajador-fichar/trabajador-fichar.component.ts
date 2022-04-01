@@ -20,7 +20,17 @@ export class TrabajadorFicharComponent implements OnInit {
 
   constructor(public usuarioService:UsuarioService, private toastService:ToastService,
     private router:Router, private ficharService:FicharService) {
-      this.estado = true;
+      let date = new Date;
+      let hoy = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+      this.ficharService.buscar(this.usuarioService.usuario.id_usuario,hoy).subscribe((datos:any)=>{
+        if(datos.resultado.length>0 && datos.resultado[0].salida == null){
+          this.estado = false;
+          this.fichar=datos.resultado[0];
+        }else{
+          this.estado = true;
+          this.fichar=new Fichar(this.usuarioService.usuario.id_usuario,new Date,null,null);
+        }
+      })
       this.paginador = [];
 
       let fecha = new Date().getFullYear + "-" + new Date().getMonth + "-" + new Date().getDay
