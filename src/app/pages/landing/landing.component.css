@@ -618,3 +618,157 @@ body {
   position: absolute;
   content: "Su comentario ... ";
 }
+
+
+@media (max-width: 480px) {
+
+  .img-banner {
+    height: auto;
+  }
+
+  .texto-banner p {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+
+  .texto-banner h1 {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+  }
+
+  .btn-banner {
+    margin-top: 2vh;
+    width: 22vw;
+    height: 5vh;
+  }
+  .img-separador img {
+    width: 100vw;
+    /* height: 273px; */
+    height: 20vh;
+  }
+
+  .texto-separador {
+    margin-top: 25px;
+  }
+
+  .texto-separador h1 {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 700;
+    /* font-size: 72px; */
+    font-size: 6vw;
+  }
+  .texto-separador h2 {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 700;
+    /* font-size: 30px;     */
+    font-size: 3vw;
+  }
+
+  .separador {
+    margin-bottom: 5px;
+    height: 175px;
+    border: 1px solid blue;
+  }
+
+  .cuerpo1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 29vh 5.4vw 6.4vh 5.4vw;
+    height: 1080px;
+    border: 1px solid red;
+  }
+
+  /* cads1 */
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.card {
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.309);
+  height: 41.94vh;
+  background-color: #8a966915;
+  width: 40vw;
+  max-width: none;
+  margin-bottom: 20px;
+  /* overflow: hidden; */
+}
+.canva {
+  width: 40vw;
+  height: 20.47vh;
+  min-height: 20.47vh;
+  /* height: 200px; */
+  overflow: hidden;
+  /* position: relative; */
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+.canva img {
+  width: 100%;
+  /* width: 295px; */
+  height: 100%;
+}
+.canva:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.241);
+}
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content h2 {
+  padding-top: 10px;
+  text-align: center;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+.content p {
+  /* margin-top: 10px; */
+  /* height: 125px; */
+  text-align: justify;
+  padding: 0 10px 0 10px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.80em;
+}
+/* texto sub-cuerpo1 */
+.texto-cuerpo1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 8.2vh;
+  text-align: center;
+}
+.texto-cuerpo1 p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22.6909px;
+}
+.texto-cuerpo1 h2 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 66.1818px;
+}
+
+
+}

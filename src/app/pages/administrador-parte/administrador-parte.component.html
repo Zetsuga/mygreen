@@ -21,7 +21,8 @@
                             <div class="campo">
                                 <span>Prioridad</span>
                                 <div class="class-input prioridad">
-                                    <select name="prioridad" id="prioridad" name="prioridad" [(ngModel)]="tarea.prioridad"
+                                    <select name="prioridad" id="prioridad" name="prioridad"
+                                        [(ngModel)]="tarea.prioridad"
                                         [ngClass]="{'is-invalid': prioridad.invalid && (prioridad.dirty || prioridad.touched)}"
                                         required #prioridad placeholder="  Prioridad..">
                                         <option value="urgente">Urgente </option>
@@ -29,7 +30,8 @@
                                         <option value="baja">Baja</option>
                                     </select>
                                 </div>
-                                <div class="advertencia" *ngIf="prioridad.invalid && (prioridad.dirty || prioridad.touched)">
+                                <div class="advertencia"
+                                    *ngIf="prioridad.invalid && (prioridad.dirty || prioridad.touched) && prioridad!=null">
                                     <p *ngIf="prioridad.errors.required">El campo prioridad es obligatorio</p>
                                 </div>
                             </div>
@@ -61,25 +63,26 @@
                                         [ngClass]="{'is-invalid': fechaTarea.invalid && (fechaTarea.dirty || fechaTarea.touched)}"
                                         required placeholder="  Fecha..." value="{{tarea.fecha | date:'yyyy-MM-dd'}}" />
                                 </div>
-                                <div class="advertencia" *ngIf="fechaTarea.invalid && (fechaTarea.dirty || fechaTarea.touched)">
+                                <div class="advertencia"
+                                    *ngIf="fechaTarea.invalid && (fechaTarea.dirty || fechaTarea.touched) && fechaTarea!=null">
                                     <p *ngIf="fechaTarea.errors.required">La fecha es obligatoria</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="partedcha">
                         <div class="fila">
                             <div class="campo campodescripcion">
                                 <span>Descripción</span>
                                 <div class="class-input descripcion">
-                                    <textarea type="text" id="descripcion" name="descripcion" [(ngModel)]="tarea.descripcion"
-                                        #descripcion="ngModel"
-                                        [ngClass]="{'is-invalid': descripcion.invalid && (descripcion.dirty || descripcion.touched)}"
+                                    <textarea type="text" id="descripcion" name="descripcion"
+                                        [(ngModel)]="tarea.descripcion" #descripcion="ngModel"
+                                        [ngClass]="{'is-invalid': descripcion.invalid && (descripcion.dirty || descripcion.touched) }"
                                         required placeholder="  Descripción"></textarea>
                                 </div>
                                 <div class="advertencia"
-                                    *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+                                    *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched) && descripcion.value!=null">
                                     <p *ngIf="descripcion.errors.required">La descripcion es obligatoria</p>
                                 </div>
                             </div>

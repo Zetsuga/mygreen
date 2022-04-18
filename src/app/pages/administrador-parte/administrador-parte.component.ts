@@ -133,7 +133,7 @@ export class AdministradorParteComponent implements OnInit {
           }
         }
         this.botonFormulario = true;
-        this.tarea = new Tarea(0,0,"","","",""," ");
+        this.tarea = new Tarea(0,0,"","",null,"","");
       }
     })
   }
