@@ -22,34 +22,39 @@
                             <div class="class-input nombre">
                                 <input type="text" id="nombre-usuariosForm" name="nombre" [(ngModel)]="usuario.nombre"
                                     #nombre="ngModel"
-                                    [ngClass]="{'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}" required
-                                    placeholder="  Nombre" />
+                                    [ngClass]="{'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}"
+                                    required placeholder="  Nombre" />
                             </div>
-                            <div class="advertencia" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            <div class="advertencia"
+                                *ngIf="nombre.invalid && (nombre.dirty || nombre.touched) && nombre.value != null">
                                 <p *ngIf="nombre.errors.required">El nombre es obligatorio</p>
                             </div>
                         </div>
-        
+
                         <span>Apellidos</span>
                         <div class="subForm">
                             <div class="class-input apellidos">
-                                <input type="text" id="apellidos-usuariosForm" name="apellidos" [(ngModel)]="usuario.apellidos"
-                                    #apellidos="ngModel" [ngClass]="{'is-invalid':usuariosForm.submitted && apellidos.invalid}"
-                                    required placeholder="  Apellidos..." />
+                                <input type="text" id="apellidos-usuariosForm" name="apellidos"
+                                    [(ngModel)]="usuario.apellidos" #apellidos="ngModel"
+                                    [ngClass]="{'is-invalid':usuariosForm.submitted && apellidos.invalid}" required
+                                    placeholder="  Apellidos..." />
                             </div>
-                            <div class="advertencia" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+                            <div class="advertencia"
+                                *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched) && apellidos.value != null">
                                 <p *ngIf="apellidos.errors.required">Los apellidos son obligatorios</p>
                             </div>
                         </div>
-        
+
                         <span>Teléfono</span>
                         <div class="subForm">
                             <div class="class-input telefono">
-                                <input type="text" id="telefono-usuariosForm" name="telefono" [(ngModel)]="usuario.telefono"
-                                    #telefono="ngModel" [ngClass]="{'is-invalid': usuariosForm.submitted && telefono.invalid}"
-                                    required placeholder="  Teléfono..." />
+                                <input type="text" id="telefono-usuariosForm" name="telefono"
+                                    [(ngModel)]="usuario.telefono" #telefono="ngModel"
+                                    [ngClass]="{'is-invalid': usuariosForm.submitted && telefono.invalid}" required
+                                    placeholder="  Teléfono..." />
                             </div>
-                            <div class="advertencia" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                            <div class="advertencia"
+                                *ngIf="telefono.invalid && (telefono.dirty || telefono.touched) && telefono.value != null">
                                 <p *ngIf="telefono.errors.required">El teléfono es obligatorio</p>
                             </div>
                         </div>
@@ -60,27 +65,29 @@
                             <div class="class-input email">
                                 <input type="email" id="email-usuariosForm" name="correo" [(ngModel)]="usuario.email"
                                     #correo="ngModel"
-                                    [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email required
-                                    placeholder="  E-mail..." />
+                                    [ngClass]="{'is-invalid':correo.invalid && (correo.dirty || correo.touched)}" email
+                                    required placeholder="  E-mail..." />
                             </div>
-                            <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                            <div *ngIf="correo.invalid && (correo.dirty || correo.touched) && correo.value != null">
                                 <p *ngIf="correo.errors.required" class="advertencia">El correo es obligatorio</p>
                             </div>
                         </div>
-        
+
                         <span>Contraseña</span>
                         <div class="subForm">
                             <div class="class-input">
-                                <input type="password" name="password" [(ngModel)]="usuario.contrasenia" #password="ngModel"
+                                <input type="password" name="password" [(ngModel)]="usuario.contrasenia"
+                                    #password="ngModel"
                                     [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched)}"
                                     minlength="4" required placeholder="  *******" />
                             </div>
-                            <div class="advertencia" *ngIf="password.invalid && (password.dirty || password.touched)">
+                            <div class="advertencia"
+                                *ngIf="password.invalid && (password.dirty || password.touched) && password.value != null">
                                 <p *ngIf="password.errors.required">La contraseña es obligatoria</p>
                                 <p *ngIf="password.errors.minlength">Minimo 4 caracteres</p>
                             </div>
                         </div>
-        
+
                         <span>Repetir contraseña</span>
                         <div class="subForm">
                             <div class="class-input">
@@ -93,7 +100,8 @@
                                 *ngIf="  ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)">
                                 <p *ngIf="ConfirmPassword.errors.required">La contraseña es obligatoria</p>
                                 <p *ngIf="ConfirmPassword.errors.minlength">Minimo 4 caracteres</p>
-                                <p *ngIf="ConfirmPassword.hasError('notEqual') && password.valid">Contraseñas no coinciden</p>
+                                <p *ngIf="ConfirmPassword.hasError('notEqual') && password.valid">Contraseñas no
+                                    coinciden</p>
                             </div>
                         </div>
                     </div>
@@ -149,9 +157,10 @@
                 </tbody>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                      <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link" (click)="cargarTabla(indice)">{{indice+1}}</a></li>
+                        <li *ngFor="let pag of paginador; let indice = index" class="page-item"><a class="page-link"
+                                (click)="cargarTabla(indice)">{{indice+1}}</a></li>
                     </ul>
-                  </nav>
+                </nav>
             </table>
         </div>
 

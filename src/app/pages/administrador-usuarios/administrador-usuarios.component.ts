@@ -73,11 +73,10 @@ export class AdministradorUsuariosComponent implements OnInit {
     for(let atributo of this.usuarios){
       if(atributo.id_usuario == usuario.id_usuario){
         this.usuario = atributo;
-        this.usuario.contrasenia = "";
+        this.usuario.contrasenia = null;
         this.botonFormulario = false;
       }
     }
-     
    }
 
    public eliminarUsuario(){
@@ -110,6 +109,7 @@ export class AdministradorUsuariosComponent implements OnInit {
    }
 
    public modificarUsuario(){
+    
     if(this.usuario.contrasenia == ""){
       this.usuario.contrasenia = null;
     }
@@ -118,9 +118,26 @@ export class AdministradorUsuariosComponent implements OnInit {
         this.toastService.showError(datos.mensaje,datos.titulo);
       }else{
         this.toastService.showOk(datos.mensaje, datos.titulo);
-        this.usuarios[this.indice]=this.usuario;
+        
+        let contador = 0;
+        for ( let atributo of this.usuarioSlice){
+          if(atributo.id_usuario == this.usuario.id_usuario){
+            this.usuarioSlice[contador] = this.usuario;
+          }else{
+            contador++;
+          }
+        }
+        contador = 0;
+
+        for( let atributo of this.usuarios){
+          if ( atributo.id_usuario == this.usuario.id_usuario){
+            this.usuarios[contador]= this.usuario;
+          }else{
+            contador++;
+          }
+        }
         this.botonFormulario=true;
-        this.usuario = new Usuario("","","","",0,"","","","4","","");
+        this.usuario = new Usuario(null,null,null,null,0,"","",null,"4","",null);
       }
      })
    }

@@ -30,6 +30,9 @@ export class AdministradorDomoticaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
+    
+
     if(this.usuario.logueado==false && this.usuario.usuario.rol!="2"){
       this.router.navigateByUrl('/login');
     }
@@ -45,8 +48,16 @@ export class AdministradorDomoticaComponent implements OnInit {
     })
 
     this.mediciones.buscarRango(null,null).subscribe((datos:any)=>{
+
+      let datosAMostrar:number;
+
+      if ( datos.resultado.length >= 40)
+        datosAMostrar = 40;
+      else
+        datosAMostrar = datos.resultado.length;
+      
     
-      for( let i = datos.resultado.length-1; i>datos.resultado.length - 40 ; i--){
+      for( let i = datos.resultado.length-1; i>datos.resultado.length - datosAMostrar ; i--){
         let dateTimeParts= datos.resultado[i].fecha.split(/[- : T]/);
         this.dataFecha.push( dateTimeParts[2]+"-"+dateTimeParts[1]+"-"+dateTimeParts[0]+ " \n "+ datos.resultado[i].hora);
         this.dataTension.push(datos.resultado[i].tensionmatricial);
@@ -60,6 +71,7 @@ export class AdministradorDomoticaComponent implements OnInit {
       this.dataTemperatura.reverse();
       this.dataTension.reverse();
       
+     
       
 
       // Pintamos la gráfica
